@@ -15,7 +15,7 @@
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-box-open"></i><span>Inventory</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-table"></i><span>Order</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-user"></i><span>User</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fal fa-file"></i><span>Report</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-file"></i><span>Report</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-file-alt"></i><span>Quotation</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
