@@ -12,11 +12,11 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>Table</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span>Login</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="404.html"><i class="fas fa-exclamation-circle"></i><span>Page Not Found</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-box-open"></i><span>Inventory</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-table"></i><span>Order</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-user"></i><span>User</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fal fa-file"></i><span>Report</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-file-alt"></i><span>Quotation</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
