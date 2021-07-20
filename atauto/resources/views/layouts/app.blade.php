@@ -36,39 +36,52 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" href="index"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index"><i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
                     </li>
                     
                     <li class="nav-item">
-                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                        <span class="fas fa-box-open"> Inventory</span>
-                        <a class="dropdown-menu shadow dropdown-menu-end animated--grow-in" href="#"><i class=""></i>&nbsp;View Category</a></a>
+                    <a class="dropdown-toggle nav-link" aria-expanded="false" role="button" id="navbarDropdown" aria-haspopup="true" data-toggle="dropdown" href="#"><i class="fas fa-box-open"></i>
+                        <span>Inventory</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" href="#">
+                        <a class="dropdown-item" href="#">View Category</a>
+                    </div>
                     </li>
+
                     <li class="nav-item">
-                    <a class="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#">
-                        <span class="fas fa-table"> Order</span>
-                        <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
-                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Delivery Order</a>
-                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Customer Order</a>
-                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Supplier List</a>
-                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Customer List</a></a>
-                        </div>              
+                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-table"></i>
+                        <span>Order</span>
+                    </a> 
+                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                        <a class="dropdown-item" href="#">&nbsp;Delivery Order</a>
+                        <a class="dropdown-item" href="#">&nbsp;Customer Order</a>
+                        <a class="dropdown-item" href="#">&nbsp;Supplier List</a>
+                        <a class="dropdown-item" href="#">&nbsp;Customer List</a>
+                    </div>
+                                 
                     </li>
                     
                     <li class="nav-item">
-                    <a class="nav-link active" aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                        <span class="far fa-user"> User</span></a>
+                    <a class="nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="far fa-user"></i>
+                        <span>User</span>
+                    </a>
                     </li>
+
                     <li class="nav-item">
-                    <a class="nav-link active" aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                        <span class="far fa-file"> Report</span></a>
-                    
+                    <a class="nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="far fa-file"></i>
+                        <span>Report</span>
+                    </a>
                     </li>
+
                     <li class="nav-item">
-                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                        <span class="far fa-file-alt"> Quotation</span>
-                        <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
-                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Add New Quotation</a></a>
+                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="far fa-file-alt"></i>
+                        <span>Quotation</span>
+                    </a>
+                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Add New Quotation</a>
                     </div>
                     </li>
                 </ul>  
@@ -165,7 +178,7 @@
                                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
                                         <span class="d-none d-lg-inline me-2 text-gray-600 small">{{ Auth::user()->username }}</span>
                                     </a>
-                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
