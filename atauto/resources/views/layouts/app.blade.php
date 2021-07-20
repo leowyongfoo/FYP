@@ -36,12 +36,41 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" href="index"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-box-open"></i><span>Inventory</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-table"></i><span>Order</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-user"></i><span>User</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-file"></i><span>Report</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-file-alt"></i><span>Quotation</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                        <span class="fas fa-box-open"> Inventory</span>
+                        <a class="dropdown-menu shadow dropdown-menu-end animated--grow-in" href="#"><i class=""></i>&nbsp;View Category</a></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#">
+                        <span class="fas fa-table"> Order</span>
+                        <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Delivery Order</a>
+                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Customer Order</a>
+                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Supplier List</a>
+                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Customer List</a></a>
+                        </div>              
+                    </li>
+                    
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                        <span class="far fa-user"> User</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                        <span class="far fa-file"> Report</span></a>
+                    
+                    </li>
+                    <li class="nav-item">
+                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                        <span class="far fa-file-alt"> Quotation</span>
+                        <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Add New Quotation</a></a>
+                    </div>
+                    </li>
                 </ul>  
             </div>
         </nav>
