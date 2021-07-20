@@ -24,6 +24,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     
+    <style>
+        .dropdown-style:hover {
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
     
@@ -46,8 +51,8 @@
                     <a class="dropdown-toggle nav-link" aria-expanded="false" role="button" id="navbarDropdown" aria-haspopup="true" data-toggle="dropdown" href="#"><i class="fas fa-box-open"></i>
                         <span>Inventory</span>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" href="#">
-                        <a class="dropdown-item" href="#">View Category</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background: #eb6a5e; border-color: #eb6a5e">
+                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">View Category</a>
                     </div>
                     </li>
 
@@ -55,11 +60,11 @@
                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-table"></i>
                         <span>Order</span>
                     </a> 
-                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
-                        <a class="dropdown-item" href="#">&nbsp;Delivery Order</a>
-                        <a class="dropdown-item" href="#">&nbsp;Customer Order</a>
-                        <a class="dropdown-item" href="#">&nbsp;Supplier List</a>
-                        <a class="dropdown-item" href="#">&nbsp;Customer List</a>
+                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="background: #eb6a5e; border-color: #eb6a5e">
+                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Delivery Order</a>
+                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Customer Order</a>
+                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Supplier List</a>
+                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Customer List</a>
                     </div>
                                  
                     </li>
@@ -80,8 +85,8 @@
                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="far fa-file-alt"></i>
                         <span>Quotation</span>
                     </a>
-                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
-                        <a class="dropdown-item" href="#"><i class=""></i>&nbsp;Add New Quotation</a>
+                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="background: #eb6a5e; border-color: #eb6a5e">
+                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Add New Quotation</a>
                     </div>
                     </li>
                 </ul>  
