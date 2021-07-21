@@ -30,8 +30,7 @@
         }
     </style>
 </head>
-<body>
-    
+<body>  
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: var(--bs-red);">
             <div class="container-fluid d-flex flex-column p-0">
@@ -200,16 +199,20 @@
                         </ul>
                     </div>
                 </nav>
-                <main class="py-4">
+                <main class="py-4 test">
                     @yield('content')
+                    <footer class="sticky-footer">
+                        <div class="container my-auto">
+                            <div class="text-center my-auto copyright"><span>Copyright © AT Auto IMS 2021</span></div>
+                        </div>
+                    </footer>
                 </main>
-                <footer class="bg-white sticky-footer">
-                    <div class="container my-auto">
-                        <div class="text-center my-auto copyright"><span>Copyright © AT Auto IMS 2021</span></div>
-                    </div>
-                </footer>
-            </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+            </div><a class="border rounded d-inline scroll-to-top" href="#top"><i class="fas fa-angle-up"></i></a>
         </div>
     </div>
 </body>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/chart.min.js"></script>
+<script src="assets/js/bs-init.js"></script>
+<script src="assets/js/theme.js"></script>
 </html>
