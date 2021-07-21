@@ -14,7 +14,7 @@
 
 <body class="bg-gradient-primary">
     <div class="container">
-        <div class="card shadow-lg o-hidden border-0" style="margin-top: 250px">
+        <div class="card shadow-lg o-hidden border-0" style="margin-top: 25vh">
             <div class="card-body p-0">
                 <div class="row">
                     <div class="col-lg-6 d-none d-lg-flex">
