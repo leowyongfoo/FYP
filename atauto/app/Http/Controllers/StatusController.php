@@ -8,27 +8,25 @@ use App\Models\Status;
 
 class StatusController extends Controller
 {
-    public function create(){
-        return view('insertStatus');
+    public function index()
+    {
+        $statuses = Status::all();
+        return view('statuses.index')->with('statuses', $statuses);
     }
 
-    public function store(){    
-        $r=request(); 
-        $addStatus=Status::create([   
-            'name'=>$r->name,
+    public function create()
+    {
+        return view('statuses.create');
+    }
+
+    public function store()
+    {
+        $data = request()->validate([
+            'name' => 'required',
         ]);
-        
-        return redirect()->route('viewStatus');
-    }
 
-    public function show(){
-        $statuses=Status::all();
-        return view('viewStatus')->with('statuses',$statuses);
-    }
+        Status::create($data);
 
-    public function delete($id){
-        $statuses=Status::find($id);
-        $statuses->delete();
-        return redirect()->route('viewStatus');
+        return redirect()->route('status.index');
     }
 }

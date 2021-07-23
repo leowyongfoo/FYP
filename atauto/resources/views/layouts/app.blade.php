@@ -51,7 +51,7 @@
                         <span>Inventory</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background: #eb6a5e; border-color: #eb6a5e">
-                        <a class="dropdown-item dropdown-style" href="{{ route('viewCategory')}}" style="color: #fff">View Category</a>
+                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">View Category</a>
                     </div>
                     </li>
 

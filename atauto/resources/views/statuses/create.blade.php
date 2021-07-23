@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <div style="text-align:center"> 
-        <form class="subform"  method="post" action="{{ route('addStatus') }}" enctype="multipart/form-data">
+        <form class="subform" method="post" action="/status" enctype="multipart/form-data">
             @csrf
             <p>
                 <label for="name" class="label">Status Name</label>

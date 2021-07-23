@@ -7,23 +7,20 @@
         <tr>
             <td>ID</td>
             <td>Name</td>
-            <td>status</td>
             <td>Action</td>
         </tr>
                                   
-        @foreach($categories as $category)
+        @foreach($statuses as $status)
             <tr>
-              <td>{{$category->id}}</td>
-              <td>{{$category->name}}</td>
-              <td>{{$category->statusID}}</td>
-              <td><a href="#" class="btn btn-danger"
+                <td>{{$status->id}}</td>
+                <td>{{$status->name}}</td>
+                <td><a href="#" class="btn btn-danger"
                     onclick="return confirm('Sure Want Delete?')">Delete</a>
               </td>
             </tr>
-         @endforeach
+        @endforeach
                     
     </table> 
 </div>
-
 
 @endsection

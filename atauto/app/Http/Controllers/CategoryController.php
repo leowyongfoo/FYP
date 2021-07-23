@@ -9,24 +9,25 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    public function create(){
-        return view('insertCategory') ->with('statuses',Status::all());
+    public function index()
+    {
+        $categories = Category::all();
+        return view('category.index')->with('categories', $categories);
     }
 
-    public function store(){    
+    public function create()
+    {
+        return view('category.create')->with('statuses', Status::all());
+    }
+
+    public function store()
+    {
         $r=request(); 
-        $addCategory=Category::create([   
+        $addCategory=Category::create([
             'name'=>$r->name,
             'statusID'=>$r->status,
         ]);
-        
-        return redirect()->route('viewCategory');
-    }
 
-    public function show(){
-        //$products=Product::paginate(4);
-        $categories=Category::all();
-        return view('viewCategory')->with('categories',$categories);
-        
+        return redirect()->route('category.index');
     }
 }

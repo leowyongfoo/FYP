@@ -11,6 +11,6 @@ class Category extends Model
 
     public function status()
     {
-        return $this->belongsTo(Status::class);
+        return $this->hasOne(Status::class);
     }
 }

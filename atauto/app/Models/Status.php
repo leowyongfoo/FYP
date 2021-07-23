@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Status extends Model
 {
     use HasFactory;
-    protected $fillable=['name'];
+    protected $guarded = [];
     
-    public function category(){
-        return $this->hasMany(Category::class);
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

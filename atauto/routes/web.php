@@ -24,16 +24,13 @@ Route::get('index', function () {
 
 Auth::routes();
 
-Route::post('/insertStatus/store', [App\Http\Controllers\StatusController::class, 'store'])->name('addStatus');
-Route::get('/insertStatus', [App\Http\Controllers\StatusController::class, 'create'])->name('insertStatus');
-Route::get('/viewStatus', [App\Http\Controllers\StatusController::class, 'show'])->name('viewStatus');
-Route::get('/deleteStatus/{id}', [App\Http\Controllers\StatusController::class, 'delete'])->name('deleteStatus');
+Route::get('/status', [App\Http\Controllers\StatusController::class, 'index'])->name('status.index');
+Route::get('/status/create', [App\Http\Controllers\StatusController::class, 'create'])->name('status.create');
+Route::post('/status', [App\Http\Controllers\StatusController::class, 'store'])->name('status.store');
 
-Route::get('/insertCategory', [App\Http\Controllers\CategoryController::class, 'create'])->name('insertCategory');
-Route::post('/insertCategory/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('addCategory');
-Route::get('/viewCategory', [App\Http\Controllers\CategoryController::class, 'show'])->name('viewCategory');
-
-
+Route::get('/category', [App\Http\Controllers\CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/create', [App\Http\Controllers\CategoryController::class, 'create'])->name('category.create');
+Route::post('/category', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
