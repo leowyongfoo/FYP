@@ -15,7 +15,7 @@
             <tr>
                 <td>{{$category->id}}</td>
                 <td>{{$category->name}}</td>
-                <td>{{$category->statusID}}</td>
+                <td>{{$category->status->name}}</td>
                 <td><a href="#" class="btn btn-danger"
                     onclick="return confirm('Sure Want Delete?')">Delete</a>
               </td>
