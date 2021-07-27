@@ -7,9 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Status extends Model
 {
-    use HasFactory;
-    protected $guarded = [];
     
+    protected $guarded = [];
+
+    public function inventory()
+    {
+        return $this->belongsTo(Inventory::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

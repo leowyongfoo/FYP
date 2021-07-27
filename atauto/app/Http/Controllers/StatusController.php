@@ -11,12 +11,12 @@ class StatusController extends Controller
     public function index()
     {
         $statuses = Status::all();
-        return view('statuses.index')->with('statuses', $statuses);
+        return view('status.index')->with('statuses', $statuses);
     }
 
     public function create()
     {
-        return view('statuses.create');
+        return view('status.create');
     }
 
     public function store()

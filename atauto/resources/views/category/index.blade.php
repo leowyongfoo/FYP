@@ -10,7 +10,7 @@
             <td>Status</td>
             <td>Action</td>
         </tr>
-                                  
+
         @foreach($categories as $category)
             <tr>
                 <td>{{$category->id}}</td>
@@ -21,8 +21,7 @@
               </td>
             </tr>
         @endforeach
-                    
+
     </table> 
 </div>
-
 @endsection

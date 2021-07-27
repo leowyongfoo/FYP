@@ -9,8 +9,14 @@ class Category extends Model
 {
     protected $guarded= [];
 
+
     public function status()
     {
-        return $this->hasOne(Status::class ,'id');
+        return $this->hasOne(Status::class , 'id');
+    }
+
+    public function inventory()
+    {
+        return $this->belongsTo(Inventory::class);
     }
 }
