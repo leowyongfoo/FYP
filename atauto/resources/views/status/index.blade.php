@@ -24,8 +24,8 @@ table, tr, td
             <tr>
                 <td>{{$status->id}}</td>
                 <td>{{$status->name}}</td>
-                <td><a href="#" class="btn btn-danger"
-                    onclick="return confirm('Sure Want Delete?')">Delete</a>
+                <td><a href="{{ route('deleteStatus', ['id' => $status->id]) }}" class="btn btn-danger" 
+                    onclick="return confirm('Sure Want Delete?')"> Delete</a>
               </td>
             </tr>
         @endforeach
