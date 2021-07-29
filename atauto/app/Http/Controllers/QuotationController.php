@@ -59,4 +59,12 @@ class QuotationController extends Controller
         return redirect("/quotation/{$quotation->id}");
     }
 
+    public function delete($id)
+    {
+        $quotations=Quotation::find($id);
+        $quotations->delete();
+
+        return redirect()->route('quotation.index');
+    }
+
 }

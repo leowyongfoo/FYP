@@ -38,6 +38,12 @@ class InventoryController extends Controller
         return redirect()->route('inventory.index');
     }
     
+    public function delete($id)
+    {
+        $inventories=Inventory::find($id);
+        $inventories->delete();
 
+        return redirect()->route('inventory.index');
+    }
 
 }

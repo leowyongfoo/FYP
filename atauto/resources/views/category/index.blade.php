@@ -26,7 +26,7 @@ table, tr, td
                 <td>{{$category->id}}</td>
                 <td>{{$category->name}}</td>
                 <td>{{$category->status->name}}</td>
-                <td><a href="#" class="btn btn-danger"
+                <td><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btn-danger"
                     onclick="return confirm('Sure Want Delete?')">Delete</a>
               </td>
             </tr>

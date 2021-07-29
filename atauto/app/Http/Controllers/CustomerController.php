@@ -49,4 +49,12 @@ class CustomerController extends Controller
         return redirect("/customer/{$customer->id}");
     }
 
+    public function delete($id)
+    {
+        $customers=Customer::find($id);
+        $customers->delete();
+
+        return redirect()->route('customer.index');
+    }
+
 }

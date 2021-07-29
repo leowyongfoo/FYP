@@ -35,7 +35,7 @@ table, tr, td
                 <td>{{$inventory->pricePerUnit}}</td>
                 <td>{{$inventory->status->name}}</td>
                 <td>
-                    <a href="#" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
+                    <a href="{{ route('deleteInventory', ['id' => $inventory->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                        Delete
                     </a>
                 </td>

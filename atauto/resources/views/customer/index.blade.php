@@ -26,7 +26,7 @@ table, tr, td
                 <td>{{$customer->id}}</td>
                 <td>{{$customer->name}}</td>
                 <td>{{$customer->contact}}</td>
-                <td><a href="#" class="btn btn-danger"onclick="return confirm('Sure Want Delete?')">
+                <td><a href="{{ route('deleteCustomer', ['id' => $customer->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                      Delete
                     </a>
                     <a href="/customer/{{ $customer->id }}/edit" class="btn btn-warning">

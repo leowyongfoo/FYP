@@ -34,7 +34,7 @@ table, tr, td
                 <td>{{$quotation->quantity}}</td>
                 <td>{{$quotation->agreedPriceperunit}}</td>
                 <td>{{$quotation->status->name}}</td>
-                <td><a href="#" class="btn btn-danger"onclick="return confirm('Sure Want Delete?')">
+                <td><a href="{{ route('deleteQuotation', ['id' => $quotation->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                      Delete
                     </a>
                     <a href="/quotation/{{ $quotation->id }}/edit" class="btn btn-warning">

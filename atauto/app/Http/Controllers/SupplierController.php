@@ -49,6 +49,12 @@ class SupplierController extends Controller
         return redirect("/supplier/{$supplier->id}");
     }
 
-   
+    public function delete($id)
+    {
+        $suppliers=Supplier::find($id);
+        $suppliers->delete();
+
+        return redirect()->route('supplier.index');
+    }
 
 }
