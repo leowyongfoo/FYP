@@ -65,7 +65,7 @@
                         <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Delivery Order</a>
                         <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Customer Order</a>
                         <a class="dropdown-item dropdown-style" href="{{ route('supplier.index') }}" style="color: #fff">&nbsp;Supplier List</a>
-                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Customer List</a>
+                        <a class="dropdown-item dropdown-style" href="{{ route('customer.index') }}" style="color: #fff">&nbsp;Customer List</a>
                     </div>
                                  
                     </li>
@@ -87,7 +87,8 @@
                         <span>Quotation</span>
                     </a>
                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="background: #eb6a5e; border-color: #eb6a5e">
-                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Add New Quotation</a>
+                        <a class="dropdown-item dropdown-style" href="{{ route('quotation.index') }}" style="color: #fff">&nbsp;View Quotation</a>
+                        <a class="dropdown-item dropdown-style" href="{{ route('quotation.create') }}" style="color: #fff">&nbsp;Add New Quotation</a>
                     </div>
                     </li>
                 </ul>  

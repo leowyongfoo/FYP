@@ -21,15 +21,15 @@ table, tr, td
             <td>Action</td>
         </tr>
                                   
-        @foreach($suppliers as $supplier)
+        @foreach($customers as $customer)
             <tr>
-                <td>{{$supplier->id}}</td>
-                <td>{{$supplier->name}}</td>
-                <td>{{$supplier->contact}}</td>
+                <td>{{$customer->id}}</td>
+                <td>{{$customer->name}}</td>
+                <td>{{$customer->contact}}</td>
                 <td><a href="#" class="btn btn-danger"onclick="return confirm('Sure Want Delete?')">
                      Delete
                     </a>
-                    <a href="/supplier/{{ $supplier->id }}/edit" class="btn btn-warning">
+                    <a href="/customer/{{ $customer->id }}/edit" class="btn btn-warning">
                        <i class="fas fa-edit">Edit</i>
                     </a> 
               </td>

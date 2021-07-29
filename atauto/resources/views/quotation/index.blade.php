@@ -17,19 +17,27 @@ table, tr, td
         <tr>
             <td>ID</td>
             <td>Name</td>
-            <td>Contact</td>
+            <td>Product</td>
+            <td>Description</td>
+            <td>Quantiy</td>
+            <td>Agreed price/unit</td>
+            <td>Status</td>
             <td>Action</td>
         </tr>
                                   
-        @foreach($suppliers as $supplier)
+        @foreach($quotations as $quotation)
             <tr>
-                <td>{{$supplier->id}}</td>
-                <td>{{$supplier->name}}</td>
-                <td>{{$supplier->contact}}</td>
+                <td>{{$quotation->id}}</td>
+                <td>{{$quotation->name}}</td>
+                <td>{{$quotation->product}}</td>
+                <td>{{$quotation->description}}</td>
+                <td>{{$quotation->quantity}}</td>
+                <td>{{$quotation->agreedPriceperunit}}</td>
+                <td>{{$quotation->status->name}}</td>
                 <td><a href="#" class="btn btn-danger"onclick="return confirm('Sure Want Delete?')">
                      Delete
                     </a>
-                    <a href="/supplier/{{ $supplier->id }}/edit" class="btn btn-warning">
+                    <a href="/quotation/{{ $quotation->id }}/edit" class="btn btn-warning">
                        <i class="fas fa-edit">Edit</i>
                     </a> 
               </td>

@@ -2,8 +2,18 @@
 
 @section('content')
 
+<style>
+table, tr, td
+{
+    border: 1px solid black;
+    padding: 15px;
+    border-spacing: 5px;
+}
+
+</style>
+
 <div>
-    <table>
+    <table style="width:90%">
         <tr>
             <td>ID</td>
             <td>Name</td>

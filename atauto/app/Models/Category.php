@@ -12,11 +12,11 @@ class Category extends Model
 
     public function status()
     {
-        return $this->hasOne(Status::class , 'id');
+        return $this->belongsTo(Status::class, 'statusID');
     }
 
     public function inventory()
     {
-        return $this->belongsTo(Inventory::class);
+        return $this->hasMany(Inventory::class);
     }
 }

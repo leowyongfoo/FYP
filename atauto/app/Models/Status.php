@@ -12,11 +12,16 @@ class Status extends Model
 
     public function inventory()
     {
-        return $this->belongsTo(Inventory::class);
+        return $this->hasMany(Inventory::class);
     }
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Category::class);
+    }
+
+    public function quotation()
+    {
+        return $this->hasMany(Quotation::class);
     }
 }
