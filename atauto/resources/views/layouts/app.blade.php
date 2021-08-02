@@ -32,7 +32,7 @@
 </head>
 <body>  
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: linear-gradient(270deg, #2376ae 0%, #c16ecf 100%);">
             <div class="container-fluid d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="index">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-tools"></i></div>
@@ -95,7 +95,7 @@
             </div>
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">
-            <div id="content" style="background: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);">
+            <div id="content" style="background: linear-gradient(90deg, #2376ae 0%, #c16ecf 100%);">
                 <nav class="navbar navbar-light navbar-expand  mb-4 topbar static-top">
                     <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -183,14 +183,14 @@
                             <li class="nav-item dropdown">
                                 <div class="nav-item dropdown">
                                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                                        <span class="d-none d-lg-inline me-2 text-gray-600 small">{{ Auth::user()->username }}</span>
+                                        <span class="d-none d-lg-inline me-2 text-white big">{{ Auth::user()->username }}</span>
                                     </a>
-                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-white-900"></i>&nbsp;Profile</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-black-900"></i>
                                             &nbsp;{{ __('Logout') }}
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -206,7 +206,7 @@
                     @yield('content')
                     <footer class="sticky-footer">
                         <div class="container my-auto">
-                            <div class="text-center my-auto copyright"><span>Copyright © AT Auto IMS 2021</span></div>
+                            <div class="text-center text-white my-auto copyright"><span>Copyright © AT Auto IMS 2021</span></div>
                         </div>
                     </footer>
                 </main>
