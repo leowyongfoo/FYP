@@ -204,7 +204,7 @@
                 </nav>
                 <main class="py-4 test">
                     @yield('content')
-                    <footer class="sticky-footer">
+                    <footer class="sticky-footer" style="position: absolute; bottom: 0; left: 0; right: 0; padding-left: 30vh;">
                         <div class="container my-auto">
                             <div class="text-center text-white my-auto copyright"><span>Copyright © AT Auto IMS 2021</span></div>
                         </div>
