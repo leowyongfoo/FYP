@@ -21,15 +21,15 @@
                                             <td>{{$category->id}}</td>
                                             <td>{{$category->name}}</td>
                                             <td>{{$category->status->name}}</td>
-                                           <td><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btn-danger"
+                                            <td><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btn-danger"
                                                  onclick="return confirm('Sure Want Delete?')">Delete</a>
-                                           </td>
+                                            </td>
                                         </tr>
                                     @endforeach  
-                            </table>
-                            <div class="text-center">
-                               {{ $categories->links() }}
-                            </div>
+                                </table>
+                                <div class="d-flex justify-content-center pt-4">
+                                {{ $categories->links() }}
+                                </div>
                         </div>
                         
                     </div>
