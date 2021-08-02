@@ -11,7 +11,7 @@ table
 }
 </style>
 <div class="container-fluid">
-    <h3 class="text-white mb-4">Customer</h3>
+    <h3 class="text-white mb-4">Status</h3>
                     <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
