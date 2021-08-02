@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
 </head>
 
-<body class="bg-gradient-primary">
+<body style="background: linear-gradient(270deg, #2376ae 0%, #c16ecf 100%);">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-12 col-xl-10">
@@ -25,7 +25,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h4 class="text-dark mb-4">Login</h4>
+                                        <h4 class="text-dark mb-4">AT-Login</h4>
                                     </div>
                                     <form class="user" method="POST" action="{{ route('login') }}">
                                         @csrf
@@ -49,14 +49,8 @@
                                             @enderror
                                         </div>
 
-                                        <div class="mb-3">
-                                            <div class="custom-control custom-checkbox small">
-                                                <div class="form-check">
-                                                    <input class="form-check-input custom-control-input" type="checkbox" id="remember" name="remember">
-                                                    <label class="form-check-label custom-control-label" for="remember">{{ __('Remember Me') }}</label>
-                                                </div>
-                                            </div>
-                                        </div><button class="btn btn-primary d-block btn-user w-100" type="submit">{{ __('Login') }}</button>
+
+                                        <button class="btn btn-primary d-block btn-user w-100 " type="submit">{{ __('Login') }}</button>
                                         <hr>
                                     </form>
                                 </div>

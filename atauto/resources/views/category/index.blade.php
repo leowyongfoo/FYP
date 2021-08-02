@@ -9,8 +9,7 @@
                             <p class="text-dark m-0 fw-bold">Overview</p>
                         </div>
                         <div class="card-body">
-
-                                <table class="table my-0" id="dataTable">
+                            <table class="table my-0" id="dataTable">
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
@@ -27,10 +26,10 @@
                                            </td>
                                         </tr>
                                     @endforeach  
-                                </table>
-                                <div class="text-center">
-                                {{ $categories->links() }}
-                        </div>
+                            </table>
+                            <div class="text-center">
+                               {{ $categories->links() }}
+                            </div>
                         </div>
                         
                     </div>
