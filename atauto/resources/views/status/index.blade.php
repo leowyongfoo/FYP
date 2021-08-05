@@ -4,6 +4,7 @@
 
 <div class="container-fluid">
     <h3 class="text-white mb-4">Status</h3>
+        <a href="/status/create" class="btn btn-danger">Add New Status</a>
                     <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
@@ -28,6 +29,7 @@
                                 @endforeach
                                             
                             </table> 
+                            
         </div>
     </div>
 </div>

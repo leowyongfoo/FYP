@@ -4,6 +4,7 @@
 
 <div class="container-fluid">
     <h3 class="text-white mb-4">Customer</h3>
+        <a href="/customer/create" class="btn btn-danger">Add New Customer</a>
                     <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
@@ -14,6 +15,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Contact</th>
+                                        <th>Address</th>
                                         <th>Action</th>
                                     </tr>
                                                             
@@ -22,6 +24,7 @@
                                             <td>{{$customer->id}}</td>
                                             <td>{{$customer->name}}</td>
                                             <td>{{$customer->contact}}</td>
+                                            <td>Null</td>
                                             <td><a href="{{ route('deleteCustomer', ['id' => $customer->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                                                 Delete
                                                 </a>

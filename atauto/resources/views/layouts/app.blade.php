@@ -72,6 +72,12 @@
                         <a class="dropdown-item dropdown-style" href="{{ route('customer.index') }}" style="color: #fff">&nbsp;Customer List</a>
                     </div>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="status"><i class="far fa-file"></i>
+                            <span>Status</span>
+                        </a>
+                    </li>
                     
                     <li class="nav-item">
                     <a class="nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="far fa-user"></i>

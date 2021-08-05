@@ -4,6 +4,7 @@
 
 <div class="container-fluid">
     <h3 class="text-white mb-4">Category</h3>
+        <a href="/category/create" class="btn btn-danger">Add New Category</a>
                     <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
