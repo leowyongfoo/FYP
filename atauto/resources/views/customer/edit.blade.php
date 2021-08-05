@@ -30,6 +30,11 @@
                         <input type="email" name="email" id="email" value="{{$customer->email}}">
                     </p>
 
+                    <p>
+                        <label for="address" class="label">Address</label>
+                        <input type="text" name="address" id="address" value="address">
+                    </p>
+
                     @endforeach
                     <p>
                         <button class="btn btn-primary"type="submit" name="edit" id="edit">edit</button>

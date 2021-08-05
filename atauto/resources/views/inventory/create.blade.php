@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+.subform
+{
+    max-width: 1208px;
+    margin: 0 auto;
+    max-width: 75.5rem;
+}
+</style>
 <div>
     <div style="text-align:center"> 
         <form class="subform" method="post" action="/inventory" enctype="multipart/form-data">
@@ -21,8 +29,8 @@
             </p>
             
             <select name="category" id="category" class="form-control">
-                @foreach($categories as $categpry)
-                    <option value="{{ $categpry->id }}">{{ $categpry->name }}</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
             </select>
 

@@ -37,6 +37,8 @@ Route::get('/deleteCategory/{id}', [App\Http\Controllers\CategoryController::cla
 Route::get('/inventory', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory.index');
 Route::get('/inventory/create', [App\Http\Controllers\InventoryController::class, 'create'])->name('inventory.create');
 Route::post('/inventory', [App\Http\Controllers\InventoryController::class, 'store'])->name('inventory.store');
+Route::get('/inventory/{id}/edit', [App\Http\Controllers\InventoryController::class, 'edit'])->name('inventory.edit');
+Route::patch('/inventory/{id}', [App\Http\Controllers\InventoryController::class, 'update'])->name('inventory.update');
 Route::get('/deleteInventory/{id}', [App\Http\Controllers\InventoryController::class, 'delete'])->name('deleteInventory');
 
 Route::get('/supplier', [App\Http\Controllers\SupplierController::class, 'index'])->name('supplier.index');

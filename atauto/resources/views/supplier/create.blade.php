@@ -19,6 +19,12 @@
                 <label for="email" class="label">E-mail</label>
                 <input type="email" name="email" id="email">
             </p>
+
+            <p>
+                <label for="address" class="label">Address</label>
+                <input type="text" name="address" id="address" value="address">
+            </p>
+            
             <p>
                 <input type="submit" name="insert" value="Insert">
             </p>

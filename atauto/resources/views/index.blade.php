@@ -88,7 +88,7 @@
                             ,&quot;data&quot;:{&quot;labels&quot;:[&quot;Jan&quot;
                                 ,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;
                                 ,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;
-                                ,&quot;Aug&quot;],&quot;datasets&quot;
+                                ,&quot;Aug&quot;,&quot;Sept&quot;,&quot;Oct&quot;,&quot;Nov&quot;,&quot;Dec&quot;],&quot;datasets&quot;
                                 :[{&quot;label&quot;:&quot;Earnings&quot;,&quot;fill&quot;:true,&quot;data&quot;
 
                                 :[&quot;0&quot;,&quot;5000&quot;,&quot;5000&quot;,&quot;0&quot;,&quot;4432&quot;,&quot;5100&quot;,&quot;9000&quot;,&quot;25000&quot;]

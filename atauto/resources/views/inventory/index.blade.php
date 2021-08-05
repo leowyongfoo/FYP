@@ -8,9 +8,11 @@ table
     padding: 15px;
     border-spacing: 5px;
 }
+
 </style>
 <div class="container-fluid">
     <h3 class="text-white mb-4">Inventory</h3>
+            <a href="/inventory/create" class="btn btn-danger">Add New Inventory</a>
                     <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
@@ -42,6 +44,9 @@ table
                                             <a href="{{ route('deleteInventory', ['id' => $inventory->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                                             Delete
                                             </a>
+                                            <a href="/inventory/{{ $inventory->id }}/edit" class="btn btn-warning">
+                                            <i class="fas fa-edit">Edit</i>
+                                            </a> 
                                         </td>
                                     </tr>
                                 @endforeach       
