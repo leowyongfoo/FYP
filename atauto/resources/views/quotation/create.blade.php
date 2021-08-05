@@ -6,7 +6,7 @@
         <form class="subform" method="post" action="/quotation" enctype="multipart/form-data">
             @csrf
             <p>
-                <label for="name" class="label">Name</label>
+                <label for="name" class="label"> Customer Name</label>
                 <input type="text" name="name" id="name">
             </p>
 
