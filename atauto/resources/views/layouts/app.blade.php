@@ -47,11 +47,13 @@
                     </li>
                     
                     <li class="nav-item">
-                    <a class="dropdown-toggle nav-link" aria-expanded="false" role="button" id="navbarDropdown" aria-haspopup="true" data-toggle="dropdown" href="{{ route('inventory.index') }}">
+                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="{{ route('inventory.index') }}">
                         <i class="fas fa-box-open"></i>
                         <span>Inventory</span>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background: #eb6a5e; border-color: #eb6a5e">
+                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="background: background: rgb(35,118,174);
+                                                                                                    background: linear-gradient(270deg, rgba(35,118,174,1) 0%, rgba(193,110,207,1) 100%);
+                                                                                                    border-color: #1f1f1f; border-width: 2px; margin-left: 0.1vh;">
                         <a class="dropdown-item dropdown-style" href="{{ route('inventory.index') }}" style="color: #fff">View Inventory</a>
                         <a class="dropdown-item dropdown-style" href="{{ route('category.index') }}" style="color: #fff">View Category</a>
                     </div>
@@ -61,13 +63,14 @@
                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-table"></i>
                         <span>Order</span>
                     </a> 
-                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="background: #eb6a5e; border-color: #eb6a5e">
+                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="background: background: rgb(35,118,174);
+                                                                                                    background: linear-gradient(270deg, rgba(35,118,174,1) 0%, rgba(193,110,207,1) 100%);
+                                                                                                    border-color: #1f1f1f; border-width: 2px; margin-left: 0.1vh;">
                         <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Delivery Order</a>
                         <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Customer Order</a>
                         <a class="dropdown-item dropdown-style" href="{{ route('supplier.index') }}" style="color: #fff">&nbsp;Supplier List</a>
                         <a class="dropdown-item dropdown-style" href="{{ route('customer.index') }}" style="color: #fff">&nbsp;Customer List</a>
                     </div>
-                                 
                     </li>
                     
                     <li class="nav-item">
@@ -86,7 +89,9 @@
                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="far fa-file-alt"></i>
                         <span>Quotation</span>
                     </a>
-                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="background: #eb6a5e; border-color: #eb6a5e">
+                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="background: background: rgb(35,118,174);
+                                                                                                    background: linear-gradient(270deg, rgba(35,118,174,1) 0%, rgba(193,110,207,1) 100%);
+                                                                                                    border-color: #1f1f1f; border-width: 2px; margin-left: 0.1vh;">
                         <a class="dropdown-item dropdown-style" href="{{ route('quotation.index') }}" style="color: #fff">&nbsp;View Quotation</a>
                         <a class="dropdown-item dropdown-style" href="{{ route('quotation.create') }}" style="color: #fff">&nbsp;Add New Quotation</a>
                     </div>

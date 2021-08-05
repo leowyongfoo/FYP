@@ -1,14 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-table
-{
-    border: 1px solid black;
-    padding: 15px;
-    border-spacing: 5px;
-}
-</style>
+
 <div class="container-fluid">
     <h3 class="text-white mb-4">Supplier</h3>
                     <div class="card ">

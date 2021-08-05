@@ -8,7 +8,7 @@
         <h3 class="text-white mb-0">Dashboard</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
     </div>
     <div class="row">
-        <div class="col-md-6 col-xl-3 mb-4">
+        <div class="col-md-6 col-xl-4 mb-4">
             <div class="card shadow border-start-primary py-2">
                 <div class="card-body">
                     <div class="row align-items-center no-gutters">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3 mb-4">
+            <div class="col-md-6 col-xl-4 mb-4">
                 <div class="card shadow border-start-success py-2">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3 mb-4">
+            <div class="col-md-6 col-xl-4 mb-4">
                 <div class="card shadow border-start-info py-2">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
@@ -56,21 +56,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-start-warning py-2">
-                    <div class="card-body">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col me-2">
-                                <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Pending Requests</span></div>
-                                <div class="text-dark fw-bold h5 mb-0"><span>18</span></div>
-                            </div>
-                        <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-left: 1.2vh; margin-right: 1.2vh;">
         <div class="col-lg-7 col-xl-8">
             <div class="card shadow mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
@@ -82,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body py-5">
                     <div class="chart-area">
                         <canvas data-bss-chart="{&quot;type&quot;:&quot;line&quot;
                             ,&quot;data&quot;:{&quot;labels&quot;:[&quot;Jan&quot;
@@ -118,14 +106,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body py-4">
                     <div class="chart-area"><canvas data-bss-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}}"></canvas></div>
                         <div class="text-center small mt-4"><span class="me-2"><i class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="me-2"><i class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="me-2"><i class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-left: 1.2vh; margin-right: 1.2vh;">
         <div class="col-lg-6 col-xxl-5 offset-xxl-0 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
