@@ -12,7 +12,7 @@ class QuotationController extends Controller
 {
     public function index()
     {
-        $quotations = Quotation::all();
+        $quotations = Quotation::paginate(5);
         return view('quotation.index')->with('quotations', $quotations);
     }
 

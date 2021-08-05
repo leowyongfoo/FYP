@@ -34,9 +34,11 @@
                                             </a> 
                                     </td>
                                     </tr>
-                                @endforeach
-                                            
+                                @endforeach   
                                 </table> 
+                                <div class="d-flex justify-content-center pt-4">
+                                    {{ $suppliers->links() }}
+                                </div>
         </div>
     </div>
 </div>

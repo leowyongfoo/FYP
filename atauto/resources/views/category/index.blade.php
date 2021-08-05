@@ -29,7 +29,7 @@
                                     @endforeach  
                                 </table>
                                 <div class="d-flex justify-content-center pt-4">
-                                {{ $categories->links() }}
+                                    {{ $categories->links() }}
                                 </div>
                         </div>
                         
