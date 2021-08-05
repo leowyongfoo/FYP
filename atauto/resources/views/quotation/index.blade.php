@@ -40,9 +40,11 @@
                                             </a> 
                                     </td>
                                     </tr>
-                                @endforeach
-                                            
+                                @endforeach   
                             </table> 
+                            <div class="d-flex justify-content-center pt-4">
+                                {{ $quotations->links() }}
+                            </div>
         </div>
     </div>
 </div>

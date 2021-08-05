@@ -26,10 +26,11 @@
                                             onclick="return confirm('Sure Want Delete?')"> Delete</a>
                                     </td>
                                     </tr>
-                                @endforeach
-                                            
+                                @endforeach      
                             </table> 
-                            
+                            <div class="d-flex justify-content-center pt-4">
+                                    {{ $statuses->links() }}
+                            </div>
         </div>
     </div>
 </div>

@@ -41,7 +41,10 @@
                                         </td>
                                     </tr>
                                 @endforeach       
-                            </table> 
+                            </table>
+                            <div class="d-flex justify-content-center pt-4">
+                                    {{ $inventories->links() }}
+                            </div>
         </div>
     </div>
 </div>
