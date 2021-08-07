@@ -8,18 +8,22 @@
                     @csrf
                     @method('PATCH')
                         <p>
+                            <h3>Edit Inventory</h3>
+                        </p>
+
+                        <p>
                             <label for="name" class="label">Product Name</label>
-                            <input type="text" name="name" id="name">
+                            <input type="text" name="name" id="name" value="{{$inventory->name}}">
                         </p>
 
                         <p>
                             <label for="description" class="label">Description</label>
-                            <input type="text" name="description" id="description">
+                            <input type="text" name="description" id="description" value="{{$inventory->description}}">
                         </p>
 
                         <p>
                             <label for="quantity" class="label">Quantity</label>
-                            <input type="number" name="quantity" id="quantity">
+                            <input type="number" name="quantity" id="quantity" value="{{$inventory->quantity}}">
                         </p>
                         
                         <select name="category" id="category" class="form-control">
@@ -30,12 +34,12 @@
 
                         <p>
                             <label for="priceperunit" class="label">Price per unit</label>
-                            <input type="text" name="priceperunit" id="priceperunit">
+                            <input type="text" name="priceperunit" id="priceperunit" value="{{$inventory->priceperunit}}">
                         </p>
 
                         <p>
                             <label for="retailPrice" class="label">Retail Price</label>
-                            <input type="text" name="retailPrice" id="retailPrice">
+                            <input type="text" name="retailPrice" id="retailPrice" value="{{$inventory->retailPrice}}">
                         </p>
                         
                         <select name="status" id="status" class="form-control">

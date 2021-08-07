@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container-fluid">
-    <h3 class="text-white mb-4">Customer</h3>
-        <a href="/customer/create" class="btn btn-danger">Add New Customer</a>
+    <h3 class="text-white mb-4">User</h3>
+        <a href="/customer/create" class="btn btn-danger">Add New User</a>
                     <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
