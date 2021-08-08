@@ -9,4 +9,9 @@ class Supplier extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function DeliveryOrder()
+    {
+        return $this->hasOne(DeliveryOrder::class);
+    }
 }

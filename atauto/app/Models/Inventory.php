@@ -9,6 +9,11 @@ class Inventory extends Model
 {
     protected $guarded = [];
 
+    public function DeliveryOrder()
+    {
+        return $this->belongsToMany(DeliveryOrder::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class ,'categoryID');
