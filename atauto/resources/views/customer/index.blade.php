@@ -26,7 +26,7 @@
                                             <td>{{$customer->name}}</td>
                                             <td>{{$customer->contact}}</td>
                                             <td>{{$customer->email}}</td>
-                                            <td style="Max-width:20vh;">Null</td>
+                                            <td style="Max-width:20vh;">{{$customer->address}}</td>
                                             <td><a href="{{ route('deleteCustomer', ['id' => $customer->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                                                 Delete
                                                 </a>
