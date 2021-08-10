@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    background-color: #1e1f21;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+header {
+    background-color: #31353f;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+.sidebar {
+    margin: 5px 5px 5px 5px;
+    border-radius: 10px;
+    height: 87vh;
+    background-color: #31353f;
+}
+
+nav {
+    float: left;
+    width: 13%;
+    background: #1e1f21;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+}
+
+nav a:hover {
+    color: white;
+    border-radius: 10px;
+    background-color: #454d5f;
+    text-decoration: none;
+}
