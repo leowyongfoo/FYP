@@ -80,7 +80,7 @@
                     </li>
                     
                     <li class="nav-item">
-                    <a class="nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="far fa-user"></i>
+                    <a class="nav-link" href="user"><i class="far fa-user"></i>
                         <span>User</span>
                     </a>
                     </li>

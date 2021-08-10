@@ -16,6 +16,7 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Contact</th>
+                                    <th>E-mail</th>
                                     <th>Address</th>
                                     <th>Action</th>
                                 </tr>
@@ -25,13 +26,16 @@
                                         <td>{{$supplier->id}}</td>
                                         <td>{{$supplier->name}}</td>
                                         <td>{{$supplier->contact}}</td>
-                                        <td>Null</td>
+                                        <td>{{$supplier->email}}</td>
+                                        <td style="Max-width:20vh;">Null</td>
                                         <td><a href="{{ route('deleteSupplier', ['id' => $supplier->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                                             Delete
                                             </a>
                                             <a href="/supplier/{{ $supplier->id }}/edit" class="btn btn-warning">
                                             <i class="fas fa-edit">Edit</i>
                                             </a> 
+                                            <a href="#" class="btn btn-success">
+                                            <i class="fa fa-whatsapp"></i>
                                     </td>
                                     </tr>
                                 @endforeach   
