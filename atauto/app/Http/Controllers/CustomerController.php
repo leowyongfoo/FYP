@@ -26,6 +26,7 @@ class CustomerController extends Controller
             'name'=>$r->name,
             'contact'=>$r->contact,
             'email'=>$r->email,
+            'address'=>$r->address,
         ]);
 
         return redirect()->route('customer.index');
@@ -44,6 +45,7 @@ class CustomerController extends Controller
         $customers->name=$r->name; 
         $customers->contact=$r->contact; 
         $customers->email=$r->email; 
+        $customers->address=$r->address; 
         $customers->save();
 
         return redirect("/customer/{$customer->id}");

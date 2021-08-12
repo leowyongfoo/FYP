@@ -23,7 +23,7 @@
 
             <p>
                 <label for="address" class="label">Address</label>
-                <input type="text" name="address" id="address" value="address">
+                <input type="text" name="address" id="address">
             </p>
             
             <p>

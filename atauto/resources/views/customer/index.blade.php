@@ -26,15 +26,19 @@
                                             <td>{{$customer->name}}</td>
                                             <td>{{$customer->contact}}</td>
                                             <td>{{$customer->email}}</td>
-                                            <td style="Max-width:20vh;">Null</td>
+                                            <td style="Max-width:20vh;">{{$customer->address}}</td>
                                             <td><a href="{{ route('deleteCustomer', ['id' => $customer->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                                                 Delete
                                                 </a>
                                                 <a href="/customer/{{ $customer->id }}/edit" class="btn btn-warning">
                                                 <i class="fas fa-edit">Edit</i>
                                                 </a> 
-                                                <a href="#" class="btn btn-success">
+                                                <a href="https://wa.me/+6{{$customer->contact}}" class="btn btn-success">
                                                 <i class="fa fa-whatsapp"></i>
+                                                </a>
+                                                <a href="mailto:{{$customer->email}}" class="btn btn-success">
+                                            <i class="fa fa-envelope"></i>
+                                            </a>    
                                         </td>
                                         </tr>
                                     @endforeach 

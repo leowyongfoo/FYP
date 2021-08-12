@@ -26,6 +26,7 @@ class SupplierController extends Controller
             'name'=>$r->name,
             'contact'=>$r->contact,
             'email'=>$r->email,
+            'address'=>$r->address,
         ]);
 
         return redirect()->route('supplier.index');
@@ -43,7 +44,8 @@ class SupplierController extends Controller
         $suppliers =Supplier::find($r->ID);
         $suppliers->name=$r->name; 
         $suppliers->contact=$r->contact; 
-        $suppliers->email=$r->email; 
+        $suppliers->email=$r->email;
+        $suppliers->address=$r->address; 
         $suppliers->save();
 
         return redirect("/supplier/{$supplier->id}");
