@@ -66,7 +66,7 @@
                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in" style="background: background: rgb(35,118,174);
                                                                                                     background: linear-gradient(270deg, rgba(35,118,174,1) 0%, rgba(193,110,207,1) 100%);
                                                                                                     border-color: #1f1f1f; border-width: 2px; margin-left: 0.1vh;">
-                        <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Delivery Order</a>
+                        <a class="dropdown-item dropdown-style" href="{{ route('deliveryOrder.index') }}" style="color: #fff">&nbsp;Delivery Order</a>
                         <a class="dropdown-item dropdown-style" href="#" style="color: #fff">&nbsp;Customer Order</a>
                         <a class="dropdown-item dropdown-style" href="{{ route('supplier.index') }}" style="color: #fff">&nbsp;Supplier List</a>
                         <a class="dropdown-item dropdown-style" href="{{ route('customer.index') }}" style="color: #fff">&nbsp;Customer List</a>
