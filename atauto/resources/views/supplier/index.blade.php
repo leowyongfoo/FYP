@@ -22,6 +22,12 @@
                                 </tr>
                                                         
                                 @foreach($suppliers as $supplier)
+                                <script>
+                                    function addMsg() {
+                                        var msg = document.getElementById("message").value;
+                                        window.open("https://wa.me/+6{{$supplier->contact}}/?text=" + msg);
+                                    }
+                                </script>
                                     <tr>
                                         <td>{{$supplier->id}}</td>
                                         <td>{{$supplier->name}}</td>
@@ -33,8 +39,9 @@
                                             </a>
                                             <a href="/supplier/{{ $supplier->id }}/edit" class="btn btn-warning">
                                             <i class="fas fa-edit">Edit</i>
-                                            </a> 
-                                            <a href="#" class="btn btn-success">
+                                            </a>
+                                            <input type="text" id="message">
+                                            <a onclick="addMsg()" class="btn btn-success">
                                             <i class="fa fa-whatsapp"></i>
                                     </td>
                                     </tr>
@@ -46,4 +53,5 @@
         </div>
     </div>
 </div>
+
 @endsection

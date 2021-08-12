@@ -2,6 +2,7 @@ body {
     margin: 0;
     background-color: #1e1f21;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    color: white;
 }
 
 header {
@@ -9,6 +10,23 @@ header {
     padding: 10px;
     font-size: 30px;
     color: white;
+}
+
+.dropdown a {
+    color:white;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    background-color: #262a32;
+    color: white;
+    border-radius: 10px;
+}
+
+.dropdown-menu a:hover{
+    background-color: #3a4150;
+    color: white;
+    border-radius: 10px;
 }
 
 .sidebar {
@@ -42,3 +60,16 @@ nav a:hover {
     background-color: #454d5f;
     text-decoration: none;
 }
+
+.content-left {
+    float: left;
+    margin: 3vh 0 0 0;
+    padding: 2vh 3vh 0 0;
+    text-align: left;
+    border-right: 1px solid white;
+}
+
+.content-left ul {
+    list-style-type: none;
+}
+
