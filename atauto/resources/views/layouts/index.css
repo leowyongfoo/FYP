@@ -21,6 +21,7 @@ header {
     background-color: #262a32;
     color: white;
     border-radius: 10px;
+    width: 18.5vh;
 }
 
 .dropdown-menu a:hover{
@@ -38,7 +39,7 @@ header {
 
 nav {
     float: left;
-    width: 13%;
+    width: 27vh;
     background: #1e1f21;
     padding: 20px;
 }
@@ -61,15 +62,60 @@ nav a:hover {
     text-decoration: none;
 }
 
+.dropdown-item {
+    font-size: 15px;
+    color: white;
+}
+
+.content {
+    vertical-align: auto;
+}
+
 .content-left {
     float: left;
-    margin: 3vh 0 0 0;
+    margin: 3vh 0 0 1vh;
     padding: 2vh 3vh 0 0;
     text-align: left;
     border-right: 1px solid white;
 }
 
-.content-left ul {
-    list-style-type: none;
+.content-left > .earningsTitle > h5 {
+    text-align: left;
+    background-color: #31353f;
+    padding: 1vh;
+    border-radius: 10px;
 }
+
+.content-left > .earningsTitle{
+    font-size: 50px;
+    text-align: center;
+}
+
+.content-right {
+    padding-top: 5vh;
+    padding-left: 66.5vh;
+}
+
+.dataTables {
+    float: left;
+    width: 165vh;
+    margin: 1vh 0 0 2vh;
+    padding: 2vh 0 0 0;
+}
+
+thead {
+    background-color: #0b0c0c;
+}
+
+tbody {
+    background-color: #151517;
+}
+
+tr, th {
+    border-top: 2px solid #313236;
+    border-bottom: 2px solid #313236;
+}
+
+
+
 

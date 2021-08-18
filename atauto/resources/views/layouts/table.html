@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
 </head>
-<body onload=display_ct();>
+<body>
     <header>
         <div>
             <span class="pl-5">AT Auto</span>
@@ -82,28 +82,34 @@
 
     <main>
         <div class="content">
-            <div class="content-left">
-                <div class="earningsTitle">
-                    <h5>Earnings (Daily)</h5>
-                    RM100.00
-                </div>
-
-                <div class="earningsTitle">
-                    <hr style="width: auto; text-align: left; margin: 2vh 0; background-color: white;">
-                    <h5>Earnings (Monthly)</h5>
-                    RM12315.00
-                </div>
-
-                <div class="earningsTitle">
-                    <hr style="width: auto; text-align: left; margin: 2vh 0; background-color: white;">
-                    <h5>Earnings (Annually)</h5>
-                    RM128093.00
-                </div>
-            </div>
-
-            <div class="content-right">
-                
-                <h4>Date & Time: <span id="datetime"></span></h4>
+            <div class="dataTables">
+                <h2>Inventory</h2>
+                <table class="table table-borderless" style="margin-top: 2vh;">
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Price/Unit</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th>1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
@@ -112,23 +118,5 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript"> 
-    function display_c(){
-        var refresh=1000; // Refresh rate in milli seconds
-        mytime=setTimeout('display_ct()',refresh)
-    }
-    
-    function display_ct() {
-        var x = new Date()
-        var day = x.getDay()
-        var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        document.getElementById("datetime").innerHTML = weekday[day] + '<br/>' + x.toLocaleString();
-        display_c();
-    }
-</script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/chart.min.js"></script>
-<script src="assets/js/bs-init.js"></script>
-<script src="assets/js/theme.js"></script>
 
 </html>
