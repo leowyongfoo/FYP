@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DeliveryOrder extends Model
 {
     use HasFactory;
-    protected $fillable=['DO_No','supplierID','inventoryID','quantity','statusID'];
+    protected $fillable=['DO_No','supplierID','statusID'];
 
     public function supplier()
     {
@@ -17,7 +17,13 @@ class DeliveryOrder extends Model
 
     public function inventory()
     {
-        return $this->belongsToMany(Inventory::class,'inventoryID')->orderBy('created_at','DESC');
+        return $this->belongsTo('App\Inventory');
+    }
+
+    public function itemlist()
+    {
+        return $this->hasMany(Itemlist::class);
+
     }
 
 }
