@@ -27,8 +27,10 @@
                                         <td>{{$deliveryOrder->id}}</td>
                                         <td>{{$deliveryOrder->DO_No}}</td>
                                         <td>{{$deliveryOrder->supplierID}}</td>
-                                        <td>{{$deliveryOrder->inventoryID}}</td>
-                                        <td>{{$deliveryOrder->quantity}}</td>
+                                        @foreach($itemlists as $itemlist)
+                                        <td>{{$itemlist->inventoryID}}</td>
+                                        <td>{{$itemlist->quantity}}</td>
+                                        @endforeach
                                         <td>{{$deliveryOrder->statusID}}</td>
                                         <td>
                                             <a href="#" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
@@ -38,7 +40,7 @@
                                             <i class="fas fa-edit">Edit</i>
                                             </a> 
                                         </td>
-                                    </tr>
+                                    </tr>      
                                 @endforeach       
                             </table>
                         </div>

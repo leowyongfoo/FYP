@@ -29,7 +29,6 @@
 
             <div class="container-fluid">
             <h4 class="text-white mb-4">Product</h4>
-            <a href="/deliveryOrder/productmenu" class="btn btn-danger">Add Product</a>
                     <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
@@ -37,16 +36,28 @@
                         <div class="card-body">
                         <div>
                             <table class="table my-0" id="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Inventory ID</th>
+                                        <th>quantity</th>
+                                        <th><input type="button" class="addRow" value="Add row"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                 <tr>
-                                    <th>Inventory ID</th>
-                                    <th>quantity</th>
+                                    <td>
+                                        <select name="inventory" class="form-control">
+                                            @foreach($inventories as $inventory)
+                                                <option value="{{ $inventory->id }}">{{ $inventory->productName }}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="quantity" class="form-control">
+                                    </td>
+                                    <td><a href="#" class="btn btn-danger remove">remove</a></td>
                                 </tr>
-                                @foreach($deliveryOrders as $deliveryOrder)
-                                <tr>
-                                    <td>{{$deliveryOrder->inventoryID}}</td>
-                                    <td>{{$deliveryOrder->quantity}}</td>
-                                </tr>
-                                @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -67,6 +78,30 @@
         </form>
     </div>
 </div>
+
+<script type="text/javascript">
+    $('.addRow').on('click',function(){
+        addRow();
+    });
+    function addRow()
+    {
+        var add='<tr>'+
+        '<td><select name="inventory" class="form-control">@foreach($inventories as $inventory)<option value="{{ $inventory->id }}">{{ $inventory->productName }}</option>@endforeach</select></td>'+
+        '<td <input type="number" name="quantity" class="form-control"></td>'+
+        '<td><a href="#" class="btn btn-danger remove">remove</a></td>'+
+        '</tr>';
+        $("tbody").append(add);
+    };
+    $('.remove').live('click',function(){
+        var last=$('tbody tr').length;
+        if(last==1){
+            alert("you can not remove last row");
+        }
+        else{
+             $(this).parent().parent().remove();
+        }
+    });
+</script>
 
 
 @endsection
