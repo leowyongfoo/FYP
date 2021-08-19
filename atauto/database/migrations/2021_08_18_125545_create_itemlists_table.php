@@ -21,6 +21,7 @@ class CreateItemlistsTable extends Migration
             $table->timestamps();
 
             $table->index('deliveryOrderID');
+            $table->index('inventoryID');
         });
     }
 

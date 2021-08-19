@@ -14,6 +14,11 @@ class Inventory extends Model
         return $this->hasMany(DeliveryOrder::class);
     }
 
+    public function itemlist()
+    {
+        return $this->hasMany(Itemlist::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class ,'categoryID');

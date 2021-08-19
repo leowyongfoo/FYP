@@ -15,9 +15,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>DO No.</th>
-                                    <th>Supplier ID</th>
-                                    <th>Inventory ID</th>
-                                    <th>quantity</th>
+                                    <th>Supplier Name</th>
+                                    <th>Order date/time</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -26,18 +25,19 @@
                                     <tr>
                                         <td>{{$deliveryOrder->id}}</td>
                                         <td>{{$deliveryOrder->DO_No}}</td>
-                                        <td>{{$deliveryOrder->supplierID}}</td>
-                                        @foreach($itemlists as $itemlist)
-                                        <td>{{$itemlist->inventoryID}}</td>
-                                        <td>{{$itemlist->quantity}}</td>
-                                        @endforeach
+                                        <td>{{$deliveryOrder->supplier->name}}</td>
+                                        <td>{{$deliveryOrder->created_at}}</td>
                                         <td>{{$deliveryOrder->statusID}}</td>
                                         <td>
-                                            <a href="#" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
+                                            <a href="/deliveryOrder/{{$deliveryOrder->id}}/deleteOrder" 
+                                            class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                                             Delete
                                             </a>
                                             <a href="#" class="btn btn-warning">
                                             <i class="fas fa-edit">Edit</i>
+                                            </a> 
+                                            <a href="/deliveryOrder/{{ $deliveryOrder->id }}" class="btn btn-success">
+                                                View detail
                                             </a> 
                                         </td>
                                     </tr>      

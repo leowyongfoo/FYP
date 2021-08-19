@@ -15,9 +15,8 @@ class DeliveryOrderController extends Controller
     public function index()
     {
         $deliveryOrders = DeliveryOrder::all();
-        $itemlists = Itemlist::all();
-        return view('deliveryOrder.index')->with('deliveryOrders', $deliveryOrders)
-                                          ->with('itemlists', $itemlists);
+        return view('deliveryOrder.index')->with('deliveryOrders', $deliveryOrders);
+                                          
     }
 
     public function create()
@@ -33,18 +32,44 @@ class DeliveryOrderController extends Controller
         $addDO=DeliveryOrder::create([    
             'DO_No'=>$r->DO_No,  
             'supplierID'=>$r->supplier, 
-            'statusID'=>$r->status,
+            'statusID'=>'pending',
         ]);
 
         $deliveryOrderID = DB::table('delivery_orders')->orderBy('created_at', 'desc')->first();
-        $addItem=Itemlist::create([
-            'deliveryOrderID'=>$deliveryOrderID->id,
-            'inventoryID'=>$r->inventory,
-            'quantity'=>$r->quantity,
-        ]);
+        foreach($r->inventory as $item=>$v){
+            $data2=array(
+                'deliveryOrderid'=>$deliveryOrderID->id,
+                'inventoryID'=>$r->inventory[$item],
+                'quantity'=>$r->quantity[$item]
+            );
+        Itemlist::insert($data2);
+      }
 
         return redirect()->route('deliveryOrder.index');       
        
+    }
+
+    public function show($id)
+    {
+        $itemlists =Itemlist::all()->where('deliveryOrderID',$id);
+        return view('deliveryOrder.show')->with('itemlists',$itemlists);
+
+    }
+
+    public function deleteItem($id)
+    {
+        $items=Itemlist::find($id);
+        $items->delete();
+        return redirect()->route('deliveryOrder.index');
+
+    }
+
+    public function deleteOrder($id)
+    {
+        $orders=DeliveryOrder::find($id);
+        $orders->delete();
+        return redirect()->route('deliveryOrder.index');
+
     }
 
     public function productmenu()

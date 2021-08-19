@@ -12,7 +12,7 @@ class Itemlist extends Model
 
     public function inventory(){
 
-        return $this->hasMany('App\Inventory');
+        return $this->belongsTo(Inventory::class, 'inventoryID');
 
     }
 

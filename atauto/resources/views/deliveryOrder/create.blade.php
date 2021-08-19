@@ -15,7 +15,7 @@
             @csrf
             <p>
                 <label for="DO_No" class="label">DO No.</label>
-                <input type="text" name="DO_No" id="DO_No">
+                <input type="text" name="DO_No" id="DO_No" required>
             </p>
 
             <div class="card-body">
@@ -38,22 +38,37 @@
                             <table class="table my-0" id="dataTable">
                                 <thead>
                                     <tr>
-                                        <th>Inventory ID</th>
-                                        <th>quantity</th>
+                                        <th>Product</th>
+                                        <th>Quantity</th>
                                         <th><input type="button" class="addRow" value="Add row"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <select name="inventory" class="form-control">
+                                        <select name="inventory[]" class="form-control">
+                                        <option selected="" value="Default" required> pleace select </option>
                                             @foreach($inventories as $inventory)
-                                                <option value="{{ $inventory->id }}">{{ $inventory->productName }}</option>
+                                                <option value="{{ $inventory->id}}">{{ $inventory->productName }}</option>
                                             @endforeach
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="number" name="quantity" class="form-control">
+                                        <input type="number" name="quantity[]" class="form-control">
+                                    </td>
+                                    <td><a href="#" class="btn btn-danger remove">remove</a></td>
+                                </tr>
+
+                                <tr>
+                                <td>
+                                        <select name="inventory[]" class="form-control">
+                                            @foreach($inventories as $inventory)
+                                                <option value="{{ $inventory->id}}">{{ $inventory->productName }}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="quantity[]" class="form-control">
                                     </td>
                                     <td><a href="#" class="btn btn-danger remove">remove</a></td>
                                 </tr>
@@ -62,15 +77,6 @@
                         </div>
                     </div>
                 </div>
-
-            <div class="card-body">
-                <label for="status" class="label">status</label>
-                <select name="status" id="status" class="form-control">
-                    @foreach($statuses as $status)
-                        <option value="{{ $status->id }}">{{ $status->name }}</option>
-                    @endforeach
-                </select>
-            </div> 
 
             <p>
                 <input type="submit" name="insert" value="Insert" style="margin-top:15px;"> 

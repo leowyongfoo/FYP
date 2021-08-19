@@ -17,7 +17,7 @@ class DeliveryOrder extends Model
 
     public function inventory()
     {
-        return $this->belongsTo('App\Inventory');
+        return $this->belongsTo(Inventory::class);
     }
 
     public function itemlist()

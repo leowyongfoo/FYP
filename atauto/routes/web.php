@@ -53,12 +53,12 @@ Route::patch('/supplier/{id}', [App\Http\Controllers\SupplierController::class, 
 Route::get('/deleteSupplier/{id}', [App\Http\Controllers\SupplierController::class, 'delete'])->name('deleteSupplier');
 
 //delivery order route
-Route::post('/addProduct', [App\Http\Controllers\DeliveryOrderController::class, 'add'])->name('add.to.DO');
 Route::get('/deliveryOrder', [App\Http\Controllers\DeliveryOrderController::class, 'index'])->name('deliveryOrder.index');
 Route::get('/deliveryOrder/create', [App\Http\Controllers\DeliveryOrderController::class, 'create'])->name('deliveryOrder.create');
 Route::post('/deliveryOrder', [App\Http\Controllers\DeliveryOrderController::class, 'store'])->name('deliveryOrder.store');
-Route::get('/deliveryOrder/productmenu', [App\Http\Controllers\DeliveryOrderController::class, 'productmenu'])->name('deliveryOrder.productmenu');
-Route::get('/deliveryOrder/{id}', [App\Http\Controllers\DeliveryOrderController::class, 'showDetail'])->name('product.detail');
+Route::get('/deliveryOrder/{id}/deleteOrder', [App\Http\Controllers\DeliveryOrderController::class, 'deleteOrder'])->name('deleteOrder');
+Route::get('/deliveryOrder/{id}/deleteItem', [App\Http\Controllers\DeliveryOrderController::class, 'deleteItem'])->name('deleteItem');
+Route::get('/deliveryOrder/{id}', [App\Http\Controllers\DeliveryOrderController::class, 'show'])->name('deliveryOrder.show');
 
 //customer route
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer.index');
