@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container-fluid">
-    <h3 class="text-white mb-4">Customer order</h3>
+    <h3 class="text-white mb-4">Customer Order</h3>
             <a href="/customerOrder/create" class="btn btn-danger">Add New CO</a>
                     <div class="card ">
                         <div class="card-header py-3">
