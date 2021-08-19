@@ -25,7 +25,7 @@
                                 <script>
                                     function addMsg() {
                                         var msg = document.getElementById("message").value;
-                                        window.open("https://wa.me/+6{{$supplier->contact}}/?text=" + msg);
+                                        window.open("https://wa.me/+6{{  $supplier->contact  }}/?text=" + msg);
                                     }
                                 </script>
                                     <tr>

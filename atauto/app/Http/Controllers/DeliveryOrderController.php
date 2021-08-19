@@ -16,15 +16,13 @@ class DeliveryOrderController extends Controller
     {
         $deliveryOrders = DeliveryOrder::all();
         return view('deliveryOrder.index')->with('deliveryOrders', $deliveryOrders);
-                                          
     }
 
     public function create()
     {
         return view('deliveryOrder.create')->with('suppliers', Supplier::all())
                                             ->with('statuses', Status::all())
-                                            ->with('inventories', Inventory::all());
-                                      
+                                            ->with('inventories', Inventory::all());                          
     }
 
     public function store(){   

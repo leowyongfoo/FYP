@@ -5,6 +5,7 @@
 </style>
 <div class="container-fluid">
     <h3 class="text-white mb-4">Quotation</h3>
+    <a href="/quotation/create" class="btn btn-danger">Add New Quotation</a>
                     <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
