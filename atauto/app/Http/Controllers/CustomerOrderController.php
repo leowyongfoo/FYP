@@ -82,4 +82,24 @@ class CustomerOrderController extends Controller
                                       
     }
 
+    public function edit($id){
+
+        $customerOrders =CustomerOrder::all()->where('id',$id);
+        return view('customerOrder.edit')->with('customerOrders', CustomerOrder::all())
+                                        ->with('items',customer_itemlist::all())
+                                        ->with('inventories',Inventory::all())
+                                        ->with('customers', Customer::all())
+                                        ->with('statuses', Status::all());
+    }
+    
+    public function update(CustomerOrder $customerOrders)
+    {
+        $r=request();
+        $customerOrders =CustomerOrder::find($r->id);
+        $customerOrders->CO_No=$r->CO_No; 
+        $customerOrders->customerID=$r->customer;
+        $customerOrders->save();
+
+        return redirect("/customerOrder");
+    }
 }
