@@ -70,4 +70,18 @@ class InventoryController extends Controller
         return redirect()->route('inventory.index');
     }
 
+    public function clientView()
+    {
+        $inventories = Inventory::all();
+        return view('inventory.clientView')->with('inventories',$inventories);
+    }
+
+    public function viewDetail($id)
+    {
+        $inventories =Inventory::all()->where('id',$id);
+        return view('inventory.productDetail')->with('inventories',$inventories);
+    }
+
+
+
 }
