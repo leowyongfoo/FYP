@@ -21,7 +21,7 @@ header {
     background-color: #262a32;
     color: white;
     border-radius: 10px;
-    width: 18.5vh;
+    width: 12%;
 }
 
 .dropdown-menu a:hover{
@@ -39,7 +39,7 @@ header {
 
 nav {
     float: left;
-    width: 27vh;
+    width: 16%;
     background: #1e1f21;
     padding: 20px;
 }
@@ -67,13 +67,14 @@ nav a:hover {
     color: white;
 }
 
-.content {
-    vertical-align: auto;
+.borderbottom {
+    margin-right: 2vh;
+    border-bottom: 1px solid white;
 }
 
 .content-left {
     float: left;
-    margin: 3vh 0 0 1vh;
+    margin: 3vh 0 3vh 1vh;
     padding: 2vh 3vh 0 0;
     text-align: left;
     border-right: 1px solid white;
@@ -87,28 +88,37 @@ nav a:hover {
 }
 
 .content-left > .earningsTitle{
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
 }
 
+.content-mid {
+    float: left;
+    margin: 3vh 0 3vh 0;
+    padding: 3vh 3vh 0 3vh;
+    border-right: 1px solid white;
+}
+
 .content-right {
-    padding-top: 5vh;
-    padding-left: 66.5vh;
+    margin: 3vh 0 3vh 0;
+    padding: 15vh 0 0 12vh;
+    text-align: center;
 }
 
 .dataTables {
     float: left;
-    width: 165vh;
+    width: 160vh;
     margin: 1vh 0 0 2vh;
     padding: 2vh 0 0 0;
 }
 
 thead {
-    background-color: #0b0c0c;
+    background-color: #151517;
 }
 
 tbody {
-    background-color: #151517;
+    background-color: #ececec;
+    color: black;
 }
 
 tr, th {
