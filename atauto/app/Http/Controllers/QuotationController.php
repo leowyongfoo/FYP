@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Quotation;
+use App\Models\Inventory;
 use App\Models\Category;
 use App\Models\Status;
 

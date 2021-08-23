@@ -62,6 +62,14 @@ Route::get('/deliveryOrder/{id}/deleteOrder', [App\Http\Controllers\DeliveryOrde
 Route::get('/deliveryOrder/{id}/deleteItem', [App\Http\Controllers\DeliveryOrderController::class, 'deleteItem'])->name('deleteItem');
 Route::get('/deliveryOrder/{id}', [App\Http\Controllers\DeliveryOrderController::class, 'show'])->name('deliveryOrder.show');
 
+//customer order route
+Route::get('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'index'])->name('customerOrder.index');
+Route::get('/customerOrder/create', [App\Http\Controllers\CustomerOrderController::class, 'create'])->name('customerOrder.create');
+Route::post('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'store'])->name('customerOrder.store');
+Route::get('/customerOrder/{id}/deleteOrder', [App\Http\Controllers\CustomerOrderController::class, 'deleteOrder'])->name('deleteOrder');
+Route::get('/customerOrder/{id}/deleteItem', [App\Http\Controllers\CustomerOrderController::class, 'deleteItem'])->name('deleteItem');
+Route::get('/customerOrder/{id}', [App\Http\Controllers\CustomerOrderController::class, 'show'])->name('customerOrder.show');
+
 //customer route
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer.index');
 Route::get('/customer/create', [App\Http\Controllers\CustomerController::class, 'create'])->name('customer.create');

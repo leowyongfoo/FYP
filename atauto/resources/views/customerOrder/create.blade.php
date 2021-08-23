@@ -10,32 +10,32 @@
 }
 </style>
 <div>
-    <div style="text-align:center"> 
-        <form class="subform" method="post" action="/deliveryOrder" enctype="multipart/form-data">
+<div style="text-align:center"> 
+        <form class="subform" method="post" action="/customerOrder" enctype="multipart/form-data">
             @csrf
             <p>
-                <label for="DO_No" class="label">DO No.</label>
-                <input type="text" name="DO_No" id="DO_No" required>
+                <label for="CO_No" class="label">CO No.</label>
+                <input type="text" name="CO_No" id="CO_No" required>
             </p>
 
             <div class="card-body">
-                <label for="supplier" class="label">Supplier</label>
-                <select name="supplier" id="supplier" class="form-control">
-                    @foreach($suppliers as $supplier)
-                        <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                <label for="customer" class="label">Customer</label>
+                <select name="customer" id="customer" class="form-control">
+                    @foreach($customers as $customer)
+                        <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                     @endforeach
                 </select>
             </div>     
 
             <div class="container-fluid">
             <h4 class="text-white mb-4">Product</h4>
-                    <div class="card">
+                    <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
                         </div>
                         <div class="card-body">
                         <div>
-                            <table class="table my-0" id="dataTabe">
+                            <table class="table my-0" id="dataTable">
                                 <thead>
                                     <tr>
                                         <th>Product</th>
@@ -49,12 +49,12 @@
                                         <select name="inventory[]" class="form-control">
                                         <option selected="" value="Default" required> please select </option>
                                             @foreach($inventories as $inventory)
-                                                <option value="{{ $inventory->id}}">{{ $inventory->productName }}</option>
+                                                <option value="{{ $inventory->id}}">{{ $inventory->pricePerUnit }}</option>
                                             @endforeach
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="number" name="quantity[]" class="form-control quantity">
+                                        <input type="number" name="quantity[]" class="form-control">
                                     </td>
                                     <td><a href="#" class="btn btn-danger remove">Remove</a></td>
                                 </tr>
@@ -108,5 +108,6 @@
         }
     });
 </script>
+
 
 @endsection
