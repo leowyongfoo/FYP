@@ -33,7 +33,7 @@
                                             class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                                             Delete
                                             </a>
-                                            <a href="#" class="btn btn-warning">
+                                            <a href="/deliveryOrder/{{ $deliveryOrder->id }}/edit" class="btn btn-warning">
                                             <i class="fas fa-edit">Edit</i>
                                             </a> 
                                             <a href="/deliveryOrder/{{ $deliveryOrder->id }}" class="btn btn-success">
