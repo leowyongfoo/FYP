@@ -82,12 +82,20 @@ Route::get('/customer/{id}/edit', [App\Http\Controllers\CustomerController::clas
 Route::patch('/customer/{id}', [App\Http\Controllers\CustomerController::class, 'update'])->name('customer.update');
 Route::get('/deleteCustomer/{id}', [App\Http\Controllers\CustomerController::class, 'delete'])->name('deleteCustomer');
 
+//quotation route
 Route::get('/quotation', [App\Http\Controllers\QuotationController::class, 'index'])->name('quotation.index');
 Route::get('/quotation/create', [App\Http\Controllers\QuotationController::class, 'create'])->name('quotation.create');
 Route::post('/quotation', [App\Http\Controllers\QuotationController::class, 'store'])->name('quotation.store');
 Route::get('/quotation/{id}/edit', [App\Http\Controllers\QuotationController::class, 'edit'])->name('quotation.edit');
 Route::patch('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'update'])->name('quotation.update');
 Route::get('/deleteQuotation/{id}', [App\Http\Controllers\QuotationController::class, 'delete'])->name('deleteQuotation');
+
+Route::post('/addtocart', [App\Http\Controllers\CartController::class, 'add'])->name('add.to.cart');
+Route::get('/myCart', [App\Http\Controllers\CartController::class, 'viewMyCart'])->name('view.mycart');
+Route::get('/deleteitem/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('deleteitem');
+
+Route::post('/createorder', [App\Http\Controllers\OrderController::class, 'add'])->name('create.order');
+Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'viewMyOrder'])->name('order.viewOrder');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
