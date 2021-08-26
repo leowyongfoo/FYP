@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
 </head>
 
-<body style="background: linear-gradient(270deg, #2376ae 0%, #c16ecf 100%);">
+<body style="background: #1e1f21;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-12 col-xl-10">
-                <div class="card shadow-lg o-hidden border-0" style="margin-top: 25vh">
+                <div class="card shadow o-hidden border-0" style="background: #31353f; margin-top: 28vh; border-radius: 10px;">
                     <div class="card-body p-0">
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-flex">
@@ -25,12 +25,12 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h4 class="text-dark mb-4">AT-Login</h4>
+                                        <h4 class="text-white mb-4">AT-Login</h4>
                                     </div>
                                     <form class="user" method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="mb-3">
-                                            <input id="username" class="form-control @error('username') is-invalid @enderror" type="username" placeholder="{{ __('Username') }}" name="username">
+                                            <input id="username" class="form-control @error('username') is-invalid @enderror" type="username" placeholder="{{ __('Username') }}" name="username" style="border-color: #414752; background: #414752;">
 
                                             @error('username')
                                                 <span class="invalid-feedback" role="alert">
@@ -40,7 +40,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <input id="password" class="form-control @error('password') is-invalid @enderror" type="password" id="exampleInputPassword" placeholder="{{ __('Password') }}" name="password">
+                                            <input id="password" class="form-control @error('password') is-invalid @enderror" type="password" id="exampleInputPassword" placeholder="{{ __('Password') }}" name="password" style="border-color: #414752; background: #414752;">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -51,7 +51,6 @@
 
 
                                         <button class="btn btn-primary d-block btn-user w-100 " type="submit">{{ __('Login') }}</button>
-                                        <hr>
                                     </form>
                                 </div>
                             </div>
