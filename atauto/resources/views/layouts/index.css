@@ -1,3 +1,21 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #303030; 
+    border-radius: 10px;
+}
+   
+::-webkit-scrollbar-thumb {
+    background: rgb(100, 100, 100); 
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 body {
     margin: 0;
     background-color: #1e1f21;
@@ -126,6 +144,26 @@ tr, th {
     border-bottom: 2px solid #313236;
 }
 
+.bottomleft {
+    float: left;
+    margin: 3vh 0 3vh 0;
+    padding: 0 2vh 0 0;
+}
 
+.bottomright {
+    float: left;
+    margin: 3vh 0 3vh 0;
+    padding: 0 2vh 0 0;
+}
 
+.bottomleft ul li {
+    border-top: 1px solid white;
+    padding: 1vh;
+    list-style-type: none;
+}
 
+.bottomright ul li {
+    border-top: 1px solid white;
+    padding: 1vh;
+    list-style-type: none;
+}
