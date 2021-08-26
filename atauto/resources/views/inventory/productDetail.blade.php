@@ -3,7 +3,7 @@
 	<div class="row" align="left" >
         @foreach($inventories as $inventory)       
             <div class="col-md-6" Style="outline: 5px groove black;">
-                <form action="#" method="post">
+                <form action="{{ route('add.to.cart') }}" method="post">
                     @csrf
                     <h4>{{$inventory->productName}}</h1>
                     <h5 class="card-title">Description: {{$inventory->description}}</h4>
