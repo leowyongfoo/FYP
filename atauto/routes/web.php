@@ -86,7 +86,8 @@ Route::get('/deleteCustomer/{id}', [App\Http\Controllers\CustomerController::cla
 Route::get('/quotation', [App\Http\Controllers\QuotationController::class, 'index'])->name('quotation.index');
 Route::get('/quotation.create', [App\Http\Controllers\QuotationController::class, 'create'])->name('quotation.create');
 Route::post('/quotation', [App\Http\Controllers\QuotationController::class, 'store'])->name('quotation.store');
-Route::get('/quotation.{id}.edit', [App\Http\Controllers\QuotationController::class, 'edit'])->name('quotation.edit');
+Route::get('/quotation/{id}/edit', [App\Http\Controllers\QuotationController::class, 'edit'])->name('quotation.edit');
+Route::get('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'show'])->name('quotation.show');
 Route::patch('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'update'])->name('quotation.update');
 Route::get('/deleteQuotation/{id}', [App\Http\Controllers\QuotationController::class, 'delete'])->name('deleteQuotation');
 
