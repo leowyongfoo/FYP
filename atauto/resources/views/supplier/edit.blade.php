@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" >
-                <div class="row" style="text-align:right">
+<div>
+                <div class="createForm">
                 @foreach($suppliers as $supplier)
                     <form class="form-group"  method="post" action="/supplier/{{ $supplier->id }}" enctype="multipart/form-data" >
                     @csrf
@@ -12,27 +12,27 @@
                     </p>
 
                     <p>
-                        <label for="ID" class="label">Supplier ID</label>
-                        <input type="text" name="ID" id="ID" value="{{$supplier->id}}" readonly>
+                        <label for="ID" class="label">Supplier ID:</label>
+                        <input class="inputField" type="text" name="ID" id="ID" value="{{$supplier->id}}" readonly>
                     </p>
 
                     <p>
-                        <label for="name" class="label">Name</label>
-                        <input type="text" name="name" id="name" value="{{$supplier->name}}">
+                        <label for="name" class="label">Name:</label>
+                        <input class="inputField" type="text" name="name" id="name" value="{{$supplier->name}}">
                     </p>
                     <p>
-                        <label for="contact" class="label">Contact</label>
-                        <input type="text" name="contact" id="contact" value="{{$supplier->contact}}">
+                        <label for="contact" class="label">Contact:</label>
+                        <input class="inputField" type="text" name="contact" id="contact" value="{{$supplier->contact}}">
                     </p>
                    
                     <p>
-                        <label for="email" class="label">Email</label>
-                        <input type="email" name="email" id="email" value="{{$supplier->email}}">
+                        <label for="email" class="label">Email:</label>
+                        <input class="inputField" type="email" name="email" id="email" value="{{$supplier->email}}">
                     </p>
 
                     <p>
-                        <label for="address" class="label">Address</label>
-                        <input type="text" name="address" id="address" value="{{$supplier->address}}">
+                        <label for="address" class="label">Address:</label>
+                        <input class="inputField" type="text" name="address" id="address" value="{{$supplier->address}}">
                     </p>
 
                     @endforeach

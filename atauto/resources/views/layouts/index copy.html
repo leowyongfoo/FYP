@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body onload=display_ct();>
+    <header>
+        <div>
+            <span class="pl-5">AT Auto</span>
+            <div class="dropdown show pr-5" style="float: right;">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                </a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="sidebar shadow p-3">
+            <ul>
+                <li>
+                    <a href=""><span>Dashboard</span></a>
+                </li>
+
+                <li>
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                        <span>Inventory</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">View Inventory</a>
+                        <a class="dropdown-item" href="#">View Category</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                        <span>Order</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Delivery Order</a>
+                        <a class="dropdown-item" href="#">Customer Order</a>
+                        <a class="dropdown-item" href="#">Supplier List</a>
+                        <a class="dropdown-item" href="#">Customer List</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href=""><span>Status</span></a>
+                </li>
+
+                <li>
+                    <a href=""><span>User</span></a>
+                </li>
+
+                <li>
+                    <a href=""><span>Report</span></a>
+                </li>
+
+                <li>
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                        <span>Quotation</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">View Quotation</a>
+                        <a class="dropdown-item" href="#">Add New Quotation</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="borderbottom">
+            <div class="row">
+                <div class="col-md-3 content-left">
+                    <div class="earningsTitle">
+                        <h5>Earnings (Daily)</h5>
+                        RM100.00
+                    </div>
+
+                    <div class="earningsTitle">
+                        <hr style="width: auto; text-align: left; margin: 2vh 0; background-color: white;">
+                        <h5>Earnings (Monthly)</h5>
+                        RM12315.00
+                    </div>
+
+                    <div class="earningsTitle">
+                        <hr style="width: auto; text-align: left; margin: 2vh 0; background-color: white;">
+                        <h5>Earnings (Annually)</h5>
+                        RM128093.00
+                    </div>
+                </div>
+
+                <div class="col-md-6 content-mid">
+                    <h4>Earnings Overview</h4>
+                    <br>
+                    <canvas id="myChart" style="width:100%;"></canvas>
+                </div>
+
+                <div class="col-md-2 content-right">
+                    <h1><span id="day"></span></h1>
+                    <h4><span id="currentDate"></span></h4>
+                    <h4><span id="time"></span> PM</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 bottomleft">
+                <div class="card shadow text-white bg-dark" style="height: 33vh; border-radius: 10px;">
+                    <div class="card-body" style="overflow: auto;">
+                        <h4 class="card-title">Notification</h4>
+                        <ul>
+                            <li>
+                                <h5>Notification 1</h5>
+                            </li>
+                            <li>
+                                <h5>Notification 2</h5>
+                            </li>
+                            <li>
+                                <h5>Notification 3</h5>
+                            </li>
+                            <li>
+                                <h5>Notification 4</h5>
+                            </li>
+                            <li>
+                                <h5>Notification 5</h5>
+                            </li>
+                            <li>
+                                <h5>Notification 6</h5>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 bottomright">
+                <div class="card shadow text-white bg-dark" style=" height: 33vh; border-radius: 10px;">
+                    <div class="card-body" style="overflow: auto;">
+                        <h4 class="card-title">Pending Order</h4>
+                        <ul>
+                            <li>
+                                <h5>Order 1</h5>
+                            </li>
+                            <li>
+                                <h5>Order 2</h5>
+                            </li>
+                            <li>
+                                <h5>Order 3</h5>
+                            </li>
+                            <li>
+                                <h5>Order 4</h5>
+                            </li>
+                            <li>
+                                <h5>Order 5</h5>
+                            </li>
+                            <li>
+                                <h5>Order 6</h5>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script type="text/javascript"> 
+    function display_c(){
+        var refresh=1000; // Refresh rate in milli seconds
+        mytime=setTimeout('display_ct()',refresh)
+    }
+    
+    function display_ct() {
+        var today = new Date()
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var day = today.getDay()
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        h = checkHours(h);
+        m = checkTime(m);
+        s = checkTime(s);
+        var time = h + ":" + m + ":" + s;
+        var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        document.getElementById("day").innerHTML = weekday[day];
+        document.getElementById("currentDate").innerHTML = date;
+        document.getElementById("time").innerHTML = time;
+        display_c();
+    }
+
+    function checkHours(i) {
+        if (i > 12) {i = i - 12};
+        return i;
+    }
+
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};
+        return i;
+    }
+</script>
+
+<script>
+    var xValues = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{ 
+          data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478,200,100],
+          borderColor: "#e91f63",
+          fill: false
+        }, { 
+          data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000,11234,12315],
+          borderColor: "#61c688",
+          fill: false
+        }, { 
+          data: [300,700,2000,5000,6000,4000,2000,1000,200,100,12397,128],
+          borderColor: "#57addd",
+          fill: false
+        }]
+      },
+
+      options: {
+        legend: {display: false},
+      
+        scales: {
+            yAxes: [{
+                ticks: {
+                    fontColor: "white",
+                }
+            }],
+
+            xAxes: [{
+                ticks: {
+                    fontColor: "white",
+                }
+            }] 
+        }
+      }
+    });
+    </script>
+
+</html>
