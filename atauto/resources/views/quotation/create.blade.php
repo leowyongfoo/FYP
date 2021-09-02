@@ -2,12 +2,11 @@
 
 @section('content')
 <div>
-    <div style="text-align:center"> 
+    <div class="createForm"> 
         <form class="subform" method="post" action="/quotation" enctype="multipart/form-data">
             @csrf
             <p>
-                <label for="name" class="label"> Customer Name</label>
-                <input type="text" name="name" id="name">
+                <h3>Create Quotation</h3>
             </p>
 
             <div class="container-fluid">
@@ -47,15 +46,16 @@
                     </div>
                 </div>
             <p>
-                <label for="agreedPriceperunit" class="label">Agreed price/unit</label>
-                <input type="text" name="agreedPriceperunit" id="agreedPriceperunit">
+                <label for="agreedPriceperunit" class="label">Agreed price/unit:</label>
+                <input class="inputField" type="text" name="agreedPriceperunit" id="agreedPriceperunit">
             </p>
             <p>
-            <select name="status" id="status" class="form-control">
+                <label for="status">Status:</label>
+                <select name="status" id="status" class="form-control">
                 @foreach($statuses as $status)
                     <option value="{{ $status->id }}">{{ $status->name }}</option>
                 @endforeach
-            </select>
+                </select>
             </p>
             <p>
                 <input type="submit" name="insert" value="Insert">

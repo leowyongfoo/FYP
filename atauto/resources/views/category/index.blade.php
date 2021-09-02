@@ -2,39 +2,38 @@
 
 @section('content')
 
-<div class="container-fluid">
-    <h3 class="text-white mb-4">Category</h3>
-        <a href="/category/create" class="btn btn-danger">Add New Category</a>
-                    <div class="card ">
-                        <div class="card-header py-3">
-                            <p class="text-dark m-0 fw-bold">Overview</p>
-                        </div>
-                        <div class="card-body">
-                            <table class="table my-0" id="dataTable">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    @foreach($categories as $category)
-                                        <tr>
-                                            <td>{{$category->id}}</td>
-                                            <td>{{$category->name}}</td>
-                                            <td>{{$category->status->name}}</td>
-                                            <td><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btn-danger"
-                                                 onclick="return confirm('Sure Want Delete?')">Delete</a>
-                                            </td>
-                                        </tr>
-                                    @endforeach  
-                                </table>
-                                <div class="d-flex justify-content-center pt-4">
-                                    {{ $categories->links() }}
-                                </div>
-                        </div>
-                        
-                    </div>
-</div>
+<div class="content">
+            <div class="dataTables">
+                <br>
+                <h2>Category</h2>
+                <br>
+                <a href="/category.create" class="btn btn-danger">Add New Category</a>
+                <table class="table table-borderless" style="margin-top: 2vh;">
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($categories as $category)
+                        <tr>
+                        <th>{{$category->id}}</th>
+                        <td>{{$category->name}}</td>
+                        <td>{{$category->status->name}}</td>
+                        <td><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btn-danger"
+                            onclick="return confirm('Sure Want Delete?')">Delete</a></td>
+                        </tr>
+                        @endforeach 
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-center pt-4 pl-5">
+                    {{ $categories->links() }}
+                </div>
+            </div>
+        </div>
 
 
 @endsection

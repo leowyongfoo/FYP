@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" >
-                <div class="row" style="text-align:right">
+<div>
+                <div class="createForm">
                 @foreach($inventories as $inventory)
                     <form class="form-group"  method="post" action="/inventory/{{ $inventory->id }}" enctype="multipart/form-data" >
                     @csrf
@@ -16,41 +16,48 @@
                         </p>
 
                         <p>
-                            <label for="name" class="label">Product Name</label>
-                            <input type="text" name="name" id="name" value="{{$inventory->productName}}">
+                            <label for="ID" class="label">Inventory ID</label>
+                            <input class="inputField" type="text" name="ID" id="ID" value="{{$inventory->id}}" readonly>
                         </p>
 
                         <p>
-                            <label for="description" class="label">Description</label>
-                            <input type="text" name="description" id="description" value="{{$inventory->description}}">
+                            <label for="name" class="label">Product Name:</label>
+                            <input class="inputField" type="text" name="name" id="name" value="{{$inventory->productName}}">
                         </p>
 
                         <p>
-                            <label for="quantity" class="label">Quantity</label>
-                            <input type="number" name="quantity" id="quantity" value="{{$inventory->quantity}}">
+                            <label for="description" class="label">Description:</label>
+                            <input class="inputField" type="text" name="description" id="description" value="{{$inventory->description}}">
+                        </p>
+
+                        <p>
+                            <label for="quantity" class="label">Quantity:</label>
+                            <input class="inputField" type="number" name="quantity" id="quantity" value="{{$inventory->quantity}}">
                         </p>
                         
+                        <label for="category">Category:</label>
                         <select name="category" id="category" class="form-control">
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
-                        </select>
+                        </select><br>
 
                         <p>
-                            <label for="priceperunit" class="label">Price per unit</label>
-                            <input type="text" name="priceperunit" id="priceperunit" value="{{$inventory->pricePerUnit}}">
+                            <label for="priceperunit" class="label">Price per unit:</label>
+                            <input class="inputField" type="text" name="priceperunit" id="priceperunit" value="{{$inventory->pricePerUnit}}">
                         </p>
 
                         <p>
-                            <label for="retailPrice" class="label">Retail Price</label>
-                            <input type="text" name="retailPrice" id="retailPrice" value="{{$inventory->retailPrice}}">
+                            <label for="retailPrice" class="label">Retail Price:</label>
+                            <input class="inputField" type="text" name="retailPrice" id="retailPrice" value="{{$inventory->retailPrice}}">
                         </p>
                         
+                        <label for="status">Status:</label>
                         <select name="status" id="status" class="form-control">
                             @foreach($statuses as $status)
                                 <option value="{{ $status->id }}">{{ $status->name }}</option>
                             @endforeach
-                        </select>
+                        </select><br>
                         
 
                         <p>
