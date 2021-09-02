@@ -5,7 +5,7 @@
 </style>
 <div class="container-fluid">
     <h3 class="text-white mb-4">Quotation</h3>
-    <a href="/quotation/create" class="btn btn-danger">Add New Quotation</a>
+    <a href="/quotation.create" class="btn btn-danger">Add New Quotation</a>
                     <div class="card ">
                         <div class="card-header py-3">
                             <p class="text-dark m-0 fw-bold">Overview</p>
@@ -30,10 +30,10 @@
                                         <td><a href="{{ route('deleteQuotation', ['id' => $quotation->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                                             Delete
                                             </a>
-                                            <a href="/quotation/{{ $quotation->id }}/edit" class="btn btn-warning">
+                                            <a href="/quotation.{{ $quotation->id }}.edit" class="btn btn-warning">
                                             <i class="fas fa-edit">Edit</i>
                                             </a> 
-                                            <a href="/quotation/{{ $quotation->id }}" class="btn btn-success">
+                                            <a href="/quotation.{{ $quotation->id }}" class="btn btn-success">
                                                 View detail
                                             </a> 
                                     </td>

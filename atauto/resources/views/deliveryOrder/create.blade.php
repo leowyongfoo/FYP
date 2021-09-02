@@ -1,16 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-.subform
-{
-    max-width: 1208px;
-    margin: 0 auto;
-    max-width: 75.5rem;
-}
-</style>
 <div>
-    <div style="text-align:center"> 
+    <div class="createForm"> 
         <form class="subform" method="post" action="/deliveryOrder" enctype="multipart/form-data">
             @csrf
             <p>
