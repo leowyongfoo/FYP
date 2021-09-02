@@ -10,10 +10,14 @@
                         <p>
                             <h3>Edit Inventory</h3>
                         </p>
+                        <p>
+                            <label for="ID" class="label">Inventory ID</label>
+                            <input type="text" name="ID" id="ID" value="{{$inventory->id}}" readonly>
+                        </p>
 
                         <p>
                             <label for="name" class="label">Product Name</label>
-                            <input type="text" name="name" id="name" value="{{$inventory->name}}">
+                            <input type="text" name="name" id="name" value="{{$inventory->productName}}">
                         </p>
 
                         <p>
@@ -34,7 +38,7 @@
 
                         <p>
                             <label for="priceperunit" class="label">Price per unit</label>
-                            <input type="text" name="priceperunit" id="priceperunit" value="{{$inventory->priceperunit}}">
+                            <input type="text" name="priceperunit" id="priceperunit" value="{{$inventory->pricePerUnit}}">
                         </p>
 
                         <p>

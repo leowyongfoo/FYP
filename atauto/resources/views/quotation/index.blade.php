@@ -16,9 +16,6 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Product</th>
-                                    <th>Description</th>
-                                    <th>Quantiy</th>
                                     <th>Agreed price/unit</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -28,9 +25,6 @@
                                     <tr>
                                         <td>{{$quotation->id}}</td>
                                         <td>{{$quotation->name}}</td>
-                                        <td>{{$quotation->product}}</td>
-                                        <td>{{$quotation->description}}</td>
-                                        <td>{{$quotation->quantity}}</td>
                                         <td>{{$quotation->agreedPriceperunit}}</td>
                                         <td>{{$quotation->status->name}}</td>
                                         <td><a href="{{ route('deleteQuotation', ['id' => $quotation->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
@@ -38,6 +32,9 @@
                                             </a>
                                             <a href="/quotation/{{ $quotation->id }}/edit" class="btn btn-warning">
                                             <i class="fas fa-edit">Edit</i>
+                                            </a> 
+                                            <a href="/quotation/{{ $quotation->id }}" class="btn btn-success">
+                                                View detail
                                             </a> 
                                     </td>
                                     </tr>

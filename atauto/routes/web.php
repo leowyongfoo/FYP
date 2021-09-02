@@ -25,7 +25,7 @@ Route::get('index', function () {
 Auth::routes();
 
 //status route
-Route::get('/status', [App\Http\Controllers\StatusController::class, 'index'])->name('status.index');
+Route::get('/status.index', [App\Http\Controllers\StatusController::class, 'index'])->name('status.index');
 Route::get('/status/create', [App\Http\Controllers\StatusController::class, 'create'])->name('status.create');
 Route::post('/status', [App\Http\Controllers\StatusController::class, 'store'])->name('status.store');
 Route::get('/deleteStatus/{id}', [App\Http\Controllers\StatusController::class, 'delete'])->name('deleteStatus');
@@ -87,6 +87,7 @@ Route::get('/quotation', [App\Http\Controllers\QuotationController::class, 'inde
 Route::get('/quotation/create', [App\Http\Controllers\QuotationController::class, 'create'])->name('quotation.create');
 Route::post('/quotation', [App\Http\Controllers\QuotationController::class, 'store'])->name('quotation.store');
 Route::get('/quotation/{id}/edit', [App\Http\Controllers\QuotationController::class, 'edit'])->name('quotation.edit');
+Route::get('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'show'])->name('quotation.show');
 Route::patch('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'update'])->name('quotation.update');
 Route::get('/deleteQuotation/{id}', [App\Http\Controllers\QuotationController::class, 'delete'])->name('deleteQuotation');
 

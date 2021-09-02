@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Quotation;
+use App\Models\QuotationList;
 use App\Models\Inventory;
-use App\Models\Category;
 use App\Models\Status;
 
 class QuotationController extends Controller
@@ -19,7 +19,8 @@ class QuotationController extends Controller
 
     public function create()
     {
-        return view('quotation.create')->with('statuses', Status::all());
+        return view('quotation.create')->with('statuses', Status::all())
+                                        ->with('inventories', Inventory::all()); 
                                       
     }
 
@@ -28,13 +29,19 @@ class QuotationController extends Controller
         $r=request(); 
         $addquotation=Quotation::create([
             'name'=>$r->name,
-            'product'=>$r->product,
-            'description'=>$r->description,
-            'quantity'=>$r->quantity,
             'agreedPriceperunit'=>$r->agreedPriceperunit,
             'statusID'=>$r->status,
         ]);
-       
+
+        $quotationID = DB::table('quotations')->orderBy('created_at', 'desc')->first();
+        foreach($r->inventory as $item=>$v){
+            $data2=array(
+                'quotationID'=>$quotationID->id,
+                'inventoryID'=>$r->inventory[$item],
+                'quantity'=>$r->quantity[$item]
+            );
+        QuotationList::insert($data2);
+        }
         return redirect()->route('quotation.index');
     }
 
@@ -45,15 +52,19 @@ class QuotationController extends Controller
                                      ->with('statuses', Status::all());
     }
 
+    public function show($id)
+    {
+        $quotation_lists =QuotationList::all()->where('quotationID',$id);
+        return view('quotation.show')->with('quotation_lists',$quotation_lists);
+
+    }
+
     public function update(Quotation $quotation)
     {
         $r=request();
         $quotations =Quotation::find($r->ID);
         $quotations->name=$r->name; 
-        $quotations->product=$r->product; 
-        $quotations->description=$r->description; 
-        $quotations->quantity=$r->quantity;
-        $quotations->agreedPriceperunit=$r->agreedPriceperunit;
+        $quotations->agreedPriceperunit=$r->agreedPriceperunit; 
         $quotations->statusID=$r->status;
         $quotations->save();
 
@@ -62,8 +73,8 @@ class QuotationController extends Controller
 
     public function delete($id)
     {
-        $quotations=Quotation::find($id);
-        $quotations->delete();
+        $item=Quotation::find($id);
+        $item->delete();
 
         return redirect()->route('quotation.index');
     }

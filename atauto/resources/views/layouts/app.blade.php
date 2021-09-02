@@ -74,7 +74,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="status"><i class="far fa-file"></i>
+                        <a class="nav-link" href="/status.index"><i class="far fa-file"></i>
                             <span>Status</span>
                         </a>
                     </li>

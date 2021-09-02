@@ -50,13 +50,13 @@ class InventoryController extends Controller
     {
         $r=request();
         $inventories =Inventory::find($r->ID);
-        $inventories->name=$r->name; 
+        $inventories->productName=$r->name; 
         $inventories->description=$r->description; 
         $inventories->quantity=$r->quantity;
-        $inventories->category=$r->category; 
+        $inventories->categoryID=$r->category; 
         $inventories->priceperunit=$r->priceperunit; 
         $inventories->retailPrice=$r->retailPrice; 
-        $inventories->status=$r->status; 
+        $inventories->statusID=$r->status; 
         $inventories->save();
 
         return redirect("/inventory/{$inventory->id}");

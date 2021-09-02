@@ -15,4 +15,8 @@ class Quotation extends Model
         return $this->belongsTo(Status::class ,'statusID');
     }
     
+    public function QuotationList()
+    {
+        return $this->hasMany(QuotationList::class);
+    }
 }
