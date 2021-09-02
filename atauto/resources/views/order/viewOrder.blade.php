@@ -4,7 +4,7 @@
 
 <div class="container"><br><br><br>
 	    <div class="row" style="float:right;">
-		<form   method="post" action="#" >
+		<form   method="POST" action="{!! URL::to('paypal') !!}" >
 			@csrf
 		    <table class="table table-striped table-light"  Style="outline: 5px groove black;">
 				

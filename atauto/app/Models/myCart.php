@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class myCart extends Model
+class MyCart extends Model
 {
    
     protected $fillable=['orderID','userID','quantity','inventoryID'];
