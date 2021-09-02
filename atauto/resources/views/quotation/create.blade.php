@@ -2,11 +2,11 @@
 
 @section('content')
 <div>
-    <div class="createForm"> 
+    <div class="createForm2"> 
         <form class="subform" method="post" action="/quotation" enctype="multipart/form-data">
             @csrf
             <p>
-                <h3>Create Quotation</h3>
+                <h3 class="pb-4">Add New Quotation</h3>
             </p>
 
             <div class="container-fluid">
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-            <p>
+            <p class="pt-4">
                 <label for="agreedPriceperunit" class="label">Agreed price/unit:</label>
                 <input class="inputField" type="text" name="agreedPriceperunit" id="agreedPriceperunit">
             </p>

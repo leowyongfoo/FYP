@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container-fluid">
+<div class="createForm2">
     <h3 class="text-white mb-4">Delivery order detail</h3>
                     <div class="card ">
                         <div class="card-header py-3">

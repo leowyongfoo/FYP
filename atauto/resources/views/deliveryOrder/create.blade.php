@@ -2,9 +2,12 @@
 
 @section('content')
 <div>
-    <div class="createForm"> 
+    <div class="createForm2"> 
         <form class="subform" method="post" action="/deliveryOrder" enctype="multipart/form-data">
             @csrf
+            <p>
+                <h3 class="pb-4">Add New Delivery Order</h3>
+            </p>
             <p>
                 <label for="DO_No" class="label">DO No.</label>
                 <input type="text" name="DO_No" id="DO_No" required>

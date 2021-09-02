@@ -2,8 +2,8 @@
 
 @section('content')
 
-</style>
-<div class="container-fluid">
+<div class="content">
+<div class="dataTables">
     <h3 class="text-white mb-4">Quotation</h3>
     <a href="/quotation.create" class="btn btn-danger">Add New Quotation</a>
                     <div class="card ">
@@ -43,5 +43,6 @@
                             <div class="d-flex justify-content-center pt-4">
                                 {{ $quotations->links() }}
                             </div>
+        </div>
         </div>
 @endsection

@@ -61,7 +61,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('status.index') }}"><span>Status</span></a>
+                <a href="{{ route('status.index') }}"><span>Status</span></a>
                 </li>
 
                 <li>
