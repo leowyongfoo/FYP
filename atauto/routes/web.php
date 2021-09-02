@@ -25,7 +25,7 @@ Route::get('index', function () {
 Auth::routes();
 
 //status route
-Route::get('/status', [App\Http\Controllers\StatusController::class, 'index'])->name('status.index');
+Route::get('/status.index', [App\Http\Controllers\StatusController::class, 'index'])->name('status.index');
 Route::get('/status.create', [App\Http\Controllers\StatusController::class, 'create'])->name('status.create');
 Route::post('/status', [App\Http\Controllers\StatusController::class, 'store'])->name('status.store');
 Route::get('/deleteStatus/{id}', [App\Http\Controllers\StatusController::class, 'delete'])->name('deleteStatus');

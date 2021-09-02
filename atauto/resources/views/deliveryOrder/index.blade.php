@@ -35,7 +35,7 @@
                             Edit
                             </a> 
                             <a href="/deliveryOrder.{{ $deliveryOrder->id }}" class="btn btn-success">
-                                View detail
+                                View Product
                             </a> </td>
                         </tr>
                         @endforeach 
