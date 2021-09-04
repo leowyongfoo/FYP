@@ -15,6 +15,7 @@
                                     
                                     <th>Product</th>
                                     <th>Quantity</th>
+                                    <th>Agreed Price/Unit</th>
                                     <th>Action</th>
                                 </tr>
 
@@ -22,9 +23,10 @@
                                     <tr>
                                         <td>{{$quotation_lists->inventory->productName}}</td>
                                         <td>{{$quotation_lists->quantity}}</td>
+                                        <td>{{$quotation_lists->agreedPriceperunit}}</td>
                                         <td>
                                             <a href="/quotation/{{ $quotation_lists->id }}/deleteItem" class="btn btn-danger" onclick="return confirm('Sure Want delete?')">
-                                            Restock
+                                            Delete
                                             </a>
                                             <a href="#" class="btn btn-warning">
                                             <i class="fas fa-edit">Edit</i>

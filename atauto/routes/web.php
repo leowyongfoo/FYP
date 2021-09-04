@@ -88,6 +88,7 @@ Route::get('/quotation.create', [App\Http\Controllers\QuotationController::class
 Route::post('/quotation', [App\Http\Controllers\QuotationController::class, 'store'])->name('quotation.store');
 Route::get('/quotation.{id}.edit', [App\Http\Controllers\QuotationController::class, 'edit'])->name('quotation.edit');
 Route::get('/quotation.{id}', [App\Http\Controllers\QuotationController::class, 'show'])->name('quotation.show');
+Route::get('/quotation/{id}/deleteItem', [App\Http\Controllers\QuotationController::class, 'deleteItem'])->name('deleteItem');
 Route::patch('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'update'])->name('quotation.update');
 Route::get('/deleteQuotation/{id}', [App\Http\Controllers\QuotationController::class, 'delete'])->name('deleteQuotation');
 

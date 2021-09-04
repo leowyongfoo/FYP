@@ -16,7 +16,6 @@ class CreateQuotationsTable extends Migration
         Schema::create('quotations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->double('agreedPriceperunit', 6,2);
             $table->string('statusID');
             $table->timestamps();
             $table->index('statusID');

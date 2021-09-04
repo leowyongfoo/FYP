@@ -18,6 +18,7 @@ class CreateQuotationListsTable extends Migration
             $table->string('quotationID');
             $table->string('inventoryID');
             $table->string('quantity');
+            $table->double('agreedPriceperunit', 6,2);
             $table->timestamps();
 
             $table->index('quotationID');
