@@ -6,13 +6,17 @@
         <form class="subform" method="post" action="/quotation" enctype="multipart/form-data">
             @csrf
             <p>
-                <h3 class="pb-4">Add New Quotation</h3>
+                <h3>Create Quotation</h3>
             </p>
             <p>
                         <label for="name" class="label">Name</label>
                         <input class="inputField" type="text" name="name" id="name" >
                     </p>
             <div class="container-fluid">
+            <p>
+                <label for="name" class="label">Name:</label>
+                <input class="inputField" type="text" name="name" id="name">
+            </p>
             <h4 class="text-white mb-4">Product</h4>
                     <div class="card">
                         <div class="card-header py-3">
