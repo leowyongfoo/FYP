@@ -20,6 +20,7 @@
                             <tr>
                                 <th>Product</th>
                                 <th>Quantity</th>
+                                <th>Agreed Price/Unit</th>
                                 <th class="hoverColor"><input type="button" class="addRow btn btnStyle" value="Add row"></th>
                             </tr>
                         </thead>
@@ -36,15 +37,14 @@
                                 <td>
                                     <input type="number" name="quantity[]" class="form-control quantity">
                                 </td>
+                                <td>
+                                    <input class="form-control inputField" type="text" name="agreedPriceperunit[]">
+                                </td>
                                 <td class="hoverColor"><a href="#" class="btn btnStyle remove">Remove</a></td>
                             </tr>
                         </tbody>
                     </table>  
                 <p class="pt-2">
-                    <label for="agreedPriceperunit" class="label">Agreed price/unit:</label>
-                    <input class="inputField" type="text" name="agreedPriceperunit" id="agreedPriceperunit">
-                </p>
-                <p>
                     <label for="status">Status:</label>
                     <select name="status" id="status" class="form-control inputField">
                     @foreach($statuses as $status)
@@ -83,9 +83,9 @@
                 <input type="number" name="quantity[]" class="form-control quantity">\n\
                 </td>\n\
                 <td>\n\
-                <input class="inputField" type="text" name="agreedPriceperunit[]">\n\
+                <input class="form-control inputField" type="text" name="agreedPriceperunit[]">\n\
                 </td>\n\
-                <td><a href="#" class="btn btn-danger remove">Remove</a></td>\n\
+                <td class="hoverColor"><a href="#" class="btn btnStyle remove">Remove</a></td>\n\
                 </tr>';
         $('tbody').append(tr);
     };
