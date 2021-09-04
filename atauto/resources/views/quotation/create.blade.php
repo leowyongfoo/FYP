@@ -73,7 +73,7 @@
         var tr='<tr>\n\
                 <td>\n\
                 <select name="inventory[]" class="form-control">\n\
-                <option selected="" value="Default" required> please select </option>\n\
+                <option selected="" value="Default" required> Please select </option>\n\
                 @foreach($inventories as $inventory)\n\
                 <option value="{{ $inventory->id}}">{{ $inventory->productName }}</option>\n\
                 @endforeach\n\
