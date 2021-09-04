@@ -20,6 +20,12 @@ use Redirect;
 use Session;
 use URL;
 use Notification;
+use DB;
+use App\Models\Inventory; 
+use App\Models\MyCart;
+use App\Models\Order;
+Use Auth;
+
 
 class PaymentController extends Controller
 {
@@ -53,8 +59,8 @@ class PaymentController extends Controller
 
         $item_1 = new Item();
 
-        $item_1->setName('Item 1') /** item name **/
-            ->setCurrency('USD')
+        $item_1->setName('[Item 1]') /** item name **/
+            ->setCurrency('MYR')
             ->setQuantity(1)
             ->setPrice($request->get('amount')); /** unit price **/
 
@@ -62,7 +68,7 @@ class PaymentController extends Controller
         $item_list->setItems(array($item_1));
 
         $amount = new Amount();
-        $amount->setCurrency('USD')
+        $amount->setCurrency('MYR')
             ->setTotal($request->get('amount'));
 
         $transaction = new Transaction();
@@ -156,7 +162,7 @@ class PaymentController extends Controller
 
             Session::put('success', 'Payment success');
             //add update record for cart
-            $email='jacksonleow6@gmail.com';
+            $email='leongchengyang@gmail.com';
 	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
             return Redirect::to('clientView');  //back to product page
 

@@ -82,6 +82,9 @@
                 <td>\n\
                 <input type="number" name="quantity[]" class="form-control quantity">\n\
                 </td>\n\
+                <td>\n\
+                <input class="inputField" type="text" name="agreedPriceperunit[]">\n\
+                </td>\n\
                 <td><a href="#" class="btn btn-danger remove">Remove</a></td>\n\
                 </tr>';
         $('tbody').append(tr);

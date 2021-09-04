@@ -6,6 +6,12 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use DB;
+use App\Models\Inventory; 
+use App\Models\MyCart;
+use App\Models\Order;
+Use Auth;
+
 
 class orderPaid extends Notification
 {
@@ -40,10 +46,12 @@ class orderPaid extends Notification
      */
     public function toMail($notifiable)
     {
+        
         return (new MailMessage)
                     ->line('ATAuto Sdn.Bhd.')
                     ->action('click to return', url('/'))
-                    ->line('Thank you for shopping with us!');
+                    ->line('Thank You for purchasing');
+                    
     }
 
     /**
