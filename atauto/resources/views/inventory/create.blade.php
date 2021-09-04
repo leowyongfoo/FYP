@@ -16,7 +16,7 @@
 
             <p>
                 <label for="description" class="label">Description:</label>
-                <input class="inputField" type="text" name="description" id="description">
+                <textarea name="description" id="description" class="inputField" cols="30" rows="8"></textarea>
             </p>
 
             <p>
