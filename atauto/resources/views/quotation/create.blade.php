@@ -8,7 +8,10 @@
             <p>
                 <h3 class="pb-4">Add New Quotation</h3>
             </p>
-
+            <p>
+                        <label for="name" class="label">Name</label>
+                        <input class="inputField" type="text" name="name" id="name" >
+                    </p>
             <div class="container-fluid">
             <h4 class="text-white mb-4">Product</h4>
                     <div class="card">

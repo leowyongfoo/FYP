@@ -18,20 +18,6 @@
                         <label for="name" class="label">Name</label>
                         <input class="inputField" type="text" name="name" id="name"  value="{{$quotation->name}}" readonly>
                     </p>
-
-                    <p>
-                        <label for="product" class="label">Product</label>
-                        <input class="inputField" type="text" name="product" id="product" value="{{$quotation->product}}">
-                    </p>
-
-                    <p>
-                        <label for="description" class="label">Description</label>
-                        <input class="inputField" type="text" name="description" id="description" value="{{$quotation->description}}">
-                    </p>
-                    <p>
-                        <label for="quantity" class="label">Quantity</label>
-                        <input class="inputField" type="number" name="quantity" id="quantity" value="{{$quotation->quantity}}">
-                    </p>
                     <p>
                         <label for="agreedPriceperunit" class="label">Agreed price/unit</label>
                         <input class="inputField" type="text" name="agreedPriceperunit" id="agreedPriceperunit" value="{{$quotation->agreedPriceperunit}}">
