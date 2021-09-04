@@ -10,10 +10,6 @@
                         <p>
                             <h3>Edit Inventory</h3>
                         </p>
-                        <p>
-                            <label for="ID" class="label">Inventory ID</label>
-                            <input type="text" name="ID" id="ID" value="{{$inventory->id}}" readonly>
-                        </p>
 
                         <p>
                             <label for="ID" class="label">Inventory ID</label>
@@ -60,8 +56,8 @@
                         </select><br>
                         
 
-                        <p>
-                            <input type="submit" name="insert" value="Insert">
+                        <p class="hoverColor">
+                            <input class="btn btnStyle" type="submit" name="insert" value="Insert">
                         </p>
                     </form>
                 @endforeach

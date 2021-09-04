@@ -10,60 +10,52 @@
             </p>
             
             <div class="container-fluid">
-            <p>
-                <label for="name" class="label">Name:</label>
-                <input class="inputField" type="text" name="name" id="name">
-            </p>
-            <h4 class="text-white mb-4">Product</h4>
-                    <div class="card">
-                        <div class="card-header py-3">
-                            <p class="text-dark m-0 fw-bold">Overview</p>
-                        </div>
-                        <div class="card-body">
-                        <div>
-                            <table class="table my-0" id="dataTabe">
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Quantity</th>
-                                        <th><input type="button" class="addRow" value="Add row"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <select name="inventory[]" class="form-control">
-                                        <option selected="" value="Default" required> please select </option>
-                                            @foreach($inventories as $inventory)
-                                                <option value="{{ $inventory->id }}">{{ $inventory->productName }}</option>
-                                            @endforeach
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <input type="number" name="quantity[]" class="form-control quantity">
-                                    </td>
-                                    <td><a href="#" class="btn btn-danger remove">Remove</a></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            <p class="pt-4">
-                <label for="agreedPriceperunit" class="label">Agreed price/unit:</label>
-                <input class="inputField" type="text" name="agreedPriceperunit" id="agreedPriceperunit">
-            </p>
-            <p>
-                <label for="status">Status:</label>
-                <select name="status" id="status" class="form-control">
-                @foreach($statuses as $status)
-                    <option value="{{ $status->id }}">{{ $status->name }}</option>
-                @endforeach
-                </select>
-            </p>
-            <p>
-                <input type="submit" name="insert" value="Insert">
-            </p>
+                <p>
+                    <label for="name" class="label">Name:</label>
+                    <input class="inputField" type="text" name="name" id="name">
+                </p>
+                <h4 class="mb-4">Product</h4>
+                    <table class="table table-borderless" id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th class="hoverColor"><input type="button" class="addRow btn btnStyle" value="Add row"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <select name="inventory[]" class="form-control">
+                                    <option selected="" value="Default" required> Please select </option>
+                                        @foreach($inventories as $inventory)
+                                            <option value="{{ $inventory->id }}">{{ $inventory->productName }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="number" name="quantity[]" class="form-control quantity">
+                                </td>
+                                <td class="hoverColor"><a href="#" class="btn btnStyle remove">Remove</a></td>
+                            </tr>
+                        </tbody>
+                    </table>  
+                <p class="pt-2">
+                    <label for="agreedPriceperunit" class="label">Agreed price/unit:</label>
+                    <input class="inputField" type="text" name="agreedPriceperunit" id="agreedPriceperunit">
+                </p>
+                <p>
+                    <label for="status">Status:</label>
+                    <select name="status" id="status" class="form-control inputField">
+                    @foreach($statuses as $status)
+                        <option value="{{ $status->id }}">{{ $status->name }}</option>
+                    @endforeach
+                    </select>
+                </p>
+                <p class="hoverColor">
+                    <input type="submit" name="insert" value="Insert" class="btn btnStyle">
+                </p>
+            </div>
         </form>
     </div>
 </div>

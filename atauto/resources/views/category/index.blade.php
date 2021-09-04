@@ -7,7 +7,7 @@
                 <br>
                 <h2>Category</h2>
                 <br>
-                <a href="/category.create" class="btn btn-danger">Add New Category</a>
+                <div class="hoverColor"><a href="/category.create" class="btn btnStyle">Add New Category</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
@@ -23,7 +23,7 @@
                         <th>{{$category->id}}</th>
                         <td>{{$category->name}}</td>
                         <td>{{$category->status->name}}</td>
-                        <td><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btn-danger"
+                        <td class="hoverColor"><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btnStyle"
                             onclick="return confirm('Sure Want Delete?')">Delete</a></td>
                         </tr>
                         @endforeach 

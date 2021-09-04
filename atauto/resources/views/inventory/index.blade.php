@@ -6,7 +6,7 @@
                 <br>
                 <h2>Inventory</h2>
                 <br>
-                <a href="/inventory.create" class="btn btn-danger">Add New Inventory</a>
+                <div class="hoverColor"><a href="/inventory.create" class="btn btnStyle">Add New Inventory</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
@@ -30,10 +30,10 @@
                         <td>{{$inventory->category->name}}</td>
                         <td>{{$inventory->pricePerUnit}}</td>
                         <td>{{$inventory->status->name}}</td>
-                        <td><a href="{{ route('deleteInventory', ['id' => $inventory->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
+                        <td class="hoverColor"><a href="{{ route('deleteInventory', ['id' => $inventory->id]) }}" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                             Delete
                             </a>
-                            <a href="/inventory.{{ $inventory->id }}.edit" class="btn btn-warning">
+                            <a href="/inventory.{{ $inventory->id }}.edit" class="btn btnStyle">
                             Edit
                             </a> </td>
                         </tr>

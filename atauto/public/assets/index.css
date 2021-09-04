@@ -200,3 +200,20 @@ tr, th {
     padding: 2vh 0 0 0;
 }
 
+.btnStyle {
+    background-color: #000000;
+    border-color: #000000;
+    color: white;
+}
+
+.hoverColor a:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color:white;
+}
+
+.hoverColor input:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color:white;
+}

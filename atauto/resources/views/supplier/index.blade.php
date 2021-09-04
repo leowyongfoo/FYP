@@ -7,7 +7,7 @@
                 <br>
                 <h2>Supplier</h2>
                 <br>
-                <a href="/supplier.create" class="btn btn-danger">Add New Supplier</a>
+                <div class="hoverColor"><a href="/supplier.create" class="btn btnStyle">Add New Supplier</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
@@ -27,16 +27,16 @@
                         <td>{{$supplier->contact}}</td>
                         <td>{{$supplier->email}}</td>
                         <td style="Max-width:20vh;">{{$supplier->address}}</td>
-                        <td><a href="{{ route('deleteSupplier', ['id' => $supplier->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
+                        <td class="hoverColor"><a href="{{ route('deleteSupplier', ['id' => $supplier->id]) }}" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                             Delete
                             </a>
-                            <a href="/supplier.{{ $supplier->id }}.edit" class="btn btn-warning">
+                            <a href="/supplier.{{ $supplier->id }}.edit" class="btn btnStyle">
                             Edit
                             </a>
-                            <a href="https://wa.me/+6{{ $supplier->contact }}" class="btn btn-success">
+                            <a href="https://wa.me/+6{{ $supplier->contact }}" class="btn btnStyle">
                             <i class="fab fa-whatsapp"></i>
                             </a>
-                            <a href="mailto:{{$supplier->email}}" class="btn btn-success">
+                            <a href="mailto:{{$supplier->email}}" class="btn btnStyle">
                             <i class="fa fa-envelope"></i>
                             </a></td>
                         </tr>

@@ -7,61 +7,53 @@
         <form class="subform" method="post" action="/customerOrder" enctype="multipart/form-data">
             @csrf
             <p>
-                <h3 class="pb-4">Add New Customer Order</h3>
-            </p>
-            <p>
-                <label for="CO_No" class="label">CO No.</label>
-                <input type="text" name="CO_No" id="CO_No" required>
+                <h3>Add New Customer Order</h3>
             </p>
 
-            <div class="card-body">
-                <label for="customer" class="label">Customer</label>
-                <select name="customer" id="customer" class="form-control">
+            <div class="container-fluid">
+            <p>
+                <label for="CO_No" class="label">CO No.:</label>
+                <input class="inputField" type="text" name="CO_No" id="CO_No" required>
+            </p>
+
+            <p>
+                <label for="customer" class="label">Customer:</label>
+                <select name="customer" id="customer" class="form-control inputField">
                     @foreach($customers as $customer)
                         <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                     @endforeach
                 </select>
-            </div>     
+            </p>
 
-            <div class="container-fluid">
+            
             <h4 class="text-white mb-4">Product</h4>
-                    <div class="card ">
-                        <div class="card-header py-3">
-                            <p class="text-dark m-0 fw-bold">Overview</p>
-                        </div>
-                        <div class="card-body">
-                        <div>
-                            <table class="table my-0" id="dataTable">
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Quantity</th>
-                                        <th><input type="button" class="addRow" value="Add row"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <select name="inventory[]" class="form-control">
-                                        <option selected="" value="Default" required> please select </option>
-                                            @foreach($inventories as $inventory)
-                                                <option value="{{ $inventory->id}}">{{ $inventory->pricePerUnit }}</option>
-                                            @endforeach
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <input type="number" name="quantity[]" class="form-control">
-                                    </td>
-                                    <td><a href="#" class="btn btn-danger remove">Remove</a></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-            <p>
-                <input type="submit" name="insert" value="Insert" style="margin-top:15px;"> 
+                <table class="table table-borderless" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th class="hoverColor"><input type="button" class="addRow btn btnStyle" value="Add row"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select name="inventory[]" class="form-control">
+                                <option selected="" value="Default" required> Please select </option>
+                                    @foreach($inventories as $inventory)
+                                    <option value="{{ $inventory->id}}">{{ $inventory->productName }}</option>
+                                    @endforeach
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity[]" class="form-control">
+                            </td>
+                            <td class="hoverColor"><a href="#" class="btn btnStyle remove">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            <p class="hoverColor">
+                <input type="submit" name="insert" value="Insert" style="margin-top:15px;" class="btn btnStyle"> 
             </p>
         </form>
     </div>

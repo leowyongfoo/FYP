@@ -7,7 +7,7 @@
                 <br>
                 <h2>Customer Order</h2>
                 <br>
-                <a href="/customerOrder.create" class="btn btn-danger">Add New CO</a>
+                <div class="hoverColor"><a href="/customerOrder.create" class="btn btnStyle">Add New CO</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
@@ -27,13 +27,13 @@
                         <td>{{$customerOrder->customer->name}}</td>
                         <td>{{$customerOrder->created_at}}</td>
                         <td>{{$customerOrder->statusID}}</td>
-                        <td><a href="/customerOrder/{{$customerOrder->id}}/deleteOrder" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
-                            Delete
+                        <td class="hoverColor"><a href="/customerOrder/{{$customerOrder->id}}/deleteOrder" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
+                                Delete
                             </a>
-                            <a href="/customerOrder.{{ $customerOrder->id }}.edit" class="btn btn-warning">
-                            Edit
+                            <a href="/customerOrder.{{ $customerOrder->id }}.edit" class="btn btnStyle">
+                                Edit
                             </a> 
-                            <a href="/customerOrder.{{ $customerOrder->id }}" class="btn btn-success">
+                            <a href="/customerOrder.{{ $customerOrder->id }}" class="btn btnStyle">
                                 View detail
                             </a> </td>
                         </tr>

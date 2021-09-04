@@ -7,7 +7,7 @@
                 <br>
                 <h2>Delivery Order</h2>
                 <br>
-                <a href="/deliveryOrder.create" class="btn btn-danger">Add New DO</a>
+                <div class="hoverColor"><a href="/deliveryOrder.create" class="btn btnStyle">Add New DO</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
@@ -27,14 +27,14 @@
                         <td>{{$deliveryOrder->supplier->name}}</td>
                         <td>{{$deliveryOrder->created_at}}</td>
                         <td>{{$deliveryOrder->statusID}}</td>
-                        <td><a href="/deliveryOrder/{{$deliveryOrder->id}}/deleteOrder" 
-                            class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
-                            Delete
+                        <td class="hoverColor"><a href="/deliveryOrder/{{$deliveryOrder->id}}/deleteOrder" 
+                            class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
+                                Delete
                             </a>
-                            <a href="/deliveryOrder.{{ $deliveryOrder->id }}.edit" class="btn btn-warning">
-                            Edit
+                            <a href="/deliveryOrder.{{ $deliveryOrder->id }}.edit" class="btn btnStyle">
+                                Edit
                             </a> 
-                            <a href="/deliveryOrder.{{ $deliveryOrder->id }}" class="btn btn-success">
+                            <a href="/deliveryOrder.{{ $deliveryOrder->id }}" class="btn btnStyle">
                                 View Product
                             </a> </td>
                         </tr>

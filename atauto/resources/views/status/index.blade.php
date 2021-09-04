@@ -7,7 +7,7 @@
                 <br>
                 <h2>Status</h2>
                 <br>
-                <a href="/status.create" class="btn btn-danger">Add New Status</a>
+                <div class="hoverColor"><a href="/status.create" class="btn btnStyle">Add New Status</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
@@ -21,7 +21,7 @@
                             <tr> 
                             <th>{{$status->id}}</th>
                             <td>{{$status->name}}</td>
-                            <td><a href="{{ route('deleteStatus', ['id' => $status->id]) }}" class="btn btn-danger" 
+                            <td class="hoverColor"><a href="{{ route('deleteStatus', ['id' => $status->id]) }}" class="btn btnStyle" 
                                 onclick="return confirm('Sure Want Delete?')">Delete</a></td>
                             </tr>
                         @endforeach  
