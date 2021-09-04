@@ -19,10 +19,6 @@
                         <input class="inputField" type="text" name="name" id="name"  value="{{$quotation->name}}" readonly>
                     </p>
                     <p>
-                        <label for="agreedPriceperunit" class="label">Agreed price/unit</label>
-                        <input class="inputField" type="text" name="agreedPriceperunit" id="agreedPriceperunit" value="{{$quotation->agreedPriceperunit}}">
-                    </p>
-                    <p>
                         <label for="status">Status:</label>
                         <select name="status" id="status" class="form-control">
                         @foreach($statuses as $status)

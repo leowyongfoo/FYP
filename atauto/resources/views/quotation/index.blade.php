@@ -16,7 +16,6 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Agreed price/unit</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -25,8 +24,7 @@
                                     <tr>
                                         <td>{{$quotation->id}}</td>
                                         <td>{{$quotation->name}}</td>
-                                        <td>{{$quotation->agreedPriceperunit}}</td>
-                                        <td>{{$quotation->status->name}}</td>
+                                        <td>{{$quotation->statusID}}</td>
                                         <td><a href="{{ route('deleteQuotation', ['id' => $quotation->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
                                             Delete
                                             </a>

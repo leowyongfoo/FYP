@@ -8,10 +8,7 @@
             <p>
                 <h3>Create Quotation</h3>
             </p>
-            <p>
-                        <label for="name" class="label">Name</label>
-                        <input class="inputField" type="text" name="name" id="name" >
-                    </p>
+            
             <div class="container-fluid">
             <p>
                 <label for="name" class="label">Name:</label>
@@ -29,6 +26,7 @@
                                     <tr>
                                         <th>Product</th>
                                         <th>Quantity</th>
+                                        <th>Agreed Price/Unit</th>
                                         <th><input type="button" class="addRow" value="Add row"></th>
                                     </tr>
                                 </thead>
@@ -45,6 +43,9 @@
                                     <td>
                                         <input type="number" name="quantity[]" class="form-control quantity">
                                     </td>
+                                    <td>
+                                            <input class="inputField" type="text" name="agreedPriceperunit[]">
+                                    </td>
                                     <td><a href="#" class="btn btn-danger remove">Remove</a></td>
                                 </tr>
                                 </tbody>
@@ -52,10 +53,7 @@
                         </div>
                     </div>
                 </div>
-            <p class="pt-4">
-                <label for="agreedPriceperunit" class="label">Agreed price/unit:</label>
-                <input class="inputField" type="text" name="agreedPriceperunit" id="agreedPriceperunit">
-            </p>
+            
             <p>
                 <label for="status">Status:</label>
                 <select name="status" id="status" class="form-control">
@@ -92,6 +90,9 @@
                 </td>\n\
                 <td>\n\
                 <input type="number" name="quantity[]" class="form-control quantity">\n\
+                </td>\n\
+                <td>\n\
+                <input class="inputField" type="text" name="agreedPriceperunit[]">\n\
                 </td>\n\
                 <td><a href="#" class="btn btn-danger remove">Remove</a></td>\n\
                 </tr>';

@@ -29,8 +29,7 @@ class QuotationController extends Controller
         $r=request(); 
         $addquotation=Quotation::create([
             'name'=>$r->name,
-            'agreedPriceperunit'=>$r->agreedPriceperunit,
-            'statusID'=>$r->status,
+            'statusID'=>'Confirmed',
         ]);
 
         $quotationID = DB::table('quotations')->orderBy('created_at', 'desc')->first();
@@ -38,7 +37,8 @@ class QuotationController extends Controller
             $data2=array(
                 'quotationID'=>$quotationID->id,
                 'inventoryID'=>$r->inventory[$item],
-                'quantity'=>$r->quantity[$item]
+                'quantity'=>$r->quantity[$item],
+                'agreedPriceperunit'=>$r->agreedPriceperunit[$item]
             );
         QuotationList::insert($data2);
         }
@@ -64,7 +64,6 @@ class QuotationController extends Controller
         $r=request();
         $quotations =Quotation::find($r->ID);
         $quotations->name=$r->name; 
-        $quotations->agreedPriceperunit=$r->agreedPriceperunit; 
         $quotations->statusID=$r->status;
         $quotations->save();
 
@@ -78,5 +77,14 @@ class QuotationController extends Controller
 
         return redirect()->route('quotation.index');
     }
+
+    public function deleteItem($id)
+    {
+        $item=QuotationList::find($id);
+        $item->delete();
+
+        return redirect()->route('quotation.index');
+    }
+
 
 }
