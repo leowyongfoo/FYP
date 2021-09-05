@@ -35,7 +35,7 @@ Route::get('/category', [App\Http\Controllers\CategoryController::class, 'index'
 Route::get('/category.create', [App\Http\Controllers\CategoryController::class, 'create'])->name('category.create');
 Route::post('/category', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
 Route::get('/deleteCategory/{id}', [App\Http\Controllers\CategoryController::class, 'delete'])->name('deleteCategory');
-Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'changeStatus'])->name('changeStatus');
+Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'changeStatus'])->name('category.changeStatus');
 
 //inventory route
 Route::get('/inventory', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory.index');
@@ -46,7 +46,7 @@ Route::post('/inventory', [App\Http\Controllers\InventoryController::class, 'sto
 Route::get('/inventory.{id}.edit', [App\Http\Controllers\InventoryController::class, 'edit'])->name('inventory.edit');
 Route::patch('/inventory/{id}', [App\Http\Controllers\InventoryController::class, 'update'])->name('inventory.update');
 Route::get('/deleteInventory/{id}', [App\Http\Controllers\InventoryController::class, 'delete'])->name('deleteInventory');
-Route::get('/inventory/{id}', [App\Http\Controllers\InventoryController::class, 'changeStatus'])->name('changeStatus');
+Route::get('/inventory/{id}', [App\Http\Controllers\InventoryController::class, 'changeStatus'])->name('inventory.changeStatus');
 
 //supplier route
 Route::get('/supplier', [App\Http\Controllers\SupplierController::class, 'index'])->name('supplier.index');

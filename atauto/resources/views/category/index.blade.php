@@ -26,7 +26,7 @@
                         <td class="hoverColor"><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btnStyle"
                             onclick="return confirm('Sure Want Delete?')">Delete</a>
                             
-                            <a href="{{ route('changeStatus', ['id' => $category->id]) }}" class="btn btnStyle">{{$category->statusID}}</a>
+                            <a href="{{ route('category.changeStatus', ['id' => $category->id]) }}" class="btn btnStyle">{{$category->statusID}}</a>
                         </td>
                         
                         </tr>

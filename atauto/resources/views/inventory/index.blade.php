@@ -36,7 +36,7 @@
                             <a href="/inventory.{{ $inventory->id }}.edit" class="btn btnStyle">
                             Edit
                             </a> 
-                            <a href="{{ route('changeStatus', ['id' => $inventory->id]) }}" class="btn btnStyle">
+                            <a href="{{ route('inventory.changeStatus', ['id' => $inventory->id]) }}" class="btn btnStyle">
                                 {{$inventory->statusID}}
                             </a>
                         </td>
