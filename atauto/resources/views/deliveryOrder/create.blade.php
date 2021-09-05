@@ -46,7 +46,7 @@
                             <td>
                                 <input type="number" name="quantity[]" class="form-control quantity">
                             </td>
-                            <td class="hoverColor"><a href="#" class="btn btnStyle">Remove</a></td>
+                            <td class="hoverColor"><a href="#" class="btn btnStyle remove">Remove</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -71,7 +71,7 @@
         var tr='<tr>\n\
                 <td>\n\
                 <select name="inventory[]" class="form-control">\n\
-                <option selected="" value="Default" required> please select </option>\n\
+                <option selected="" value="Default" required> Please select </option>\n\
                 @foreach($inventories as $inventory)\n\
                 <option value="{{ $inventory->id}}">{{ $inventory->productName }}</option>\n\
                 @endforeach\n\
@@ -80,7 +80,7 @@
                 <td>\n\
                 <input type="number" name="quantity[]" class="form-control quantity">\n\
                 </td>\n\
-                <td><a href="#" class="btn btn-danger remove">Remove</a></td>\n\
+                <td class="hoverColor"><a href="#" class="btn btnStyle remove">Remove</a></td>\n\
                 </tr>';
         $('tbody').append(tr);
     };

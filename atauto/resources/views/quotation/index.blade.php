@@ -7,14 +7,13 @@
         <br>
         <h2>Quotation</h2>
         <br>
-        <div class="hoverColor"><a href="/quotation.create" class="btn btnStyle">Add New Quotation</a></div>
+        <div class="hoverColor"><a href="/quotation.create" class="btn btnStyleLighter">Add New Quotation</a></div>
                         
         <table class="table table-borderless" style="margin-top: 2vh;">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Agreed price/unit</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
@@ -24,8 +23,7 @@
             <tr>
                 <th>{{$quotation->id}}</th>
                 <td>{{$quotation->name}}</td>
-                <td>{{$quotation->agreedPriceperunit}}</td>
-                <td>{{$quotation->status->name}}</td>
+                <td>{{$quotation->statusID}}</td>
                 <td class="hoverColor"><a href="{{ route('deleteQuotation', ['id' => $quotation->id]) }}" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                     Delete
                     </a>

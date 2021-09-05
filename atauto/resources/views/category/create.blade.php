@@ -19,8 +19,8 @@
                         <option value="{{ $status->id }}">{{ $status->name }}</option>
                     @endforeach
                 </select>
-            <p>
-                <input type="submit" name="insert" value="Insert" style="margin-top:15px;"> 
+            <p class="hoverColor">
+                <input type="submit" name="insert" value="Insert" style="margin-top:15px;" class="btn btnStyle"> 
             </p>
         </form>
     </div>

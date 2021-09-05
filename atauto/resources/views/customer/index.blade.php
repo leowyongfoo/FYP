@@ -7,7 +7,7 @@
                 <br>
                 <h2>Customer</h2>
                 <br>
-                <div class="hoverColor"><a href="/customer.create" class="btn btnStyle">Add New Customer</a></div>
+                <div class="hoverColor"><a href="/customer.create" class="btn btnStyleLighter">Add New Customer</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
