@@ -7,7 +7,7 @@
                 <br>
                 <h2>Supplier</h2>
                 <br>
-                <div class="hoverColor"><a href="/supplier.create" class="btn btnStyle">Add New Supplier</a></div>
+                <div class="hoverColor"><a href="/supplier.create" class="btn btnStyleLighter">Add New Supplier</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>

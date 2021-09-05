@@ -28,8 +28,8 @@
                 <input class="inputField" type="text" name="address" id="address">
             </p>
             
-            <p>
-                <input type="submit" name="insert" value="Insert">
+            <p class="hoverColor">
+                <input type="submit" name="insert" value="Insert" class="btn btnStyle">
             </p>
         </form>
     </div>

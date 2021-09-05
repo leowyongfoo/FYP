@@ -7,7 +7,7 @@
                 <br>
                 <h2>Delivery Order</h2>
                 <br>
-                <div class="hoverColor"><a href="/deliveryOrder.create" class="btn btnStyle">Add New DO</a></div>
+                <div class="hoverColor"><a href="/deliveryOrder.create" class="btn btnStyleLighter">Add New DO</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>

@@ -32,11 +32,11 @@
                     </p>
 
                     @endforeach
-                    <p>
-                        <button class="btn btn-primary"type="submit" name="edit" id="edit">edit</button>
+                    <p class="hoverColor">
+                        <button class="btn btnStyle" type="submit" name="edit" id="edit">edit</button>
                     </p>
-                    <p>
-                        <a href="{{route('quotation.index')}}" class="btn btn-danger"onclick="return confirm('Sure Want Cancel?')">
+                    <p class="hoverColor">
+                        <a href="{{route('quotation.index')}}" class="btn btnStyle"onclick="return confirm('Sure Want Cancel?')">
                           Cancel
                         </a>
                     </p>

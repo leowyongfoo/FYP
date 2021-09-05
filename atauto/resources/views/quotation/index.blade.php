@@ -7,7 +7,7 @@
         <br>
         <h2>Quotation</h2>
         <br>
-        <div class="hoverColor"><a href="/quotation.create" class="btn btnStyle">Add New Quotation</a></div>
+        <div class="hoverColor"><a href="/quotation.create" class="btn btnStyleLighter">Add New Quotation</a></div>
                         
         <table class="table table-borderless" style="margin-top: 2vh;">
         <thead>
