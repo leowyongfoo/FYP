@@ -41,14 +41,6 @@
                 <input class="inputField" type="text" name="retailPrice" id="retailPrice">
             </p>
             
-            <label for="Status">Status:</label>
-            <select name="status" id="status" class="form-control">
-                @foreach($statuses as $status)
-                    <option value="{{ $status->id }}">{{ $status->name }}</option>
-                @endforeach
-            </select><br>
-            
-
             <p>
                 <input type="submit" name="insert" value="Insert">
             </p>

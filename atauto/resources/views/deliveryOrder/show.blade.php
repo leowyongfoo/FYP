@@ -22,6 +22,9 @@
                     <td>{{$itemlist->quantity}}</td>
                     <td class="hoverColor">
                         <a href="/deliveryOrder/{{ $itemlist->id }}/deleteItem" class="btn btnStyle" onclick="return confirm('Sure Want delete?')">
+                        Delete
+                        </a>
+                        <a href="/deliveryOrder/{{ $itemlist->id }}/deleteItem" class="btn btnStyle" onclick="return confirm('Sure Want delete?')">
                         Restock
                         </a>
                         <a href="#" class="btn btnStyle">

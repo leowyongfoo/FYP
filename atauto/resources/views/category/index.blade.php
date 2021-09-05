@@ -22,9 +22,13 @@
                         <tr>
                         <th>{{$category->id}}</th>
                         <td>{{$category->name}}</td>
-                        <td>{{$category->status->name}}</td>
+                        <td>{{$category->statusID}}</td>
                         <td class="hoverColor"><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btnStyle"
-                            onclick="return confirm('Sure Want Delete?')">Delete</a></td>
+                            onclick="return confirm('Sure Want Delete?')">Delete</a>
+                            
+                            <a href="{{ route('changeStatus', ['id' => $category->id]) }}" class="btn btnStyle">{{$category->statusID}}</a>
+                        </td>
+                        
                         </tr>
                         @endforeach 
                     </tbody>

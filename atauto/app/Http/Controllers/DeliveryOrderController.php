@@ -104,4 +104,13 @@ class DeliveryOrderController extends Controller
         return redirect("/deliveryOrder");
     }
 
+    public function restock($id)
+    {
+        $orders=Itemlist::find($id);
+      
+        
+
+        return redirect()->route('inventory.index');
+    }
+
 }

@@ -29,13 +29,17 @@
                         <td>{{$inventory->quantity}}</td>
                         <td>{{$inventory->category->name}}</td>
                         <td>{{$inventory->pricePerUnit}}</td>
-                        <td>{{$inventory->status->name}}</td>
+                        <td>{{$inventory->statusID}}</td>
                         <td class="hoverColor"><a href="{{ route('deleteInventory', ['id' => $inventory->id]) }}" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                             Delete
                             </a>
                             <a href="/inventory.{{ $inventory->id }}.edit" class="btn btnStyle">
                             Edit
-                            </a> </td>
+                            </a> 
+                            <a href="{{ route('changeStatus', ['id' => $inventory->id]) }}" class="btn btnStyle">
+                                {{$inventory->statusID}}
+                            </a>
+                        </td>
                         </tr>
                         @endforeach
                     </tbody>
