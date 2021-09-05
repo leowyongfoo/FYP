@@ -31,8 +31,8 @@
 
             
 
-            <p>
-                <input type="submit" name="edit" value="edit" style="margin-top:15px;"> 
+            <p class="hoverColor">
+                <input type="submit" name="edit" value="edit" style="margin-top:15px;" class="btn btnStyle"> 
             </p>
         </form>
         @endforeach

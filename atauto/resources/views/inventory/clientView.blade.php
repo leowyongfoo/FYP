@@ -15,7 +15,7 @@
                                      
                             <h5 class="card-title">Description: {{$inventory->description}}</h5>
                             <div> 
-                                <a href="/productDetail/{{ $inventory->id }}"><button style="float:right;" class="btn btn-danger btn-xs">View More</button></a>     
+                                <a href="/productDetail.{{ $inventory->id }}"><button style="float:right;" class="btn btn-danger btn-xs">View More</button></a>     
                             </div>
                         </div>
                     </div>

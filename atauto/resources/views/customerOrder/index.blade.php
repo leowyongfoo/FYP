@@ -7,7 +7,7 @@
                 <br>
                 <h2>Customer Order</h2>
                 <br>
-                <div class="hoverColor"><a href="/customerOrder.create" class="btn btnStyle">Add New CO</a></div>
+                <div class="hoverColor"><a href="/customerOrder.create" class="btn btnStyleLighter">Add New CO</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>

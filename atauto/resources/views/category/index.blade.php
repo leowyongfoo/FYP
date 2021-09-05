@@ -7,7 +7,7 @@
                 <br>
                 <h2>Category</h2>
                 <br>
-                <div class="hoverColor"><a href="/category.create" class="btn btnStyle">Add New Category</a></div>
+                <div class="hoverColor"><a href="/category.create" class="btn btnStyleLighter">Add New Category</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>

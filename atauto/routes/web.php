@@ -40,7 +40,7 @@ Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'c
 //inventory route
 Route::get('/inventory', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory.index');
 Route::get('/clientView', [App\Http\Controllers\InventoryController::class, 'clientView'])->name('inventory.clientView');
-Route::get('/productDetail/{id}', [App\Http\Controllers\InventoryController::class, 'viewDetail'])->name('inventory.productDetail');
+Route::get('/productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'viewDetail'])->name('inventory.productDetail');
 Route::get('/inventory.create', [App\Http\Controllers\InventoryController::class, 'create'])->name('inventory.create');
 Route::post('/inventory', [App\Http\Controllers\InventoryController::class, 'store'])->name('inventory.store');
 Route::get('/inventory.{id}.edit', [App\Http\Controllers\InventoryController::class, 'edit'])->name('inventory.edit');
