@@ -7,6 +7,7 @@
                 <h2>Inventory</h2>
                 <br>
                 <div class="hoverColor"><a href="/inventory.create" class="btn btnStyleLighter">Add New Inventory</a></div>
+                <div class="hoverColor"><a href="/inventory.report" class="btn btnStyleLighter">Print report</a></div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>

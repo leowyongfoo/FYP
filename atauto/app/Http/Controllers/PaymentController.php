@@ -162,7 +162,7 @@ class PaymentController extends Controller
 
             Session::put('success', 'Payment success');
             //add update record for cart
-            $email='jacksonleow6g@gmail.com';
+            $email='jacksonleow6@gmail.com';
 	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
             return Redirect::to('clientView');  //back to product page
 
