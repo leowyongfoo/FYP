@@ -59,7 +59,7 @@ class PaymentController extends Controller
 
         $item_1 = new Item();
 
-        $item_1->setName('[Item 1]') /** item name **/
+        $item_1->setName('Item 1') /** item name **/
             ->setCurrency('MYR')
             ->setQuantity(1)
             ->setPrice($request->get('amount')); /** unit price **/
@@ -162,7 +162,7 @@ class PaymentController extends Controller
 
             Session::put('success', 'Payment success');
             //add update record for cart
-            $email='leongchengyang@gmail.com';
+            $email='jacksonleow6g@gmail.com';
 	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
             return Redirect::to('clientView');  //back to product page
 

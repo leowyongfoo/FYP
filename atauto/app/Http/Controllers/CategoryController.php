@@ -25,7 +25,7 @@ class CategoryController extends Controller
         $r=request(); 
         $addCategory=Category::create([
             'name'=>$r->name,
-            'statusID'=>$r->status,
+            'statusID'=>'active',
         ]);
 
         return redirect()->route('category.index');
@@ -35,6 +35,22 @@ class CategoryController extends Controller
     {
         $categories=Category::find($id);
         $categories->delete();
+
+        return redirect()->route('category.index');
+    }
+
+    public function changeStatus($id)
+    {
+        $categories=Category::find($id);
+
+        if($categories->statusID=='active'){
+            $categories->statusID='inactive'; 
+            $categories->save();
+        }else{
+            $categories->statusID='active';  
+            $categories->save();
+        }
+        
 
         return redirect()->route('category.index');
     }

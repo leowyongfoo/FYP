@@ -32,7 +32,7 @@ class InventoryController extends Controller
             'categoryID'=>$r->category,
             'PricePerUnit'=>$r->priceperunit,
             'retailPrice'=>$r->retailPrice,
-            'statusID'=>$r->status,
+            'statusID'=>'active',
         ]);
 
         return redirect()->route('inventory.index');
@@ -80,6 +80,22 @@ class InventoryController extends Controller
     {
         $inventories =Inventory::all()->where('id',$id);
         return view('inventory.productDetail')->with('inventories',$inventories);
+    }
+
+    public function changeStatus($id)
+    {
+        $inventories=Inventory::find($id);
+
+        if($inventories->statusID=='active'){
+            $inventories->statusID='inactive'; 
+            $inventories->save();
+        }else{
+            $inventories->statusID='active';  
+            $inventories->save();
+        }
+        
+
+        return redirect()->route('inventory.index');
     }
 
 

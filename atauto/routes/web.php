@@ -35,16 +35,18 @@ Route::get('/category', [App\Http\Controllers\CategoryController::class, 'index'
 Route::get('/category.create', [App\Http\Controllers\CategoryController::class, 'create'])->name('category.create');
 Route::post('/category', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
 Route::get('/deleteCategory/{id}', [App\Http\Controllers\CategoryController::class, 'delete'])->name('deleteCategory');
+Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'changeStatus'])->name('category.changeStatus');
 
 //inventory route
 Route::get('/inventory', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory.index');
 Route::get('/clientView', [App\Http\Controllers\InventoryController::class, 'clientView'])->name('inventory.clientView');
-Route::get('/productDetail/{id}', [App\Http\Controllers\InventoryController::class, 'viewDetail'])->name('inventory.productDetail');
+Route::get('/productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'viewDetail'])->name('inventory.productDetail');
 Route::get('/inventory.create', [App\Http\Controllers\InventoryController::class, 'create'])->name('inventory.create');
 Route::post('/inventory', [App\Http\Controllers\InventoryController::class, 'store'])->name('inventory.store');
 Route::get('/inventory.{id}.edit', [App\Http\Controllers\InventoryController::class, 'edit'])->name('inventory.edit');
 Route::patch('/inventory/{id}', [App\Http\Controllers\InventoryController::class, 'update'])->name('inventory.update');
 Route::get('/deleteInventory/{id}', [App\Http\Controllers\InventoryController::class, 'delete'])->name('deleteInventory');
+Route::get('/inventory/{id}', [App\Http\Controllers\InventoryController::class, 'changeStatus'])->name('inventory.changeStatus');
 
 //supplier route
 Route::get('/supplier', [App\Http\Controllers\SupplierController::class, 'index'])->name('supplier.index');
@@ -63,6 +65,7 @@ Route::get('/deliveryOrder/{id}/deleteItem', [App\Http\Controllers\DeliveryOrder
 Route::get('/deliveryOrder.{id}.edit', [App\Http\Controllers\DeliveryOrderController::class, 'edit'])->name('deliveryOrder.edit');
 Route::get('/deliveryOrder.{id}', [App\Http\Controllers\DeliveryOrderController::class, 'show'])->name('deliveryOrder.show');
 Route::patch('/deliveryOrder/{id}', [App\Http\Controllers\DeliveryOrderController::class, 'update'])->name('deliveryOrder.update');
+Route::get('/itemlist/{id}', [App\Http\Controllers\DeliveryOrderController::class, 'restock'])->name('restock');
 
 //customer order route
 Route::get('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'index'])->name('customerOrder.index');
@@ -96,6 +99,7 @@ Route::post('/addtocart', [App\Http\Controllers\CartController::class, 'add'])->
 Route::get('/myCart', [App\Http\Controllers\CartController::class, 'viewMyCart'])->name('view.mycart');
 Route::get('/deleteitem/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('deleteitem');
 
+//order
 Route::post('/createorder', [App\Http\Controllers\OrderController::class, 'add'])->name('create.order');
 Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'viewMyOrder'])->name('order.viewOrder');
 
