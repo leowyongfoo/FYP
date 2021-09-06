@@ -17,7 +17,7 @@ class CategoryController extends Controller
 
     public function create()
     {
-        return view('category.create')->with('statuses', Status::all());
+        return view('category.create');
     }
 
     public function store()
