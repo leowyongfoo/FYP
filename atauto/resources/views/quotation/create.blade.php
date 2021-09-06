@@ -44,14 +44,6 @@
                             </tr>
                         </tbody>
                     </table>  
-                <p class="pt-2">
-                    <label for="status">Status:</label>
-                    <select name="status" id="status" class="form-control inputField">
-                    @foreach($statuses as $status)
-                        <option value="{{ $status->id }}">{{ $status->name }}</option>
-                    @endforeach
-                    </select>
-                </p>
                 <p class="hoverColor">
                     <input type="submit" name="insert" value="Insert" class="btn btnStyle">
                 </p>

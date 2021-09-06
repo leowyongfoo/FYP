@@ -56,7 +56,6 @@ class InventoryController extends Controller
         $inventories->categoryID=$r->category; 
         $inventories->priceperunit=$r->priceperunit; 
         $inventories->retailPrice=$r->retailPrice; 
-        $inventories->statusID=$r->status; 
         $inventories->save();
 
         return redirect("/inventory/{$inventory->id}");

@@ -65,7 +65,6 @@ Route::get('/deliveryOrder/{id}/deleteItem', [App\Http\Controllers\DeliveryOrder
 Route::get('/deliveryOrder.{id}.edit', [App\Http\Controllers\DeliveryOrderController::class, 'edit'])->name('deliveryOrder.edit');
 Route::get('/deliveryOrder.{id}', [App\Http\Controllers\DeliveryOrderController::class, 'show'])->name('deliveryOrder.show');
 Route::patch('/deliveryOrder/{id}', [App\Http\Controllers\DeliveryOrderController::class, 'update'])->name('deliveryOrder.update');
-Route::get('/itemlist/{id}', [App\Http\Controllers\DeliveryOrderController::class, 'restock'])->name('restock');
 
 //customer order route
 Route::get('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'index'])->name('customerOrder.index');
@@ -99,12 +98,13 @@ Route::post('/addtocart', [App\Http\Controllers\CartController::class, 'add'])->
 Route::get('/myCart', [App\Http\Controllers\CartController::class, 'viewMyCart'])->name('view.mycart');
 Route::get('/deleteitem/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('deleteitem');
 
-//order
 Route::post('/createorder', [App\Http\Controllers\OrderController::class, 'add'])->name('create.order');
 Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'viewMyOrder'])->name('order.viewOrder');
 
 Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
 Route::get('/status', [App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('status');
+
+Route::get('/inventory.report', [App\Http\Controllers\PDFController::class, 'print'])->name('printReport');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

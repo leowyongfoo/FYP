@@ -61,10 +61,6 @@
                 </li>
 
                 <li>
-                <a href="{{ route('status.index') }}"><span>Status</span></a>
-                </li>
-
-                <li>
                     <a href=""><span>User</span></a>
                 </li>
 
@@ -80,6 +76,10 @@
                         <a class="dropdown-item" href="{{ route('quotation.index') }}">View Quotation</a>
                         <a class="dropdown-item" href="{{ route('quotation.create') }}">Add New Quotation</a>
                     </div>
+                </li>
+
+                <li>
+                    <a href="{{ route('inventory.clientView') }}"><span>Client View</span></a>
                 </li>
             </ul>
         </div>

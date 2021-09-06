@@ -47,14 +47,6 @@
                             <label for="retailPrice" class="label">Retail Price:</label>
                             <input class="inputField" type="text" name="retailPrice" id="retailPrice" value="{{$inventory->retailPrice}}">
                         </p>
-                        
-                        <label for="status">Status:</label>
-                        <select name="status" id="status" class="form-control">
-                            @foreach($statuses as $status)
-                                <option value="{{ $status->id }}">{{ $status->name }}</option>
-                            @endforeach
-                        </select><br>
-                        
 
                         <p class="hoverColor">
                             <input class="btn btnStyle" type="submit" name="insert" value="Insert">

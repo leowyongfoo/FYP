@@ -37,7 +37,7 @@
 
                     @endforeach
                     <p class="hoverColor">
-                        <button class="btn btnStyle"type="submit" name="edit" id="edit">edit</button>
+                        <button class="btn btnStyle"type="submit" name="edit" id="edit">Edit</button>
                     </p>
                     <p class="hoverColor">
                         <a href="{{route('supplier.index')}}" class="btn btnStyle"onclick="return confirm('Sure Want Cancel?')">

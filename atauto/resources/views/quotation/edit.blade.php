@@ -16,24 +16,12 @@
                     </p>
                     <p>
                         <label for="name" class="label">Name</label>
-                        <input class="inputField" type="text" name="name" id="name"  value="{{$quotation->name}}" readonly>
-                    </p>
-                    <p>
-                        <label for="status">Status:</label>
-                        <select name="status" id="status" class="form-control">
-                        @foreach($statuses as $status)
-                            <option value="{{ $status->id }}"  
-                                @if($quotation->statusID==$status->id)
-                                selected                   
-                                @endif
-                                >{{ $status->name }}</option>
-                                @endforeach
-                        </select>
+                        <input class="inputField" type="text" name="name" id="name"  value="{{$quotation->name}}">
                     </p>
 
                     @endforeach
                     <p class="hoverColor">
-                        <button class="btn btnStyle" type="submit" name="edit" id="edit">edit</button>
+                        <button class="btn btnStyle" type="submit" name="edit" id="edit">Edit</button>
                     </p>
                     <p class="hoverColor">
                         <a href="{{route('quotation.index')}}" class="btn btnStyle"onclick="return confirm('Sure Want Cancel?')">

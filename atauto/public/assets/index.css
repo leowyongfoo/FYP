@@ -218,8 +218,21 @@ tr, th {
     color:white;
 }
 
+.hoverColor button:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color:white;
+}
+
 .btnStyleLighter {
     background-color: #383838;
     border-color: #383838;
     color: white;
+}
+
+.content {
+    width: 84%;
+    float: left;
+    margin: 3vh 0 3vh 0;
+    padding: 0 2vh 0 0;
 }
