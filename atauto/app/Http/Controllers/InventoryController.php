@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Inventory;
 use App\Models\Category;
 use App\Models\Status;
+Use Session;
 
 class InventoryController extends Controller
 {
@@ -17,8 +18,7 @@ class InventoryController extends Controller
 
     public function create()
     {
-        return view('inventory.create')->with('categories', Category::all())
-                                      ->with('statuses', Status::all());
+        return view('inventory.create')->with('categories', Category::all());
                                       
     }
 
@@ -35,6 +35,7 @@ class InventoryController extends Controller
             'statusID'=>'active',
         ]);
 
+        Session::flash('success',"Product add succesful!");
         return redirect()->route('inventory.index');
     }
 
