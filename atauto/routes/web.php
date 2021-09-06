@@ -104,4 +104,7 @@ Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'viewMyOrde
 Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
 Route::get('/status', [App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('status');
 
+Route::get('/inventory.report', [App\Http\Controllers\PDFController::class, 'print'])->name('printReport');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

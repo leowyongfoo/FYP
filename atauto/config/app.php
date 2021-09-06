@@ -162,6 +162,10 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+<<<<<<< HEAD
+=======
+
+>>>>>>> 84fd01439eab005664bc16c8754842c80914bf34
 
         /*
          * Package Service Providers...

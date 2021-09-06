@@ -38,6 +38,16 @@
                                     </div>
 
                                     <div class="mb-3">
+                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="{{ __('Email') }}" required autocomplete="email" style="border-color: #414752; background: #414752;">
+
+                                                @error('email')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+
+                                    <div class="mb-3">
                                         <input id="password" class="form-control @error('password') is-invalid @enderror" type="password" id="exampleInputPassword" placeholder="{{ __('Password') }}" name="password" style="border-color: #414752; background: #414752;">
 
                                         @error('password')
