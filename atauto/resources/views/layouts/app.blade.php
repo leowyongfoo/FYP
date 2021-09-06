@@ -81,6 +81,10 @@
                 <li>
                     <a href="{{ route('inventory.clientView') }}"><span>Client View</span></a>
                 </li>
+
+                <li>
+                    <a href="{{ route('view.mycart') }}"><span>Shopping Cart</span></a>
+                </li>
             </ul>
         </div>
     </nav>

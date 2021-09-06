@@ -38,6 +38,7 @@
                     </table>
                     <div class="hoverColor">
                         <button type="submit" class="btn btnStyleLighter">Add To Cart</button>
+                        <a href="/clientView" class="btn btnStyleLighter">Back</a>
                     </div>
                 </form>
 	</div>

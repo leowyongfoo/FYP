@@ -26,8 +26,7 @@ function TotalAmount() {
             @csrf
 			<br>
 			<h2>Shopping Cart</h2>
-			<br>
-		    <table class="table table-borderless" style="margin-top: 2vh; width: 50vh;">
+		    <table class="table table-borderless" style="margin-top: 2vh; width: 60vh;">
 		        <thead>
 		        <tr>
 		            <th>ID</th>
