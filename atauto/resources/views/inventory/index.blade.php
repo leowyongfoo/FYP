@@ -6,15 +6,17 @@
                 <br>
                 <h2>Inventory</h2>
                 <br>
-                <div class="hoverColor"><a href="/inventory.create" class="btn btnStyleLighter">Add New Inventory</a></div>
-                <div class="hoverColor"><a href="/inventory.report" class="btn btnStyleLighter">Print report</a></div>
+                <div class="hoverColor d-flex">
+                    <a href="/inventory.create" class="btn btnStyleLighter mr-4">Add New Inventory</a>
+                    <a href="/inventory.report" class="btn btnStyleLighter">Print report</a>
+                </div>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Product</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">In Stock</th>
                         <th scope="col">Category</th>
                         <th scope="col">Price/Unit</th>
                         <th scope="col">Status</th>
