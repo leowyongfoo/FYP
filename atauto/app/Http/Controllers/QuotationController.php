@@ -64,7 +64,6 @@ class QuotationController extends Controller
         $r=request();
         $quotations =Quotation::find($r->ID);
         $quotations->name=$r->name; 
-        $quotations->statusID=$r->status;
         $quotations->save();
 
         return redirect("/quotation/{$quotation->id}");

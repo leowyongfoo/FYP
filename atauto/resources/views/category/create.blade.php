@@ -13,7 +13,8 @@
                 <label for="name" class="label">Category Name:</label>
                 <input class="inputField" type="text" name="name" id="name">
             </p>
-                <input type="submit" name="insert" value="Insert" style="margin-top:15px;"> 
+            <p class="hoverColor">
+                <input type="submit" name="insert" value="Insert" class="btn btnStyleLighter"> 
             </p>
         </form>
     </div>

@@ -2,17 +2,18 @@
 @section('content') 
 
 
-<div class="container"><br><br><br>
-	    <div class="row" style="float:right;">
-		<form   method="POST" action="{!! URL::to('paypal') !!}" >
+<div class="dataTables">
+		<form method="POST" action="{!! URL::to('paypal') !!}" >
 			@csrf
-		    <table class="table table-striped table-light"  Style="outline: 5px groove black;">
-				
+			<br>
+			<h2>View Order</h2>
+			<br>
+		    <table class="table table-borderless" style="margin-top: 2vh;">
 		        <thead>
-		        <tr class="thead-white">
+		        <tr>
 		            <th>ID</th>
 		            <th>Name</th>
-		            <th>quantity</th>
+		            <th>Quantity</th>
 		            <th>Amount</th>
                     <th>Status</th>
 		        </tr>
@@ -41,20 +42,11 @@
 		            </tr> 
                 @endforeach
 				 
-				<tr class="thead-dark">
-		        <td>&nbsp;</td>
-                <td>&nbsp;</td>
-		        <td>&nbsp;</td>                   
-		        <td>&nbsp;</td>
-		        <td><input type="hidden" name="amount" value="{{ $total }}"></td>
-                <td><input type="submit" name="paynow" value="Pay Now" class="btn btn-dark"></td>
-				
-		    </tr>
-		</form>					
+				<input type="hidden" name="amount" value="{{ $total }}">
 		        </tbody>			
-		    </table>		
+		    </table>	
+			<div class="hoverColor"><input type="submit" name="paynow" value="Pay Now" class="btn btnStyleLighter"></div>	
+		</form>
+</div> 
 
-	</div>
-    </div> 
-	</body>
 @endsection

@@ -1,24 +1,44 @@
 @extends('layouts.app')
 @section('content')  
-	<div class="row" align="left" >
-        @foreach($inventories as $inventory)       
-            <div class="col-md-6" Style="outline: 5px groove black;">
+	<div class="createForm">
                 <form action="{{ route('add.to.cart') }}" method="post">
                     @csrf
-                    <h4>{{$inventory->productName}}</h1>
-                    <h5 class="card-title">Description: {{$inventory->description}}</h4>
-                    <p></p>
-                    <div style="height: 100px">Quantity 
-                    <input type="number" name="quantity" id="qty" value="1" min="1" max="{{$inventory->quantity}}"> 
-                    Available stock: {{$inventory->quantity}}
+                    <h2>Product Detail</h2>
+                    <table class="table table-borderless" style="width: 50vh; margin-top: 2vh;">
+                    @foreach($inventories as $inventory) 
+                        <thead>
+                            <tr>
+                                <th>Product Name:</th>
+                                <th>{{$inventory->productName}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Description:</td>
+                                <td>{{$inventory->description}}</td>
+                            </tr>
+                            <tr>
+                                <td>Available stock:</td>
+                                <td>{{$inventory->quantity}}</td>
+                            </tr>
+                            <tr>
+                                <td>Quantity:</td>
+                                <td><input type="number" name="quantity" id="qty" value="1" min="1" max="{{$inventory->quantity}}"></td>
+                            </tr>
+                            <tr>
+                                <td>Price per Unit:</td>
+                                <td>RM {{$inventory->pricePerUnit}}</td>
+                            </tr>
+                        </tbody>
+                        <input type="hidden" name="id" id="id" value="{{$inventory->id}}">
+                        <input type="hidden" id="name" name="name" value="{{$inventory->productName}}">
+                        <input type="hidden" id="amount" name="amount" value="">
+                        
+                    @endforeach   
+                    </table>
+                    <div class="hoverColor">
+                        <button type="submit" class="btn btnStyleLighter">Add To Cart</button>
                     </div>
-                    <input type="hidden" name="id" id="id" value="{{$inventory->id}}">
-                    <input type="hidden" id="name" name="name" value="{{$inventory->productName}}">
-                    <input type="hidden" id="amount" name="amount" value="">
-                           
-                    <div style="height: 100px">RM {{$inventory->pricePerUnit}} <button type="submit" style="float:right" class="btn btn-danger btn-xs">Add To Cart</button>
                 </form>
-            </div>
-        @endforeach     
 	</div>
 @endsection  
