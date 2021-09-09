@@ -27,6 +27,22 @@ class CartController extends Controller
         return redirect()->route('view.mycart');
     }
 
+    public function customerAdd(){ 
+
+        $r=request(); 
+        $addproduct=myCart::create([  
+
+            'quantity'=>$r->quantity,           
+            'orderID'=>'',
+            'inventoryID'=>$r->id,
+            'inventoryStatus'=> 'active',            
+            'userID'=>Auth::id(),
+            
+                        
+        ]);     
+        return redirect()->route('customer.view.mycart');
+    }
+
     public function viewMyCart(){
 
         $mycarts = DB::table('my_carts')
@@ -46,10 +62,35 @@ class CartController extends Controller
                                           
     }
 
+    public function customerViewMyCart(){
+
+        $mycarts = DB::table('my_carts')
+        ->leftjoin('inventories', 'inventories.id', '=', 'my_carts.inventoryID')
+        ->select('my_carts.quantity as cartQty','my_carts.id as cid','inventories.*')
+        ->where('my_carts.orderID','=','') 
+        ->where('my_carts.userID','=',Auth::id())
+        ->paginate(12);
+
+        
+        
+        DB::table('my_carts')->where('inventoryStatus', 'inactive')->delete();
+                                   
+        
+ 
+        return view('customerView.customerViewMyCart')->with('mycarts',$mycarts);
+                                          
+    }
+
     public function delete($id){
         $carts=MyCart::find($id);
         $carts->delete();
         return redirect()->route('view.mycart');
+    }
+
+    public function customerDelete($id){
+        $carts=MyCart::find($id);
+        $carts->delete();
+        return redirect()->route('customer.view.mycart');
     }
 
 }

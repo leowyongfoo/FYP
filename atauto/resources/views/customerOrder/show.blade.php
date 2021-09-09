@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="content">
+<div>
     <div class="dataTables">
         <br>
         <h3>Customer order detail</h3>

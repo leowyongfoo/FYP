@@ -10,7 +10,7 @@
                 <h3>Create User</h3>
             </p>
             <p>
-                <label for="username" class="label">User Name:</label>
+                <label for="username" class="label">Username:</label>
                 <input class="inputField" type="text" name="username" id="username">
             </p>
 

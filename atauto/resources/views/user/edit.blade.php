@@ -16,7 +16,7 @@
                 <input class="inputField" type="text" name="ID" id="ID" value="{{$customer->id}}" readonly>
             </p>
             <p>
-                <label for="username" class="label">User Name:</label>
+                <label for="username" class="label">Username:</label>
                 <input class="inputField" type="text" name="username" id="username" value="{{$customer->username}}">
             </p>
 

@@ -35,6 +35,30 @@ class OrderController extends Controller
         
     }
 
+    public function customerAdd(){ 
+
+        $r=request(); 
+        $addOrder=Order::create([    
+            
+            'amount'=>$r->amount,             
+            'paymentStatus'=>'pending',                 
+            'userID'=>Auth::id(),                          
+        ]); 
+        
+        $orderID=DB::table('orders')->where('userID','=',Auth::id())->orderBy('created_at', 'desc')->first();       
+        
+        $items=$r->input('item');
+        foreach($items as $item => $value){
+            $mycars =MyCart::find($value);
+            $mycars->orderID = $orderID->id;
+            $mycars->save();
+        }
+        
+       
+        return redirect()->route('customer.order.viewOrder'); 
+        
+    }
+
     public function viewMyOrder(){
 
         $myorders=DB::table('orders')
@@ -45,6 +69,18 @@ class OrderController extends Controller
         ->get();
         //->paginate(3);       
         return view('order.viewOrder')->with('myorders',$myorders);
+    }
+
+    public function customerViewMyOrder(){
+
+        $myorders=DB::table('orders')
+        ->leftjoin('my_carts', 'orders.id', '=', 'my_carts.orderID')
+        ->leftjoin('inventories', 'inventories.id', '=', 'my_carts.inventoryID')
+        ->select('my_carts.*','orders.*','inventories.*','my_carts.quantity as cartQty')
+        ->where('orders.userID','=',Auth::id())
+        ->get();
+        //->paginate(3);       
+        return view('customerView.customerViewOrder')->with('myorders',$myorders);
     }
 
 }

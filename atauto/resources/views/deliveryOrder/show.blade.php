@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="content">
+<div>
     <div class="dataTables">
         <br>
             <h3>Delivery order detail</h3>
@@ -17,7 +17,9 @@
             <label for="supplier" class="label">Supplier.:</label>
             <input class="inputField" type="text" name="supplier" id="supplier" value="{{$DO->supplier->name}}" readonly>
         </p>
-        <a href="/deliveryOrder.report/{{$DO->id}}" class="btn btnStyleLighter">Print report</a>
+        <div class="hoverColor">
+            <a href="/deliveryOrder.report/{{$DO->id}}" class="btn btnStyleLighter">Print report</a>
+        </div>
         @endforeach 
         <table class="table table-borderless" style="margin-top: 2vh;" id="dataTable">
             <thead>

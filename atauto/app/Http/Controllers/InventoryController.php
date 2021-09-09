@@ -81,8 +81,8 @@ class InventoryController extends Controller
 
     public function clientView()
     {
-        $inventories = Inventory::paginate(6);
         $inventories = Inventory::all()->where('statusID','active');
+        $inventories = Inventory::paginate(6);
         return view('inventory.clientView')->with('inventories',$inventories);
     }
 
@@ -108,6 +108,17 @@ class InventoryController extends Controller
         return redirect()->route('inventory.index');
     }
 
+    public function customerClientView()
+    {
+        $inventories = Inventory::all()->where('statusID','active');
+        $inventories = Inventory::paginate(6);
+        return view('customerView.customerClientView')->with('inventories',$inventories);
+    }
 
+    public function customerViewDetail($id)
+    {
+        $inventories =Inventory::all()->where('id',$id);
+        return view('customerView.customerProductDetail')->with('inventories',$inventories);
+    }
 
 }

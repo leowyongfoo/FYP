@@ -37,7 +37,7 @@
                         <td>{{$inventory->category->name}}</td>
                         <td>{{$inventory->pricePerUnit}}</td>
                         <td style="width: 15vh;">{{$inventory->statusID}}</td>
-                        <td class="hoverColor" style="width: 30vh;"><a href="{{ route('deleteInventory', ['id' => $inventory->id]) }}" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
+                        <td class="hoverColor" style="width: 35vh;"><a href="{{ route('deleteInventory', ['id' => $inventory->id]) }}" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                             Delete
                             </a>
                             <a href="/inventory.{{ $inventory->id }}.edit" class="btn btnStyle">
@@ -52,7 +52,7 @@
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-center pt-4 pl-5">
-                    
+                    {{ $inventories->links() }}
                 </div>
             </div>
         </div>
