@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-@if(Session::has('success'))           
+@if(Session::has('addSuccess'))           
         <div class="alert alert-success" role="alert">
-            {{ Session::get('success')}}
+            {{ Session::get('addSuccess')}}
         </div>       
 @endif 
 <div>
@@ -52,7 +52,7 @@
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-center pt-4 pl-5">
-                    {{ $inventories->links() }}
+                    
                 </div>
             </div>
         </div>

@@ -24,6 +24,8 @@ Route::get('index', function () {
 
 Auth::routes();
 
+Route::get('/index', [App\Http\Controllers\MainPageController::class, 'index'])->name('main.page');
+
 //status route
 Route::get('/status.index', [App\Http\Controllers\StatusController::class, 'index'])->name('status.index');
 Route::get('/status.create', [App\Http\Controllers\StatusController::class, 'create'])->name('status.create');
@@ -60,6 +62,7 @@ Route::get('/deleteSupplier/{id}', [App\Http\Controllers\SupplierController::cla
 Route::get('/deliveryOrder', [App\Http\Controllers\DeliveryOrderController::class, 'index'])->name('deliveryOrder.index');
 Route::get('/deliveryOrder.create', [App\Http\Controllers\DeliveryOrderController::class, 'create'])->name('deliveryOrder.create');
 Route::post('/deliveryOrder', [App\Http\Controllers\DeliveryOrderController::class, 'store'])->name('deliveryOrder.store');
+Route::get('/deliveryOrder/{id}/restock', [App\Http\Controllers\DeliveryOrderController::class, 'restock'])->name('restock');
 Route::get('/deliveryOrder/{id}/deleteOrder', [App\Http\Controllers\DeliveryOrderController::class, 'deleteOrder'])->name('deleteOrder');
 Route::get('/deliveryOrder/{id}/deleteItem', [App\Http\Controllers\DeliveryOrderController::class, 'deleteItem'])->name('deleteItem');
 Route::get('/deliveryOrder.{id}.edit', [App\Http\Controllers\DeliveryOrderController::class, 'edit'])->name('deliveryOrder.edit');
@@ -105,6 +108,7 @@ Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithp
 Route::get('/status', [App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('status');
 
 Route::get('/inventory.report', [App\Http\Controllers\PDFController::class, 'print'])->name('printReport');
+Route::get('/deliveryOrder.report/{id}', [App\Http\Controllers\PDFController::class, 'printDO'])->name('printReport.DO');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
