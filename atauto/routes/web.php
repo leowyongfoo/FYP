@@ -96,6 +96,7 @@ Route::get('/quotation.{id}', [App\Http\Controllers\QuotationController::class, 
 Route::get('/quotation/{id}/deleteItem', [App\Http\Controllers\QuotationController::class, 'deleteItem'])->name('deleteItem');
 Route::patch('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'update'])->name('quotation.update');
 Route::get('/deleteQuotation/{id}', [App\Http\Controllers\QuotationController::class, 'delete'])->name('deleteQuotation');
+Route::get('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'changeQuotationStatus'])->name('quotation.changeStatus');
 
 //user route
 Route::get('/user', [App\Http\Controllers\AccountController::class, 'index'])->name('user.index');
@@ -115,8 +116,11 @@ Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'viewMyOrde
 Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
 Route::get('/status', [App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('status');
 
+//Report route
 Route::get('/inventory.report', [App\Http\Controllers\PDFController::class, 'print'])->name('printReport');
 Route::get('/deliveryOrder.report/{id}', [App\Http\Controllers\PDFController::class, 'printDO'])->name('printReport.DO');
+Route::get('/customerOrder.report/{id}', [App\Http\Controllers\PDFController::class, 'printCO'])->name('printReport.CO');
+Route::get('/quotation.report/{id}', [App\Http\Controllers\PDFController::class, 'printQO'])->name('printReport.QO');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

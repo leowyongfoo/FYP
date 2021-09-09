@@ -26,13 +26,13 @@
                 <td>{{$quotation->statusID}}</td>
                 <td class="hoverColor"><a href="{{ route('deleteQuotation', ['id' => $quotation->id]) }}" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                     Delete
-                    </a>
-                    <a href="/quotation.{{ $quotation->id }}.edit" class="btn btnStyle">
-                    Edit
                     </a> 
                     <a href="/quotation.{{ $quotation->id }}" class="btn btnStyle">
                     View detail
                     </a> 
+                    <a href="{{ route('quotation.changeStatus', ['id' => $quotation->id]) }}" class="btn btnStyle">
+                    {{$quotation->statusID}}
+                    </a>
                 </td>
             </tr>
             @endforeach 

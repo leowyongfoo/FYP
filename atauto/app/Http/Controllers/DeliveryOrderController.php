@@ -82,11 +82,8 @@ class DeliveryOrderController extends Controller
     public function edit($id){
 
         $deliveryOrders =DeliveryOrder::all()->where('id',$id);
-        return view('deliveryOrder.edit')->with('deliveryOrders', DeliveryOrder::all())
-                                        ->with('items',Itemlist::all())
-                                        ->with('inventories',Inventory::all())
-                                        ->with('suppliers', Supplier::all())
-                                        ->with('statuses', Status::all());
+        return view('deliveryOrder.edit')->with('deliveryOrders', DeliveryOrder::all()->where('id',$id))
+                                        ->with('suppliers', Supplier::all());
     }
     
     public function update(DeliveryOrder $deliveryOrders)

@@ -48,8 +48,10 @@ class CustomerOrderController extends Controller
 
     public function show($id)
     {
+        $COs=CustomerOrder::all()->where('id',$id);
         $customer_itemlists =customer_itemlist::all()->where('customerOrderID',$id);
-        return view('customerOrder.show')->with('customer_itemlists',$customer_itemlists);
+        return view('customerOrder.show')->with('customer_itemlists',$customer_itemlists)
+                                            ->with('COs',$COs);
  
     }
 
@@ -85,11 +87,9 @@ class CustomerOrderController extends Controller
     public function edit($id){
 
         $customerOrders =CustomerOrder::all()->where('id',$id);
-        return view('customerOrder.edit')->with('customerOrders', CustomerOrder::all())
+        return view('customerOrder.edit')->with('customerOrders', CustomerOrder::all()->where('id',$id))
                                         ->with('items',customer_itemlist::all())
-                                        ->with('inventories',Inventory::all())
-                                        ->with('customers', Customer::all())
-                                        ->with('statuses', Status::all());
+                                        ->with('customers', Customer::all());
     }
     
     public function update(CustomerOrder $customerOrders)
