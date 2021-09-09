@@ -42,6 +42,10 @@ header {
     width: 12%;
 }
 
+.ddmenu {
+    left: -100%;
+}
+
 .dropdown-menu a:hover{
     background-color: #3a4150;
     color: white;
@@ -60,6 +64,20 @@ header {
     color: white;
     border-radius: 10px;
     outline: none;
+}
+
+.notification {
+    position: relative;
+    display: inline-block;
+}
+
+.notification .badge {
+    position: absolute;
+    right: -5vh;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
 }
 
 .sidebar {

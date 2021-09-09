@@ -22,12 +22,12 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-            @endforeach     
-             
-                  
+            @endforeach      
         </div> 
+        <div class="d-flex justify-content-center pt-4 pl-5">
+            {{ $inventories->links() }}
+        </div>
     </div>        
 
 @endsection    

@@ -72,7 +72,7 @@ class InventoryController extends Controller
 
     public function clientView()
     {
-        $inventories = Inventory::all();
+        $inventories = Inventory::paginate(6);
         return view('inventory.clientView')->with('inventories',$inventories);
     }
 

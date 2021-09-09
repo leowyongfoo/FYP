@@ -17,10 +17,10 @@
             <span class="pl-5">AT Auto <i class="fas fa-tools"></i></span>
             <div class="dropdown show pr-5" style="float: right;">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Admin
+                    {{Auth::user()->username}}
                 </a>
               
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-menu ddmenu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="#">Profile</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
@@ -44,7 +44,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ route('inventory.index') }}">View Inventory</a>
-                        <a class="dropdown-item" href="{{ route('category.index') }}#">View Category</a>
+                        <a class="dropdown-item" href="{{ route('category.index') }}">View Category</a>
                     </div>
                 </li>
 

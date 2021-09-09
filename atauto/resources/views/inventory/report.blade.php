@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atauto</title>
+    <title>ATauto</title>
+
+    <style>
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td, th {
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>AtAuto</h1>
-    <p>Inventory report</p>
+    <h1>ATAuto</h1>
+    <h3>Inventory Report</h3>
     <div>
-        <div>
             <table>
                 <thead>
                     <tr>
@@ -37,7 +50,6 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
     </div>
 </body>
 </html>
