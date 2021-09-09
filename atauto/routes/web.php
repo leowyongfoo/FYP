@@ -94,6 +94,14 @@ Route::get('/quotation/{id}/deleteItem', [App\Http\Controllers\QuotationControll
 Route::patch('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'update'])->name('quotation.update');
 Route::get('/deleteQuotation/{id}', [App\Http\Controllers\QuotationController::class, 'delete'])->name('deleteQuotation');
 
+//user route
+Route::get('/user', [App\Http\Controllers\AccountController::class, 'index'])->name('user.index');
+Route::get('/user.create', [App\Http\Controllers\AccountController::class, 'create'])->name('user.create');
+Route::post('/user', [App\Http\Controllers\AccountController::class, 'store'])->name('user.store');
+Route::get('/user.{id}.edit', [App\Http\Controllers\AccountController::class, 'edit'])->name('user.edit');
+Route::patch('/user/{id}', [App\Http\Controllers\AccountController::class, 'update'])->name('user.update');
+Route::get('/deleteUser/{id}', [App\Http\Controllers\AccountController::class, 'delete'])->name('deleteUser');
+
 Route::post('/addtocart', [App\Http\Controllers\CartController::class, 'add'])->name('add.to.cart');
 Route::get('/myCart', [App\Http\Controllers\CartController::class, 'viewMyCart'])->name('view.mycart');
 Route::get('/deleteitem/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('deleteitem');

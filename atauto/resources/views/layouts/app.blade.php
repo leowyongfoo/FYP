@@ -61,7 +61,7 @@
                 </li>
 
                 <li>
-                    <a href=""><span>User</span></a>
+                    <a href="user"><span>User</span></a>
                 </li>
 
                 <li>
