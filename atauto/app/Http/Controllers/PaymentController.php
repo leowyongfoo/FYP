@@ -56,10 +56,11 @@ class PaymentController extends Controller
         
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
-
+        
+        $orderOverview = DB::table('orders')->where('orders.userID','=',Auth::id())->orderBy('created_at', 'desc')->first();
         $item_1 = new Item();
 
-        $item_1->setName('Item 1') /** item name **/
+        $item_1->setName($orderOverview->id ) /** item name **/
             ->setCurrency('MYR')
             ->setQuantity(1)
             ->setPrice($request->get('amount')); /** unit price **/

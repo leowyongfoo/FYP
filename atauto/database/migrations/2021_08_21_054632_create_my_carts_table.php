@@ -19,6 +19,7 @@ class CreateMyCartsTable extends Migration
             $table->string('userID');            
             $table->integer('quantity')->unsigned();
             $table->string('inventoryID');
+            $table->string('inventoryStatus');
             $table->timestamps();
 
             

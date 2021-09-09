@@ -49,8 +49,10 @@ class DeliveryOrderController extends Controller
 
     public function show($id)
     {
+        $DOs=DeliveryOrder::all()->where('id',$id);
         $itemlists =Itemlist::all()->where('deliveryOrderID',$id);
-        return view('deliveryOrder.show')->with('itemlists',$itemlists);
+        return view('deliveryOrder.show')->with('itemlists',$itemlists)
+                                           ->with('DOs',$DOs);
 
     }
 
@@ -64,23 +66,17 @@ class DeliveryOrderController extends Controller
 
     public function deleteOrder($id)
     {
+        $data =DB::table('itemlists')
+        ->leftJoin('delivery_orders','delivery_orders.id', '=','itemlists.deliveryOrderID')
+        ->where('delivery_orders.id', $id); 
+        DB::table('itemlists')->where('deliveryOrderID', $id)->delete();                           
+        $data->delete();
+        
         $orders=DeliveryOrder::find($id);
         $orders->delete();
+
         return redirect()->route('deliveryOrder.index');
 
-    }
-
-    public function productmenu()
-    {
-        return view('deliveryOrder.productmenu')->with('inventories', Inventory::all());
-                                      
-    }
-
-    public function showDetail($id)
-    {
-        $inventories =Inventory::all()->where('id',$id);
-        return view('deliveryOrder.showDetail')->with('inventories',$inventories);
-                                      
     }
 
     public function edit($id){
@@ -107,7 +103,6 @@ class DeliveryOrderController extends Controller
     public function restock($id)
     {
         $orders=Itemlist::find($id);
-      
         
 
         return redirect()->route('inventory.index');
