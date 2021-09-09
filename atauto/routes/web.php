@@ -96,6 +96,7 @@ Route::get('/quotation.{id}', [App\Http\Controllers\QuotationController::class, 
 Route::get('/quotation/{id}/deleteItem', [App\Http\Controllers\QuotationController::class, 'deleteItem'])->name('deleteItem')->middleware('role:admin');
 Route::patch('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'update'])->name('quotation.update')->middleware('role:admin');
 Route::get('/deleteQuotation/{id}', [App\Http\Controllers\QuotationController::class, 'delete'])->name('deleteQuotation')->middleware('role:admin');
+Route::get('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'changeQuotationStatus'])->name('quotation.changeStatus')->middleware('role:admin');
 
 //user route
 Route::get('/user', [App\Http\Controllers\AccountController::class, 'index'])->name('user.index')->middleware('role:admin');
@@ -128,6 +129,9 @@ Route::get('/customer.myorder', [App\Http\Controllers\OrderController::class, 'c
 Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
 Route::get('/status', [App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('status');
 
+//Report route
 Route::get('/inventory.report', [App\Http\Controllers\PDFController::class, 'print'])->name('printReport')->middleware('role:admin');
 Route::get('/deliveryOrder.report/{id}', [App\Http\Controllers\PDFController::class, 'printDO'])->name('printReport.DO')->middleware('role:admin');
+Route::get('/customerOrder.report/{id}', [App\Http\Controllers\PDFController::class, 'printCO'])->name('printReport.CO')->middleware('role:admin');
+Route::get('/quotation.report/{id}', [App\Http\Controllers\PDFController::class, 'printQO'])->name('printReport.QO')->middleware('role:admin');
 

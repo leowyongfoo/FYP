@@ -17,9 +17,12 @@
             <label for="supplier" class="label">Supplier.:</label>
             <input class="inputField" type="text" name="supplier" id="supplier" value="{{$DO->supplier->name}}" readonly>
         </p>
-        <div class="hoverColor">
-            <a href="/deliveryOrder.report/{{$DO->id}}" class="btn btnStyleLighter">Print report</a>
-        </div>
+        <p>
+            <label class="label">Order Date/Time.:</label>
+            <input class="inputField" type="text" name="created_at" id="created_at" value="{{$DO->created_at}}" readonly>
+        </p>
+        <a href="/deliveryOrder.report/{{$DO->id}}" class="btn btnStyleLighter">Print report</a>
+        <a href="/deliveryOrder.{{ $DO->id }}.edit" class="btn btnStyleLighter">Edit</a> 
         @endforeach 
         <table class="table table-borderless" style="margin-top: 2vh;" id="dataTable">
             <thead>
@@ -41,9 +44,6 @@
                         <a href="/deliveryOrder/{{ $itemlist->id }}/restock" class="btn btnStyle" onclick="return confirm('Sure Want delete?')">
                         Restock
                         </a>
-                        <a href="#" class="btn btnStyle">
-                        Edit
-                        </a> 
                     </td>
                 </tr>      
                 @endforeach  

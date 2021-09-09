@@ -29,13 +29,11 @@
                         <td>{{$customerOrder->statusID}}</td>
                         <td class="hoverColor"><a href="/customerOrder/{{$customerOrder->id}}/deleteOrder" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                                 Delete
-                            </a>
-                            <a href="/customerOrder.{{ $customerOrder->id }}.edit" class="btn btnStyle">
-                                Edit
                             </a> 
                             <a href="/customerOrder.{{ $customerOrder->id }}" class="btn btnStyle">
                                 View detail
-                            </a> </td>
+                            </a> 
+                        </td>
                         </tr>
                         @endforeach
                     </tbody>

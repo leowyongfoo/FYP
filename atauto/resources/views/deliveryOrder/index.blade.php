@@ -31,11 +31,8 @@
                             class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                                 Delete
                             </a>
-                            <a href="/deliveryOrder.{{ $deliveryOrder->id }}.edit" class="btn btnStyle">
-                                Edit
-                            </a> 
                             <a href="/deliveryOrder.{{ $deliveryOrder->id }}" class="btn btnStyle">
-                                View Product
+                                View Detail
                             </a> </td>
                         </tr>
                         @endforeach 

@@ -29,7 +29,7 @@ class QuotationController extends Controller
         $r=request(); 
         $addquotation=Quotation::create([
             'name'=>$r->name,
-            'statusID'=>'Confirmed',
+            'statusID'=>'Pending',
         ]);
 
         $quotationID = DB::table('quotations')->orderBy('created_at', 'desc')->first();
@@ -54,8 +54,10 @@ class QuotationController extends Controller
 
     public function show($id)
     {
+        $QOs=Quotation::all()->where('id',$id);
         $quotation_lists =QuotationList::all()->where('quotationID',$id);
-        return view('quotation.show')->with('quotation_lists',$quotation_lists);
+        return view('quotation.show')->with('quotation_lists',$quotation_lists)
+                                    ->with('QOs',$QOs);
 
     }
 
@@ -85,5 +87,19 @@ class QuotationController extends Controller
         return redirect()->route('quotation.index');
     }
 
+    public function changeQuotationStatus($id)
+    {
+        $quotations=Quotation::find($id);
 
+        if($quotations->statusID=='Pending'){
+            $quotations->statusID='Confirmed'; 
+            $quotations->save();
+        }else{
+            $quotations->statusID='Pending';  
+            $quotations->save();
+        }
+        return redirect()->route('quotation.index');
+    }
+
+    
 }
