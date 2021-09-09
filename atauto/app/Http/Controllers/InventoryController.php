@@ -7,13 +7,22 @@ use App\Models\Inventory;
 use App\Models\Category;
 use App\Models\Status;
 Use Session;
+use DB;
 
 class InventoryController extends Controller
 {
     public function index()
     {
-        $inventories = Inventory::paginate(5); 
+        $inventories = Inventory::paginate(5);
+        $product = Inventory::where('quantity', 0)->get();
+        foreach($product as $item){
+            $item->statusID='inactive';
+            $item->save();
+        }
+
         return view('inventory.index')->with('inventories', $inventories);
+        
+        
     }
 
     public function create()
@@ -35,7 +44,7 @@ class InventoryController extends Controller
             'statusID'=>'active',
         ]);
 
-        Session::flash('success',"Product add succesful!");
+        Session::flash('addSuccess',"Product add succesful!");
         return redirect()->route('inventory.index');
     }
 
@@ -73,6 +82,7 @@ class InventoryController extends Controller
     public function clientView()
     {
         $inventories = Inventory::paginate(6);
+        $inventories = Inventory::all()->where('statusID','active');
         return view('inventory.clientView')->with('inventories',$inventories);
     }
 
@@ -84,9 +94,9 @@ class InventoryController extends Controller
 
     public function changeStatus($id)
     {
-        $inventories=Inventory::find($id);
+        $inventories=Inventory::findOrFail($id);
 
-        if($inventories->statusID=='active'){
+        if($inventories->statusID=='active'|| $inventories->quantity=='0'){
             $inventories->statusID='inactive'; 
             $inventories->save();
         }else{

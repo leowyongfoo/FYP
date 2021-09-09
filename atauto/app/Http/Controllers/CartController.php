@@ -18,21 +18,32 @@ class CartController extends Controller
 
             'quantity'=>$r->quantity,           
             'orderID'=>'',
-            'inventoryID'=>$r->id,               
-            'userID'=>Auth::id(), 
+            'inventoryID'=>$r->id,
+            'inventoryStatus'=> 'active',            
+            'userID'=>Auth::id(),
+            
                         
         ]);     
         return redirect()->route('view.mycart');
     }
 
     public function viewMyCart(){
+
         $mycarts = DB::table('my_carts')
         ->leftjoin('inventories', 'inventories.id', '=', 'my_carts.inventoryID')
         ->select('my_carts.quantity as cartQty','my_carts.id as cid','inventories.*')
-        ->where('my_carts.orderID','=','') //'' haven't make payment
+        ->where('my_carts.orderID','=','') 
         ->where('my_carts.userID','=',Auth::id())
         ->paginate(12);
+
+        
+        
+        DB::table('my_carts')->where('inventoryStatus', 'inactive')->delete();
+                                   
+        
+ 
         return view('myCart.viewMyCart')->with('mycarts',$mycarts);
+                                          
     }
 
     public function delete($id){

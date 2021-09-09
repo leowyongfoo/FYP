@@ -71,26 +71,27 @@
         <div class="card shadow text-white bg-dark" style=" height: 33vh; border-radius: 10px;">
             <div class="card-body" style="overflow: auto;">
                 <h4 class="card-title">Pending Order</h4>
-                <ul>
-                    <li>
-                        <h5>Order 1</h5>
-                    </li>
-                    <li>
-                        <h5>Order 2</h5>
-                    </li>
-                    <li>
-                        <h5>Order 3</h5>
-                    </li>
-                    <li>
-                        <h5>Order 4</h5>
-                    </li>
-                    <li>
-                        <h5>Order 5</h5>
-                    </li>
-                    <li>
-                        <h5>Order 6</h5>
-                    </li>
-                </ul>
+                <table class="table table-borderless" style="margin-top: 2vh;">
+                    <thead>
+                        <tr>
+                        <th scope="col">DO_No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($pendingOrders as $pendingOrder)
+                        <tr>
+                        <th>{{$pendingOrder->DO_No}}</th>
+                        <td>{{$pendingOrder->supplier->name}}</td>
+                        <td>{{$pendingOrder->statusID}}</td>
+                        <td class="hoverColor"><a href="{{ route('deliveryOrder.show', ['id' => $pendingOrder->id]) }}" class="btn btnStyle"
+                            onclick="return confirm('you will be redirect')">GO-To</a></td>
+                        </tr>
+                        @endforeach 
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
