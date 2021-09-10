@@ -23,7 +23,7 @@
 
                         <p>
                             <label for="description" class="label">Description:</label>
-                            <input class="inputField" type="text" name="description" id="description" value="{{$inventory->description}}">
+                            <textarea name="description" id="description" class="inputField" cols="30" rows="8" >{{$inventory->description}}</textarea>
                         </p>
 
                         <p>
@@ -33,9 +33,13 @@
                         
                         <label for="category">Category:</label>
                         <select name="category" id="category" class="form-control">
-                            @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @endforeach
+                        @foreach($categories as $category)
+                        <option  value="{{ $category->id }}"
+                        @if($inventory->categoryID==$category->id)
+                        selected                    
+                        @endif
+                        >{{ $category->name }}</option>
+                        @endforeach
                         </select><br>
 
                         <p>
@@ -46,6 +50,11 @@
                         <p>
                             <label for="retailPrice" class="label">Retail Price:</label>
                             <input class="inputField" type="text" name="retailPrice" id="retailPrice" value="{{$inventory->retailPrice}}">
+                        </p>
+
+                        <p>
+                        <label for="image" class="label">upload image:</label><br>
+                        <input class="inputField" type="file" name="product-image" placeholder="select image" value=""> 
                         </p>
 
                         <p class="hoverColor">

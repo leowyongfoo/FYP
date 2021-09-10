@@ -23,6 +23,7 @@
                         <th scope="col">In Stock</th>
                         <th scope="col">Category</th>
                         <th scope="col">Price/Unit</th>
+                        <th scope="col">image</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                         </tr>
@@ -35,7 +36,11 @@
                         <td>{{$inventory->description}}</td>
                         <td>{{$inventory->quantity}}</td>
                         <td>{{$inventory->category->name}}</td>
-                        <td>{{$inventory->pricePerUnit}}</td>
+                        <td>RM {{$inventory->pricePerUnit}}</td>
+                        <td>
+                            <img src="{{ asset('images/') }}/{{$inventory->image}}" alt="" width="50">
+                            
+                        </td>
                         <td style="width: 15vh;">{{$inventory->statusID}}</td>
                         <td class="hoverColor" style="width: 35vh;"><a href="{{ route('deleteInventory', ['id' => $inventory->id]) }}" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                             Delete

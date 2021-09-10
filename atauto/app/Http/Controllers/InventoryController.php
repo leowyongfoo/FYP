@@ -34,6 +34,10 @@ class InventoryController extends Controller
     public function store()
     {
         $r=request(); 
+        $image=$r->file('product-image');   
+        $image->move('images',$image->getClientOriginalName());                
+        $imageName=$image->getClientOriginalName(); 
+
         $addinventory=Inventory::create([
             'productName'=>$r->name,
             'description'=>$r->description,
@@ -41,6 +45,7 @@ class InventoryController extends Controller
             'categoryID'=>$r->category,
             'PricePerUnit'=>$r->priceperunit,
             'retailPrice'=>$r->retailPrice,
+            'image'=>$imageName,
             'statusID'=>'active',
         ]);
 
@@ -52,14 +57,19 @@ class InventoryController extends Controller
        
         $inventories =Inventory::all()->where('id',$id);
         return view('inventory.edit')->with('inventories',$inventories)
-                                     ->with('categories', Category::all())
-                                     ->with('statuses', Status::all());
+                                     ->with('categories', Category::all());
     }
 
     public function update(Inventory $inventory)
     {
         $r=request();
         $inventories =Inventory::find($r->ID);
+        if($r->file('product-image')!=''){
+            $image=$r->file('product-image');        
+            $image->move('images',$image->getClientOriginalName());                   
+            $imageName=$image->getClientOriginalName(); 
+            $inventories->image=$imageName;
+            }       
         $inventories->productName=$r->name; 
         $inventories->description=$r->description; 
         $inventories->quantity=$r->quantity;

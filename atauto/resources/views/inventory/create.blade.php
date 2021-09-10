@@ -32,13 +32,18 @@
             </select><br>
 
             <p>
-                <label for="priceperunit" class="label">Price per unit:</label>
+                <label for="priceperunit" class="label">Price per unit: RM</label>
                 <input class="inputField" type="text" name="priceperunit" id="priceperunit">
             </p>
 
             <p>
                 <label for="retailPrice" class="label">Retail Price:</label>
                 <input class="inputField" type="text" name="retailPrice" id="retailPrice">
+            </p>
+
+            <p>
+                <label for="image" class="label">upload image:</label><br>
+                <input class="inputField" type="file" name="product-image" placeholder="select image">
             </p>
             
             <p class="hoverColor">
