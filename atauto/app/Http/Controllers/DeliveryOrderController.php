@@ -100,9 +100,17 @@ class DeliveryOrderController extends Controller
     public function restock($id)
     {
         $orders=Itemlist::find($id);
+        $item = Inventory::where('id', $orders->inventoryID)->get();
+        foreach($item as $items){
+          if($items){
+            Inventory::increment('quantity',$orders->quantity);
+            $items->save();
+            return redirect()->route('inventory.index');
+          }
+        }
         
 
-        return redirect()->route('inventory.index');
+        
     }
 
 }
