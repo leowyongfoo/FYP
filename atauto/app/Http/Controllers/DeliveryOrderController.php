@@ -14,7 +14,7 @@ class DeliveryOrderController extends Controller
 {
     public function index()
     {
-        $deliveryOrders = DeliveryOrder::all();
+        $deliveryOrders = DeliveryOrder::orderBy('created_at', 'DESC')->paginate(5);
         return view('deliveryOrder.index')->with('deliveryOrders', $deliveryOrders);
     }
 
