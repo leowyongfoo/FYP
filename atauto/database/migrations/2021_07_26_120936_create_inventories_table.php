@@ -21,6 +21,7 @@ class CreateInventoriesTable extends Migration
             $table->double('retailPrice',6,2);
             $table->integer('quantity')->unsigned();
             $table->string('categoryID');
+            $table->string('image');
             $table->string('statusID');
             $table->timestamps();
 
