@@ -43,12 +43,12 @@
                         </select><br>
 
                         <p>
-                            <label for="priceperunit" class="label">Price per unit:</label>
+                            <label for="priceperunit" class="label">Price per unit: RM</label>
                             <input class="inputField" type="text" name="priceperunit" id="priceperunit" value="{{$inventory->pricePerUnit}}">
                         </p>
 
                         <p>
-                            <label for="retailPrice" class="label">Retail Price:</label>
+                            <label for="retailPrice" class="label">Retail Price: RM</label>
                             <input class="inputField" type="text" name="retailPrice" id="retailPrice" value="{{$inventory->retailPrice}}">
                         </p>
 
