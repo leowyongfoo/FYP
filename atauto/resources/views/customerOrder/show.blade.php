@@ -21,8 +21,10 @@
             <label class="label">Created At.:</label>
             <input class="inputField" type="text" name="created_at" id="created_at" value="{{$CO->created_at}}" readonly>
         </p>
-        <a href="/customerOrder.report/{{$CO->id}}" class="btn btnStyleLighter">Print report</a>
-        <a href="/customerOrder.{{ $CO->id }}.edit" class="btn btnStyleLighter">Edit</a>
+        <div class="hoverColor">
+            <a href="/customerOrder.report/{{$CO->id}}" class="btn btnStyleLighter">Print report</a>
+            <a href="/customerOrder.{{ $CO->id }}.edit" class="btn btnStyleLighter">Edit</a>
+        </div>
         @endforeach 
             <table class="table table-borderless" id="dataTable">
                 <thead>
