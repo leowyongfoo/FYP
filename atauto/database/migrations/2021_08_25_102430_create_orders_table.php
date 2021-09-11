@@ -19,6 +19,8 @@ class CreateOrdersTable extends Migration
             $table->string('paymentStatus');
             $table->integer('amount')->unsigned(); 
             $table->timestamps();
+
+            $table->index('userID');
         });
     }
 

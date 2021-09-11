@@ -69,7 +69,11 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 card bg-dark text-white" Style="border: 5px groove black; border-radius: 10px;">
                         <div class="card-body">
-                            
+
+                            <a href="/customer.productDetail.{{ $inventory->id }}">
+                                <img src="{{ asset('images/') }}/{{$inventory->image}}" alt="" class="img-fluid" >
+                            </a>
+
                             <h5 class="card-title">Name: {{$inventory->productName}}</h5>
                                     
                             <h5 class="card-title">In stock: {{$inventory->quantity}}</h5>

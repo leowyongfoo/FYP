@@ -26,7 +26,6 @@ class CreateInventoriesTable extends Migration
             $table->timestamps();
 
             $table->index('categoryID');
-            $table->index('statusID');
         });
     }
 

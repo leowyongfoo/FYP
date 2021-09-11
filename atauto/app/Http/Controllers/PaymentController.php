@@ -162,6 +162,13 @@ class PaymentController extends Controller
         if ($result->getState() == 'approved') {
 
             Session::put('success', 'Payment success');
+
+            $orders = Order::where('userID', Auth::id())->get();
+            foreach($orders as $order){
+                $order->paymentStatus='successful';
+                $order->save();
+            }
+           
             //add update record for cart
             $email='jacksonleow6@gmail.com';
 	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));

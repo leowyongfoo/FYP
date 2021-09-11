@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Itemlist extends Model
 {
     use HasFactory;
-    protected $fillable=['deliveryOrderID','inventoryID','quantity'];
+    protected $fillable=['deliveryOrderID','inventoryID','orderQuantity'];
 
     public function inventory(){
 

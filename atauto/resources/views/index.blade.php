@@ -42,27 +42,30 @@
     <div class="col-md-6 bottomleft">
         <div class="card shadow text-white bg-dark" style="height: 33vh; border-radius: 10px;">
             <div class="card-body" style="overflow: auto;">
-                <h4 class="card-title">Notification</h4>
-                <ul>
-                    <li>
-                        <h5>Notification 1</h5>
-                    </li>
-                    <li>
-                        <h5>Notification 2</h5>
-                    </li>
-                    <li>
-                        <h5>Notification 3</h5>
-                    </li>
-                    <li>
-                        <h5>Notification 4</h5>
-                    </li>
-                    <li>
-                        <h5>Notification 5</h5>
-                    </li>
-                    <li>
-                        <h5>Notification 6</h5>
-                    </li>
-                </ul>
+                <h4 class="card-title">Received customer order</h4>
+                <table class="table table-borderless" style="margin-top: 2vh;">
+                    <thead>
+                        <tr>
+                        <th scope="col">OrderID</th>
+                        <th scope="col">userID</th>
+                        <th scope="col">Payment status</th>
+                        <th scope="col">Total amount</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($receivedOrders as $receivedOrder)
+                        <tr>
+                        <th>{{$receivedOrder->id}}</th>
+                        <td>{{$receivedOrder->userID}}</td>
+                        <td>{{$receivedOrder->paymentStatus}}</td>
+                        <td>{{$receivedOrder->amount}}</td>
+                        <td class="hoverColor"><a href="{{ route('viewReceivedOrder', ['id' => $receivedOrder->id]) }}" class="btn btnStyle"
+                            onclick="return confirm('you will be redirect')">GO-To</a></td>
+                        </tr>
+                        @endforeach 
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -96,6 +99,5 @@
         </div>
     </div>
 </div>
-
 
 @endsection

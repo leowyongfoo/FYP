@@ -66,11 +66,13 @@ class OrderController extends Controller
         ->leftjoin('inventories', 'inventories.id', '=', 'my_carts.inventoryID')
         ->select('my_carts.*','orders.*','inventories.*','my_carts.quantity as cartQty')
         ->where('orders.userID','=',Auth::id())
+        ->where( 'orders.paymentStatus', '=', 'pending')
         ->get();
         //->paginate(3);       
         return view('order.viewOrder')->with('myorders',$myorders);
     }
 
+    
     public function customerViewMyOrder(){
 
         $myorders=DB::table('orders')
@@ -78,9 +80,27 @@ class OrderController extends Controller
         ->leftjoin('inventories', 'inventories.id', '=', 'my_carts.inventoryID')
         ->select('my_carts.*','orders.*','inventories.*','my_carts.quantity as cartQty')
         ->where('orders.userID','=',Auth::id())
+        ->where( 'orders.paymentStatus', '=', 'pending')
         ->get();
         //->paginate(3);       
         return view('customerView.customerViewOrder')->with('myorders',$myorders);
     }
+
+    public function viewReceivedOrder($id){
+
+        $orders=Order::all()->where('id',$id);
+
+        $receivedOrders=DB::table('orders')
+        ->leftjoin('my_carts', 'orders.id', '=', 'my_carts.orderID')
+        ->leftjoin('inventories', 'inventories.id', '=', 'my_carts.inventoryID')
+        ->select('my_carts.*','orders.*','inventories.*','my_carts.quantity as cartQty')
+        ->where('orders.id','=', $id)
+        ->where( 'orders.paymentStatus', '=', 'successful')
+        ->get();
+        //->paginate(3);       
+        return view('order.viewReceivedOrder')->with('receivedOrders',$receivedOrders)
+                                               ->with('orders',$orders);
+    }
+
 
 }

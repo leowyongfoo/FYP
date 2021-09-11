@@ -110,6 +110,7 @@ Route::get('/deleteUser/{id}', [App\Http\Controllers\AccountController::class, '
 Route::get('/customer.clientView', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.clientView');
 Route::get('/customer.productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'customerViewDetail'])->name('customer.productDetail');
 
+//cart
 Route::post('/addtocart', [App\Http\Controllers\CartController::class, 'add'])->name('add.to.cart');
 Route::get('/myCart', [App\Http\Controllers\CartController::class, 'viewMyCart'])->name('view.mycart');
 Route::get('/deleteitem/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('deleteitem');
@@ -119,8 +120,11 @@ Route::post('/customer.addtocart', [App\Http\Controllers\CartController::class, 
 Route::get('/customer.myCart', [App\Http\Controllers\CartController::class, 'customerViewMyCart'])->name('customer.view.mycart');
 Route::get('/customer.deleteitem/{id}', [App\Http\Controllers\CartController::class, 'customerDelete'])->name('customer.deleteitem');
 
+//order
 Route::post('/createorder', [App\Http\Controllers\OrderController::class, 'add'])->name('create.order');
 Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'viewMyOrder'])->name('order.viewOrder');
+Route::get('/receivedOrder.{id}', [App\Http\Controllers\OrderController::class, 'viewReceivedOrder'])->name('viewReceivedOrder');
+
 
 //customer
 Route::post('/customer.createorder', [App\Http\Controllers\OrderController::class, 'customerAdd'])->name('customer.create.order');

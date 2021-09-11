@@ -38,12 +38,12 @@
                 @foreach($itemlists as $itemlist)
                 <tr>
                     <td>{{$itemlist->inventory->productName}}</td>
-                    <td>{{$itemlist->quantity}}</td>
+                    <td>{{$itemlist->orderQuantity}}</td>
                     <td class="hoverColor">
                         <a href="/deliveryOrder/{{ $itemlist->id }}/deleteItem" class="btn btnStyle" onclick="return confirm('Sure Want delete?')">
                         Delete
                         </a>
-                        <a href="/deliveryOrder/{{ $itemlist->id }}/restock" class="btn btnStyle" onclick="return confirm('Sure Want delete?')">
+                        <a href="/deliveryOrder/{{ $itemlist->id }}/restock" class="btn btnStyle" onclick="return confirm('Sure Want restock?')">
                         Restock
                         </a>
                     </td>

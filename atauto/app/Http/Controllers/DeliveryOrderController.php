@@ -38,7 +38,7 @@ class DeliveryOrderController extends Controller
             $data2=array(
                 'deliveryOrderid'=>$deliveryOrderID->id,
                 'inventoryID'=>$r->inventory[$item],
-                'quantity'=>$r->quantity[$item]
+                'orderQuantity'=>$r->quantity[$item]
             );
         Itemlist::insert($data2);
       }
@@ -100,13 +100,13 @@ class DeliveryOrderController extends Controller
     public function restock($id)
     {
         $orders=Itemlist::find($id);
-        $item = Inventory::where('id', $orders->inventoryID)->get();
-        foreach($item as $items){
-          if($items){
-            Inventory::increment('quantity',$orders->quantity);
-            $items->save();
+        $items = Inventory::where('id', $orders->inventoryID)->get();
+        foreach($items as $item){
+          if($item){
+            Inventory::where('id', $orders->inventoryID)->increment('quantity',$orders->orderQuantity);
             return redirect()->route('inventory.index');
           }
+          
         }
         
 
