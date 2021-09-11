@@ -66,7 +66,7 @@ class OrderController extends Controller
         ->leftjoin('inventories', 'inventories.id', '=', 'my_carts.inventoryID')
         ->select('my_carts.*','orders.*','inventories.*','my_carts.quantity as cartQty')
         ->where('orders.userID','=',Auth::id())
-        ->where( 'orders.paymentStatus', '=', 'pending')
+        ->where('orders.paymentStatus', '=', 'pending')
         ->get();
         //->paginate(3);       
         return view('order.viewOrder')->with('myorders',$myorders);

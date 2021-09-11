@@ -168,7 +168,19 @@ class PaymentController extends Controller
                 $order->paymentStatus='successful';
                 $order->save();
             }
-           
+
+            $carts = MyCart::where('userID', Auth::id())->get();
+            foreach($carts as $cart){
+
+                $items = Inventory::where('id', $cart->inventoryID)->get();
+
+                foreach($items as $item){
+                    if($item){
+                        Inventory::where('id', $cart->inventoryID)->decrement('quantity',$cart->quantity);
+                    }
+                }
+            }
+
             //add update record for cart
             $email='jacksonleow6@gmail.com';
 	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
