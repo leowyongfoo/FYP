@@ -13,7 +13,7 @@
             <div class="container-fluid">
             <p>
                 <label for="CO_No" class="label">CO No.:</label>
-                <input class="inputField" type="text" name="CO_No" id="CO_No" required>
+                <input class="inputField form-control" type="text" name="CO_No" id="CO_No" required>
             </p>
 
             <p>

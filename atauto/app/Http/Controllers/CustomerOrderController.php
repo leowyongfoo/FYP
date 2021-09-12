@@ -14,7 +14,7 @@ class CustomerOrderController extends Controller
 {
     public function index()
     {
-        $customerOrders = CustomerOrder::all();
+        $customerOrders = CustomerOrder::orderBy('created_at', 'DESC')->paginate(5);
         return view('customerOrder.index')->with('customerOrders', $customerOrders);                                          
     }
 

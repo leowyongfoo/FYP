@@ -16,6 +16,7 @@
                 <th>Username</th>
                 <th>E-mail</th>
                 <th>Role</th>
+                <th>Address</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                     <td>{{$customer->username}}</td>
                     <td>{{$customer->email}}</td>
                     <td>{{$customer->role}}</td>
+                    <td style="Max-width:20vh;">{{$customer->address}}</td>
                         <td class="hoverColor"><a href="{{ route('deleteUser', ['id' => $customer->id]) }}" class="btn btnStyle" onclick="return confirm('Sure Want Delete?')">
                         Delete
                         </a>

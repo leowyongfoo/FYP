@@ -13,7 +13,7 @@ class QuotationController extends Controller
 {
     public function index()
     {
-        $quotations = Quotation::paginate(5);
+        $quotations = Quotation::orderBy('created_at', 'DESC')->paginate(5);
         return view('quotation.index')->with('quotations', $quotations);
     }
 

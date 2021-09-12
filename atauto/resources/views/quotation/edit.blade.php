@@ -4,7 +4,7 @@
 <div>
                 <div class="createForm">
                 @foreach($quotations as $quotation)
-                    <form class="form-group"  method="post" action="/quotation/{{ $quotation->id }}" enctype="multipart/form-data" >
+                    <form class="form-group" method="post" action="/quotation/{{ $quotation->id }}" enctype="multipart/form-data" >
                     @csrf
                     @method('PATCH')
                     <p>
@@ -12,11 +12,11 @@
                     </p>
                     <p>
                         <label for="ID" class="label">Quotation ID</label>
-                        <input class="inputField" type="text" name="ID" id="ID" value="{{$quotation->id}}" readonly>
+                        <input class="inputField form-control" type="text" name="ID" id="ID" value="{{$quotation->id}}" readonly>
                     </p>
                     <p>
                         <label for="name" class="label">Name</label>
-                        <input class="inputField" type="text" name="name" id="name"  value="{{$quotation->name}}">
+                        <input class="inputField form-control" type="text" name="name" id="name"  value="{{$quotation->name}}">
                     </p>
 
                     @endforeach

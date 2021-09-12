@@ -11,17 +11,17 @@
 
             <p>
                 <label for="name" class="label">Product Name:</label>
-                <input class="inputField" type="text" name="name" id="name">
+                <input class="inputField form-control" type="text" name="name" id="name">
             </p>
 
             <p>
                 <label for="description" class="label">Description:</label>
-                <textarea name="description" id="description" class="inputField" cols="30" rows="8"></textarea>
+                <textarea name="description" id="description" class="inputField form-control" cols="30" rows="8"></textarea>
             </p>
 
             <p>
                 <label for="quantity" class="label">Quantity:</label>
-                <input class="inputField" type="number" name="quantity" id="quantity">
+                <input class="inputField form-control" type="number" name="quantity" id="quantity">
             </p>
             
             <label for="category">Category:</label>
@@ -33,16 +33,16 @@
 
             <p>
                 <label for="priceperunit" class="label">Price per unit: RM</label>
-                <input class="inputField" type="text" name="priceperunit" id="priceperunit">
+                <input class="inputField form-control" type="text" name="priceperunit" id="priceperunit">
             </p>
 
             <p>
                 <label for="retailPrice" class="label">Retail Price:</label>
-                <input class="inputField" type="text" name="retailPrice" id="retailPrice">
+                <input class="inputField form-control" type="text" name="retailPrice" id="retailPrice">
             </p>
 
             <p>
-                <label for="image" class="label">upload image:</label><br>
+                <label for="image" class="label">Upload Image:</label><br>
                 <input class="inputField" type="file" name="product-image" placeholder="select image">
             </p>
             

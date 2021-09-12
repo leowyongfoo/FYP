@@ -12,7 +12,7 @@
             <div class="container-fluid">
             <p>
                 <label for="DO_No" class="label">DO No.:</label>
-                <input class="inputField" type="text" name="DO_No" id="DO_No" required>
+                <input class="inputField form-control" type="text" name="DO_No" id="DO_No" required>
             </p>
 
             <p>

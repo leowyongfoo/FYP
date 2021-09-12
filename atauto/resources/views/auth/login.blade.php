@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Login - ATAuto IMS</title>
+    <title>ATAuto - Login</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -25,7 +25,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h4 class="text-white mb-4">AT-Login</h4>
+                                        <h4 class="text-white mb-4">ATAuto - Login</h4>
                                     </div>
                                     <form class="user" method="POST" action="{{ route('login') }}">
                                         @csrf
@@ -50,7 +50,7 @@
                                         </div>
 
 
-                                        <button class="btn btn-primary d-block btn-user w-100 " type="submit">{{ __('Login') }}</button>
+                                        <button class="btn btn-dark d-block w-100 " type="submit">{{ __('Login') }}</button>
                                     </form>
                                 </div>
                             </div>

@@ -108,6 +108,7 @@ Route::get('/deleteUser/{id}', [App\Http\Controllers\AccountController::class, '
 
 //customer
 Route::get('/customer.clientView', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.clientView');
+Route::get('/customer.clientView.{category}', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.clientView');
 Route::get('/customer.productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'customerViewDetail'])->name('customer.productDetail');
 
 //cart
@@ -123,6 +124,7 @@ Route::get('/customer.deleteitem/{id}', [App\Http\Controllers\CartController::cl
 //order
 Route::post('/createorder', [App\Http\Controllers\OrderController::class, 'add'])->name('create.order');
 Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'viewMyOrder'])->name('order.viewOrder');
+Route::get('/receivedOrder', [App\Http\Controllers\OrderController::class, 'index'])->name('order.receivedOrder');
 Route::get('/receivedOrder.{id}', [App\Http\Controllers\OrderController::class, 'viewReceivedOrder'])->name('viewReceivedOrder');
 
 

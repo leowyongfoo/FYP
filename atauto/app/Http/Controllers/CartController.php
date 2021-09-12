@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Inventory; 
 use App\Models\MyCart;
+use App\Models\Category;
 Use Auth;
 
 class CartController extends Controller
@@ -40,6 +41,7 @@ class CartController extends Controller
             
                         
         ]);     
+        
         return redirect()->route('customer.view.mycart');
     }
 
@@ -70,14 +72,13 @@ class CartController extends Controller
         ->where('my_carts.orderID','=','') 
         ->where('my_carts.userID','=',Auth::id())
         ->paginate(12);
+        
+        $categories=Category::orderBy('name')->get();
 
-        
-        
         DB::table('my_carts')->where('inventoryStatus', 'inactive')->delete();
-                                   
-        
- 
-        return view('customerView.customerViewMyCart')->with('mycarts',$mycarts);
+
+        return view('customerView.customerViewMyCart')->with('mycarts',$mycarts)
+                                                        ->with('categories',$categories);
                                           
     }
 

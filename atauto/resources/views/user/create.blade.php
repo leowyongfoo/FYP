@@ -11,17 +11,22 @@
             </p>
             <p>
                 <label for="username" class="label">Username:</label>
-                <input class="inputField" type="text" name="username" id="username">
+                <input class="inputField form-control" type="text" name="username" id="username">
             </p>
 
             <p>
                 <label for="email" class="label">E-mail:</label>
-                <input class="inputField" type="email" name="email" id="email">
+                <input class="inputField form-control" type="email" name="email" id="email">
             </p>
 
             <p>
                 <label for="password" class="label">Password:</label>
-                <input class="inputField" type="text" name="password" id="password">
+                <input class="inputField form-control" type="text" name="password" id="password">
+            </p>
+
+            <p>
+                <label for="address" class="label">Address:</label>
+                <textarea name="address" id="address" class="inputField form-control" cols="30" rows="8"></textarea>
             </p>
             
             <p class="hoverColor">

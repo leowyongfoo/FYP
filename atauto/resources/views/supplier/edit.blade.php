@@ -13,26 +13,26 @@
 
                     <p>
                         <label for="ID" class="label">Supplier ID:</label>
-                        <input class="inputField" type="text" name="ID" id="ID" value="{{$supplier->id}}" readonly>
+                        <input class="inputField form-control" type="text" name="ID" id="ID" value="{{$supplier->id}}" readonly>
                     </p>
 
                     <p>
                         <label for="name" class="label">Name:</label>
-                        <input class="inputField" type="text" name="name" id="name" value="{{$supplier->name}}">
+                        <input class="inputField form-control" type="text" name="name" id="name" value="{{$supplier->name}}">
                     </p>
                     <p>
                         <label for="contact" class="label">Contact:</label>
-                        <input class="inputField" type="text" name="contact" id="contact" value="{{$supplier->contact}}">
+                        <input class="inputField form-control" type="text" name="contact" id="contact" value="{{$supplier->contact}}">
                     </p>
                    
                     <p>
                         <label for="email" class="label">Email:</label>
-                        <input class="inputField" type="email" name="email" id="email" value="{{$supplier->email}}">
+                        <input class="inputField form-control" type="email" name="email" id="email" value="{{$supplier->email}}">
                     </p>
 
                     <p>
                         <label for="address" class="label">Address:</label>
-                        <input class="inputField" type="text" name="address" id="address" value="{{$supplier->address}}">
+                        <input class="inputField form-control" type="text" name="address" id="address" value="{{$supplier->address}}">
                     </p>
 
                     @endforeach

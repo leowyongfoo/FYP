@@ -10,19 +10,23 @@
 			<br>
             @foreach($orders as $order)
             <p>
-                <label for="userID" class="label">User name:</label>
-                
-                <input class="inputField" type="text" name="userID" id="userID" value="{{$order->user->username}}" readonly>
+                <label for="userID" class="label">Username:</label>
+                <input class="inputField form-control" type="text" name="userID" id="userID" value="{{$order->user->username}}" readonly>
+            </p>
+
+			<p>
+                <label for="address" class="label">Address:</label>
+                <input class="inputField form-control" type="text" name="userID" id="userID" value="{{$order->user->address}}" readonly>
             </p>
             @endforeach
 		    <table class="table table-borderless" style="margin-top: 2vh;">
 		        <thead>
 		        <tr>
-		            <th>product-ID</th>
-		            <th>Name</th>
+		            <th>Product ID</th>
+		            <th>Product Name</th>
 		            <th>Quantity</th>
 		            <th>Amount</th>
-                    <th>paymentStatus</th>
+                    <th>Payment Status</th>
 		        </tr>
 		    </thead>
 		        <tbody>	
