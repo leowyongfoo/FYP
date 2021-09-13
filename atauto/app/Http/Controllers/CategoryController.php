@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Status;
 use App\Models\Category;
+Use Session;
 
 class CategoryController extends Controller
 {
@@ -28,6 +29,7 @@ class CategoryController extends Controller
             'statusID'=>'active',
         ]);
 
+        Session::flash('addSuccess',"Category add succesful!");
         return redirect()->route('category.index');
     }
 
