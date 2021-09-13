@@ -123,7 +123,11 @@ html {
   
   <div class="column">
     <div class="card">
+<<<<<<< HEAD:atauto/resources/views/aboutUs.blade.php
       <img src="{{ asset('images/') }}/user.png" alt="NG" style="width:100%">
+=======
+      <img src="{{asset('/images/user.png')}}" alt="Ng" style="width:100%">
+>>>>>>> f4f1e8b4fd24d03cb3a7bcd5082cd04bc8b452a9:atauto/resources/views/layouts/about_us.html
       <div class="container">
         <h2>Ng Jian Chong</h2>
         <p class="title">Designer</p>
