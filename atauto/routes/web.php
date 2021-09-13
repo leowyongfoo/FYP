@@ -141,3 +141,5 @@ Route::get('/deliveryOrder.report/{id}', [App\Http\Controllers\PDFController::cl
 Route::get('/customerOrder.report/{id}', [App\Http\Controllers\PDFController::class, 'printCO'])->name('printReport.CO');
 Route::get('/quotation.report/{id}', [App\Http\Controllers\PDFController::class, 'printQO'])->name('printReport.QO');
 
+Route::get('/aboutus', [App\Http\Controllers\MainPageController::class, 'aboutus'])->name('aboutus');
+

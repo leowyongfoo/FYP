@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>About us</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
@@ -91,50 +92,54 @@ html {
   </p>
 </div>
 
-<h2 style="text-align:center">Corporate with</h2>
+<h2 style="text-align:center">Corporate with:</h2>
+<h1 style="text-align:center">SUC-19C Tech Sdn.Bhd</h1>
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="#" alt="Leow" style="width:100%">
+      <img src="{{ asset('images/') }}/user.png" alt="Leow" style="width:100%">
       <div class="container">
         <h2>Leow Yong Foo</h2>
         <p class="title">CEO & Founder</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>d190152c@sc.edu.my</p>
-        <p><button class="button">Contact</button></p>
+        <p>Email: d190152c@sc.edu.my</p>
+        <p><button class="button"><a href="https://wa.me/+60127583579"> Contact</a></button></p>
       </div>
     </div>
   </div>
 
   <div class="column">
     <div class="card">
-      <img src="#" alt="Leong" style="width:100%">
+      <img src="{{ asset('images/') }}/user.png" alt="Leong" style="width:100%">
       <div class="container">
         <h2>Leong Cheng Yang</h2>
         <p class="title">Art Director</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>d190442c@sc.edu.my</p>
-        <p><button class="button">Contact</button></p>
+        <p>Email: d190442c@sc.edu.my</p>
+        <p><button class="button"><a href="https://wa.me/+60182322001"> Contact</a></button></p>
       </div>
     </div>
   </div>
   
   <div class="column">
     <div class="card">
-      <img src="#" alt="NG" style="width:100%">
+      <img src="{{ asset('images/') }}/user.png" alt="NG" style="width:100%">
       <div class="container">
         <h2>Ng Jian Chong</h2>
         <p class="title">Designer</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>d190343c@sc.edu.my</p>
-        <p><button class="button">Contact</button></p>
+        <p>Email: d190343c@sc.edu.my</p>
+        <p><button class="button"><a href="https://wa.me/+60108800403">Contact</a></button></p>
       </div>
     </div>
   </div>
 </div>
   <div class="footer">
     <h4>Location</h4>
-    <p>Jalan Sultan Abdullah, 36000 Teluk Intan, Perak, Malaysia. </p>
+    <p>1662H, Jalan Sultan Abdullah,<br>
+      36000, Teluk intan,<br>
+      Perak
+    </p>
   </div>
 </body>
 </html>

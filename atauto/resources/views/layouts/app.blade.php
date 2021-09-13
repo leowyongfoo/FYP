@@ -79,6 +79,10 @@
                 <li>
                     <a href="receivedOrder"><span>Received Order</span></a>
                 </li>
+
+                <li>
+                    <a href="aboutus"><span>About us</span></a>
+                </li>
             </ul>
         </div>
     </nav>

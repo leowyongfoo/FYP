@@ -52,6 +52,9 @@
                         
                     </div>
                 </li>
+                <li>
+                    <a href="aboutus"><span>About us</span></a>
+                </li>
             </ul>
         </div>
     </nav>
