@@ -7,6 +7,7 @@ use DB;
 use App\Models\Inventory; 
 use App\Models\MyCart;
 use App\Models\Order;
+use App\Models\Category;
 Use Auth;
 
 class OrderController extends Controller
@@ -83,7 +84,9 @@ class OrderController extends Controller
         ->where( 'orders.paymentStatus', '=', 'pending')
         ->get();
         //->paginate(3);       
-        return view('customerView.customerViewOrder')->with('myorders',$myorders);
+        $categories=Category::orderBy('name')->get();
+        return view('customerView.customerViewOrder')->with('myorders',$myorders)
+                                                        ->with('categories',$categories);
     }
 
     public function viewReceivedOrder($id){
@@ -102,5 +105,9 @@ class OrderController extends Controller
                                                ->with('orders',$orders);
     }
 
+    public function index(){
 
+        $orders=Order::orderBy('created_at', 'DESC')->paginate(5);
+        return view('order.receivedOrder')->with('orders',$orders);
+    }
 }

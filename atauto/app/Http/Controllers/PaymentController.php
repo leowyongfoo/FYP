@@ -133,6 +133,18 @@ class PaymentController extends Controller
 
     }
 
+    public function redirectTo($role) {
+        $role = Auth::user()->role; 
+        switch ($role) {
+            case 'Admin':
+                return redirect('/index');
+                break;
+            case 'Customer':
+                return redirect('/customer.clientView');
+                break; 
+        }
+    }
+
     public function getPaymentStatus()
     {
         
@@ -184,7 +196,7 @@ class PaymentController extends Controller
             //add update record for cart
             $email='jacksonleow6@gmail.com';
 	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
-            return Redirect::to('clientView');  //back to product page
+            return $this->redirectTo(request('role'));  //back to product page
 
         }
 

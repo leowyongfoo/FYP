@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATauto</title>
+    <title>ATAuto - Inventory Report</title>
 
     <style>
         table, td, th {
@@ -21,8 +21,13 @@
     </style>
 </head>
 <body>
+    <hr>
     <h1>ATAuto</h1>
-    <h3>Inventory Report</h3>
+    <hr>
+    <h2>Inventory Report</h2>
+    <hr>
+    <br>
+    <br>
     <div>
             <table>
                 <thead>

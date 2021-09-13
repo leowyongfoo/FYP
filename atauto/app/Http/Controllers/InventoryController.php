@@ -91,7 +91,7 @@ class InventoryController extends Controller
 
     public function clientView()
     {
-        $inventories = Inventory::all()->where('statusID','active');
+        $inventories = Inventory::orderBy('productName')->get()->where('statusID','active');
         
         return view('inventory.clientView')->with('inventories',$inventories);
     }
@@ -118,17 +118,42 @@ class InventoryController extends Controller
         return redirect()->route('inventory.index');
     }
 
-    public function customerClientView()
+    public function navbar()
     {
-        $inventories = Inventory::all()->where('statusID','active');
-       
-        return view('customerView.customerClientView')->with('inventories',$inventories);
+        $categories=Category::orderBy('name')->get();
+
+        return view('layouts.app2')->with('categories',$categories);
     }
 
     public function customerViewDetail($id)
     {
         $inventories =Inventory::all()->where('id',$id);
-        return view('customerView.customerProductDetail')->with('inventories',$inventories);
+        $categories=Category::orderBy('name')->get();
+        return view('customerView.customerProductDetail')->with('inventories',$inventories)
+                                                            ->with('categories',$categories);
     }
 
+    public function customerClientView()
+    {      
+        $inventories=Inventory::orderBy('productName')->get()->where('statusID','active');
+
+        return view('customerView.customerClientView')->with('inventories',$inventories);
+    }
+
+    /*public function customerClientView()
+    {
+        $r=request();
+        $inventories=Inventory::orderBy('productName')->get()->where('statusID','active');
+        $categories=Category::orderBy('name')->get();
+        $category=Inventory::find($r->categoryID);
+
+        $sort = DB::table('inventories')
+        ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
+        ->where('categories.id', $category)
+        ->get();
+
+        return view('customerView.customerClientView')->with('inventories',$inventories)
+                                                        ->with('categories',$categories)
+                                                        ->with('sort',$sort);
+    }*/
 }

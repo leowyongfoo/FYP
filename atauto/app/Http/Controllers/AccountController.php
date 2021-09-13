@@ -10,7 +10,7 @@ class AccountController extends Controller
 {
     public function index()
     {
-        $customers = User::all()->where('role','customer');
+        $customers = User::all()->where('role','Customer');
         return view('user.index')->with('customers', $customers);
     }
 
@@ -26,6 +26,7 @@ class AccountController extends Controller
             'username'=>$r->username,
             'email'=>$r->email,
             'password'=>$r->password,
+            'address'=>$r->address,
         ]);
 
         return redirect()->route('user.index');
@@ -43,7 +44,8 @@ class AccountController extends Controller
         $customers =User::find($r->ID);
         $customers->username=$r->username; 
         $customers->email=$r->email; 
-        $customers->password=$r->password; 
+        $customers->password=$r->password;
+        $customers->address=$r->address;
         $customers->save();
 
         return redirect("/user/{$customer->id}");

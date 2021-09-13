@@ -10,22 +10,22 @@
             </p>
             <p>
                 <label for="name" class="label">Supplier Name:</label>
-                <input class="inputField" type="text" name="name" id="name">
+                <input class="inputField form-control" type="text" name="name" id="name">
             </p>
 
             <p>
                 <label for="contact" class="label">Contact number:</label>
-                <input class="inputField" type="text" name="contact" id="contact">
+                <input class="inputField form-control" type="text" name="contact" id="contact">
             </p>
 
             <p>
                 <label for="email" class="label">E-mail:</label>
-                <input class="inputField" type="email" name="email" id="email">
+                <input class="inputField form-control" type="email" name="email" id="email">
             </p>
 
             <p>
                 <label for="address" class="label">Address:</label>
-                <input class="inputField" type="text" name="address" id="address">
+                <textarea name="address" id="address" class="inputField form-control" cols="30" rows="8"></textarea>
             </p>
             
             <p class="hoverColor">

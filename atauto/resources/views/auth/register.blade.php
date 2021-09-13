@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Register - ATAuto IMS</title>
+    <title>ATAuto - Register</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -61,7 +61,17 @@
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" autocomplete="new-password" style="border-color: #414752; background: #414752;">   
                                     </div>
 
-                                <button class="btn btn-primary d-block btn-user w-100" type="submit">{{ __('Register') }}</button>
+                                    <div class="mb-3">
+                                        <input id="address" class="form-control @error('address') is-invalid @enderror" placeholder="{{ __('Address') }}" name="address" style="border-color: #414752; background: #414752;">
+                                        
+                                        @error('address')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+                                <button class="btn btn-dark d-block w-100" type="submit">{{ __('Register') }}</button>
                             </form>
                         </div>
                     </div>

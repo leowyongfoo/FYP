@@ -35,56 +35,29 @@
         <div class="sidebar shadow p-3">
             <ul>
                 <li>
-                    <a href="index"><span>Dashboard</span></a>
+                    <a href="/customer.clientView"><span>Client View</span></a>
+                </li>
+
+                <li>
+                    <a href="/customer.myCart">
+                        <span>Shopping Cart</span>
+                    </a>
                 </li>
 
                 <li>
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                        <span>Inventory</span>
+                        <span>Product Category</span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('inventory.index') }}">View Inventory</a>
-                        <a class="dropdown-item" href="{{ route('category.index') }}">View Category</a>
+                        
                     </div>
-                </li>
-
-                <li>
-                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                        <span>Order</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('deliveryOrder.index') }}">Delivery Order</a>
-                        <a class="dropdown-item" href="{{ route('customerOrder.index') }}">Customer Order</a>
-                        <a class="dropdown-item" href="{{ route('supplier.index') }}">Supplier List</a>
-                        <a class="dropdown-item" href="{{ route('customer.index') }}">Customer List</a>
-                    </div>
-                </li>
-
-                <li>
-                    <a href="user"><span>User</span></a>
-                </li>
-
-                <li>
-                    <a href="{{ route('quotation.index') }}"><span>Quotation</span></a>
-                </li>
-
-                <li>
-                    <a href="{{ route('inventory.clientView') }}"><span>Client View</span></a>
-                </li>
-
-                <li>
-                    <a href="{{ route('view.mycart') }}"><span>Shopping Cart</span></a>
-                </li>
-
-                <li>
-                    <a href="receivedOrder"><span>Received Order</span></a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <main>
-        @yield('content')
+        @yield('content2')
     </main>
 
 </body>

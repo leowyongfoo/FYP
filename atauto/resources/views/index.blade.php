@@ -42,14 +42,14 @@
     <div class="col-md-6 bottomleft">
         <div class="card shadow text-white bg-dark" style="height: 33vh; border-radius: 10px;">
             <div class="card-body" style="overflow: auto;">
-                <h4 class="card-title">Received customer order</h4>
+                <h4 class="card-title">Received Customer Order</h4>
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
-                        <th scope="col">OrderID</th>
-                        <th scope="col">userID</th>
-                        <th scope="col">Payment status</th>
-                        <th scope="col">Total amount</th>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">User ID</th>
+                        <th scope="col">Payment Status</th>
+                        <th scope="col">Total Amount</th>
                         <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -61,7 +61,7 @@
                         <td>{{$receivedOrder->paymentStatus}}</td>
                         <td>{{$receivedOrder->amount}}</td>
                         <td class="hoverColor"><a href="{{ route('viewReceivedOrder', ['id' => $receivedOrder->id]) }}" class="btn btnStyle"
-                            onclick="return confirm('you will be redirect')">GO-To</a></td>
+                            onclick="return confirm('you will be redirect')">View</a></td>
                         </tr>
                         @endforeach 
                     </tbody>
@@ -77,7 +77,7 @@
                 <table class="table table-borderless" style="margin-top: 2vh;">
                     <thead>
                         <tr>
-                        <th scope="col">DO_No</th>
+                        <th scope="col">DO No.</th>
                         <th scope="col">Name</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
@@ -90,7 +90,7 @@
                         <td>{{$pendingOrder->supplier->name}}</td>
                         <td>{{$pendingOrder->statusID}}</td>
                         <td class="hoverColor"><a href="{{ route('deliveryOrder.show', ['id' => $pendingOrder->id]) }}" class="btn btnStyle"
-                            onclick="return confirm('you will be redirect')">GO-To</a></td>
+                            onclick="return confirm('you will be redirect')">View</a></td>
                         </tr>
                         @endforeach 
                     </tbody>

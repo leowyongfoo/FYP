@@ -13,22 +13,22 @@
 
                         <p>
                             <label for="ID" class="label">Inventory ID</label>
-                            <input class="inputField" type="text" name="ID" id="ID" value="{{$inventory->id}}" readonly>
+                            <input class="inputField form-control" type="text" name="ID" id="ID" value="{{$inventory->id}}" readonly>
                         </p>
 
                         <p>
                             <label for="name" class="label">Product Name:</label>
-                            <input class="inputField" type="text" name="name" id="name" value="{{$inventory->productName}}">
+                            <input class="inputField form-control" type="text" name="name" id="name" value="{{$inventory->productName}}">
                         </p>
 
                         <p>
                             <label for="description" class="label">Description:</label>
-                            <textarea name="description" id="description" class="inputField" cols="30" rows="8" >{{$inventory->description}}</textarea>
+                            <textarea name="description" id="description" class="inputField form-control" cols="30" rows="8" >{{$inventory->description}}</textarea>
                         </p>
 
                         <p>
                             <label for="quantity" class="label">Quantity:</label>
-                            <input class="inputField" type="number" name="quantity" id="quantity" value="{{$inventory->quantity}}">
+                            <input class="inputField form-control" type="number" name="quantity" id="quantity" value="{{$inventory->quantity}}">
                         </p>
                         
                         <label for="category">Category:</label>
@@ -44,16 +44,16 @@
 
                         <p>
                             <label for="priceperunit" class="label">Price per unit: RM</label>
-                            <input class="inputField" type="text" name="priceperunit" id="priceperunit" value="{{$inventory->pricePerUnit}}">
+                            <input class="inputField form-control" type="text" name="priceperunit" id="priceperunit" value="{{$inventory->pricePerUnit}}">
                         </p>
 
                         <p>
                             <label for="retailPrice" class="label">Retail Price: RM</label>
-                            <input class="inputField" type="text" name="retailPrice" id="retailPrice" value="{{$inventory->retailPrice}}">
+                            <input class="inputField form-control" type="text" name="retailPrice" id="retailPrice" value="{{$inventory->retailPrice}}">
                         </p>
 
                         <p>
-                        <label for="image" class="label">upload image:</label><br>
+                        <label for="image" class="label">Upload Image:</label><br>
                         <input class="inputField" type="file" name="product-image" placeholder="select image" value=""> 
                         </p>
 

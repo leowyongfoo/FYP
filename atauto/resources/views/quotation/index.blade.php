@@ -28,7 +28,7 @@
                     Delete
                     </a> 
                     <a href="/quotation.{{ $quotation->id }}" class="btn btnStyle">
-                    View detail
+                    View Detail
                     </a> 
                     <a href="{{ route('quotation.changeStatus', ['id' => $quotation->id]) }}" class="btn btnStyle">
                     {{$quotation->statusID}}

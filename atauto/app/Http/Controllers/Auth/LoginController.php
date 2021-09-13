@@ -30,17 +30,12 @@ class LoginController extends Controller
     public function redirectTo() {
         $role = Auth::user()->role; 
         switch ($role) {
-            case 'admin':
+            case 'Admin':
                 return '/index';
                 break;
-            case 'customer':
+            case 'Customer':
                 return '/customer.clientView';
                 break;
-
-            default:
-                return '/index'; 
-                break; 
-            break;
         }
     }
 
