@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Session::has('addSuccess'))           
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('addSuccess')}}
+        </div>       
+@endif 
 
 <div>
             <div class="dataTables">
