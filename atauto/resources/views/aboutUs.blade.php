@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
+@section('content')
 <head>
 <title>About us</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -140,6 +140,23 @@ html {
       36000, Teluk intan,<br>
       Perak
     </p>
+    <h4>Business Hour</h4>
+    <p>9.00am - 6.00pm Monday - Sunday<br>
+      Closed on Public Holiday
+    </p>
+    <h4>Contact</h4>
+    <p>Mr. Leow Yong Aik - 018-218 1716<br>
+      At Auto Enterprise - +6056216363
+    </p>
+    <h4>Direction</h4> 
+    <p>Google Maps : <br>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3980.022756784473!2d101.0228645!3d4.0157316!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cb151f7427111d%3A0x4190d26198937b7e!2sAt%20Auto%20Enterprise!5e0!3m2!1sen!2smy!4v1631628729117!5m2!1sen!2smy" 
+      width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> <br>
+       Plus Code : 228F+74 Teluk Intan, Perak<br>
+       Waze : <br>
+       <iframe src="https://embed.waze.com/iframe?zoom=16&lat=4.015732&lon=101.022864&ct=livemap" 
+        width="400" height="300" allowfullscreen></iframe>
+    </p>
   </div>
 </body>
-</html>
+@endsection
