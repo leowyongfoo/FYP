@@ -12,7 +12,7 @@
             <div class="container-fluid">
                 <p>
                     <label for="name" class="label">Name:</label>
-                    <input class="inputField form-control" type="text" name="name" id="name">
+                    <input class="inputField form-control" type="text" name="name" id="name" required>
                 </p>
                 <h4 class="mb-4">Product</h4>
                     <table class="table table-borderless" id="dataTable">

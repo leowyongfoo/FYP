@@ -11,7 +11,7 @@
 
             <p>
                 <label for="name" class="label">Category Name:</label>
-                <input class="inputField form-control" type="text" name="name" id="name">
+                <input class="inputField form-control" type="text" name="name" id="name" required>
             </p>
             <p class="hoverColor">
                 <input type="submit" name="insert" value="Insert" class="btn btnStyleLighter"> 

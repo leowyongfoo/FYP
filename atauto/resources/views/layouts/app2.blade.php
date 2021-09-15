@@ -35,22 +35,13 @@
         <div class="sidebar shadow p-3">
             <ul>
                 <li>
-                    <a href="/customer.clientView"><span>Client View</span></a>
+                    <a href="/customer.clientView"><span>Products</span></a>
                 </li>
 
                 <li>
                     <a href="/customer.myCart">
                         <span>Shopping Cart</span>
                     </a>
-                </li>
-
-                <li>
-                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                        <span>Product Category</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        
-                    </div>
                 </li>
             </ul>
         </div>

@@ -69,7 +69,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('inventory.clientView') }}"><span>Client View</span></a>
+                    <a href="clientView"><span>Client View</span></a>
                 </li>
 
                 <li>
