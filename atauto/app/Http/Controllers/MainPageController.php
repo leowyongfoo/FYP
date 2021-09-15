@@ -22,11 +22,7 @@ class MainPageController extends Controller
     public function aboutus()
     {
        
-        
-        return view('aboutUs');
-                           
+        return view('aboutUs');                  
     }
-
-
    
 }

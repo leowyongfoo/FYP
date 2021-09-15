@@ -21,6 +21,7 @@ use Session;
 use URL;
 use Notification;
 use DB;
+use App\Models\User; 
 use App\Models\Inventory; 
 use App\Models\MyCart;
 use App\Models\Order;
@@ -175,13 +176,12 @@ class PaymentController extends Controller
 
             Session::put('success', 'Payment success');
 
-            $orders = Order::where('userID', Auth::id())->get();
-            foreach($orders as $order){
-                $order->paymentStatus='successful';
-                $order->save();
-            }
-
-            $carts = MyCart::where('userID', Auth::id())->get();
+            $carts = Order::leftjoin('my_carts','orders.id','=','my_carts.orderID')
+                            ->leftjoin('inventories','inventories.id','=','my_carts.inventoryID')
+                            ->select('my_carts.*','orders.*','inventories.*','my_carts.quantity')
+                            ->where('orders.userID','=',Auth::id())
+                            ->where('orders.paymentStatus','pending')
+                            ->get();
             foreach($carts as $cart){
 
                 $items = Inventory::where('id', $cart->inventoryID)->get();
@@ -193,10 +193,20 @@ class PaymentController extends Controller
                 }
             }
 
+            $orders = Order::where('userID', Auth::id())->get();
+            foreach($orders as $order){
+                $order->paymentStatus='successful';
+                $order->save();
+            }
+
+            
+
             //add update record for cart
-            $email='jacksonleow6@gmail.com';
-	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
+            $users= User::where('id', Auth::id())->get();
+            foreach($users as $user){  
+	        Notification::route('mail', $user->email)->notify(new \App\Notifications\orderPaid($user->email));
             return $this->redirectTo(request('role'));  //back to product page
+            }
 
         }
 

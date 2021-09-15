@@ -40,6 +40,8 @@ Route::get('/deleteCategory/{id}', [App\Http\Controllers\CategoryController::cla
 Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'changeStatus'])->name('category.changeStatus');
 
 //inventory route
+Route::post('/searchProduct',[App\Http\Controllers\InventoryController::class, 'adminSearch'])->name('admin.search.product');
+Route::post('/customer.searchProduct',[App\Http\Controllers\InventoryController::class, 'search'])->name('customer.search.product');
 Route::get('/inventory', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory.index');
 Route::get('/clientView', [App\Http\Controllers\InventoryController::class, 'clientView'])->name('inventory.clientView');
 Route::get('/productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'viewDetail'])->name('inventory.productDetail');
@@ -107,7 +109,7 @@ Route::patch('/user/{id}', [App\Http\Controllers\AccountController::class, 'upda
 Route::get('/deleteUser/{id}', [App\Http\Controllers\AccountController::class, 'delete'])->name('deleteUser');
 
 //customer
-Route::get('/customer.clientView', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.clientView');
+Route::get('/customer.clientView', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.client.View');
 Route::get('/customer.clientView.{category}', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.clientView');
 Route::get('/customer.productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'customerViewDetail'])->name('customer.productDetail');
 
@@ -127,11 +129,12 @@ Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'viewMyOrde
 Route::get('/receivedOrder', [App\Http\Controllers\OrderController::class, 'index'])->name('order.receivedOrder');
 Route::get('/receivedOrder.{id}', [App\Http\Controllers\OrderController::class, 'viewReceivedOrder'])->name('viewReceivedOrder');
 
-
 //customer
 Route::post('/customer.createorder', [App\Http\Controllers\OrderController::class, 'customerAdd'])->name('customer.create.order');
 Route::get('/customer.myorder', [App\Http\Controllers\OrderController::class, 'customerViewMyOrder'])->name('customer.order.viewOrder');
+Route::get('/order.history', [App\Http\Controllers\OrderController::class, 'orderHistory'])->name('orderHistory');
 
+//paypal
 Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
 Route::get('/status', [App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('status');
 
@@ -142,4 +145,7 @@ Route::get('/customerOrder.report/{id}', [App\Http\Controllers\PDFController::cl
 Route::get('/quotation.report/{id}', [App\Http\Controllers\PDFController::class, 'printQO'])->name('printReport.QO');
 
 Route::get('/aboutus', [App\Http\Controllers\MainPageController::class, 'aboutus'])->name('aboutus');
+
+
+
 

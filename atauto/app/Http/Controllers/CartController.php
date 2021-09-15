@@ -8,6 +8,7 @@ use App\Models\Inventory;
 use App\Models\MyCart;
 use App\Models\Category;
 Use Auth;
+Use Session;
 
 class CartController extends Controller
 {
@@ -21,11 +22,10 @@ class CartController extends Controller
             'orderID'=>'',
             'inventoryID'=>$r->id,
             'inventoryStatus'=> 'active',            
-            'userID'=>Auth::id(),
-            
-                        
-        ]);     
-        return redirect()->route('view.mycart');
+            'userID'=>Auth::id(),             
+        ]);
+        
+        return redirect()->route('inventory.clientView');
     }
 
     public function customerAdd(){ 
@@ -37,12 +37,11 @@ class CartController extends Controller
             'orderID'=>'',
             'inventoryID'=>$r->id,
             'inventoryStatus'=> 'active',            
-            'userID'=>Auth::id(),
-            
+            'userID'=>Auth::id(),    
                         
         ]);     
         
-        return redirect()->route('customer.view.mycart');
+        return redirect()->route('customer.client.View');
     }
 
     public function viewMyCart(){
@@ -53,13 +52,10 @@ class CartController extends Controller
         ->where('my_carts.orderID','=','') 
         ->where('my_carts.userID','=',Auth::id())
         ->paginate(12);
-
         
         
-        DB::table('my_carts')->where('inventoryStatus', 'inactive')->delete();
-                                   
+        DB::table('my_carts')->where('inventoryStatus', 'inactive')->delete();                    
         
- 
         return view('myCart.viewMyCart')->with('mycarts',$mycarts);
                                           
     }

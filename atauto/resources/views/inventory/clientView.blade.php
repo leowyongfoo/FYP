@@ -7,6 +7,11 @@
         <br>
         <h2>Products</h2>
         <br>
+        <form action="{{ route('admin.search.product') }}" method="post">
+            @csrf
+            <input type="text" name="searchProduct" id="searchProduct">
+            <button class="btn btn-info" type="submit">Search</button>
+        </form> 
         <div class="row">
             @foreach($inventories as $inventory)
                 <div class="col-md-4 mb-4">

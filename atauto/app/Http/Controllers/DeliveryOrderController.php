@@ -9,12 +9,22 @@ use App\Models\Itemlist;
 use App\Models\Supplier;
 use App\Models\Inventory;
 use App\Models\Status;
+Use Session;
 
 class DeliveryOrderController extends Controller
 {
     public function index()
     {
         $deliveryOrders = DeliveryOrder::orderBy('created_at', 'DESC')->paginate(5);
+        $items = Itemlist::leftjoin('delivery_orders','delivery_orders.id', '=','itemlists.deliveryOrderID')
+                           ->select('delivery_orders.*','itemlists.*')
+                           ->where('itemlists.statusID','Restocked')
+                           ->get();
+        foreach($items as $item){
+            $restockOrders=DeliveryOrder::where('id', $item->deliveryOrderID)->first();
+            $restockOrders->statusID ='fully restock';
+            $restockOrders->save();
+        }
         return view('deliveryOrder.index')->with('deliveryOrders', $deliveryOrders);
     }
 
@@ -38,7 +48,8 @@ class DeliveryOrderController extends Controller
             $data2=array(
                 'deliveryOrderid'=>$deliveryOrderID->id,
                 'inventoryID'=>$r->inventory[$item],
-                'orderQuantity'=>$r->quantity[$item]
+                'orderQuantity'=>$r->quantity[$item],
+                'statusID'=>'Restock',
             );
         Itemlist::insert($data2);
       }
@@ -100,17 +111,20 @@ class DeliveryOrderController extends Controller
     public function restock($id)
     {
         $orders=Itemlist::find($id);
-        $items = Inventory::where('id', $orders->inventoryID)->get();
-        foreach($items as $item){
-          if($item){
-            Inventory::where('id', $orders->inventoryID)->increment('quantity',$orders->orderQuantity);
-            return redirect()->route('inventory.index');
-          }
-          
-        }
-        
-
-        
+        if($orders->statusID =='Restock'){
+            $items = Inventory::where('id', $orders->inventoryID)->get();
+            foreach($items as $item){
+                if($item){
+                    Inventory::where('id', $orders->inventoryID)->increment('quantity',$orders->orderQuantity);
+                    $orders->statusID='Restocked';
+                    $orders->save(); 
+                    return redirect()->route('inventory.index');
+                }
+            }
+        }else{
+            Session::flash('fail',"Product already restock!");
+            return redirect("/deliveryOrder.{$orders->deliveryOrderID}");
+        }   
     }
 
 }
