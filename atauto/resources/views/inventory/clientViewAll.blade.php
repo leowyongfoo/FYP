@@ -5,7 +5,7 @@
 
     <div class="content">
         <br>
-        <h2>Products - {{$categoryName}}</h2>
+        <h2>Products - All</h2>
         <br>
         <p>
             <label for="category">Sort by Category:</label>
@@ -17,16 +17,8 @@
                 @endforeach
             </select><br>
         </p>
-        <form action="{{ route('admin.search.product') }}" method="post">
-            @csrf
-            <input type="text" name="searchProduct" id="searchProduct">
-            <button class="btn btn-info" type="submit">Search</button>
-        </form> 
         <div class="row">
-            @if(count($data)=="0")
-                <h2 style="margin-left: auto; margin-right: auto;">No products available under this category.</h2>
-            @else
-            @foreach($data as $inventory)
+            @foreach($inventories as $inventory)
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 card bg-dark text-white" Style="border: 5px groove black; border-radius: 10px;">
                         <div class="card-body">
@@ -49,8 +41,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach   
-            @endif   
+            @endforeach      
         </div> 
         <div class="d-flex justify-content-center pt-4 pl-5">
             
