@@ -1,5 +1,6 @@
 @extends('layouts.app')
-@section('content')  
+@section('content')
+
 	<div class="createForm">
                 <form action="{{ route('add.to.cart') }}" method="post">
                     @csrf

@@ -89,6 +89,22 @@ class OrderController extends Controller
                                                         ->with('categories',$categories);
     }
 
+    public function orderHistory(){
+
+        $myorders=DB::table('orders')
+        ->leftjoin('my_carts', 'orders.id', '=', 'my_carts.orderID')
+        ->leftjoin('inventories', 'inventories.id', '=', 'my_carts.inventoryID')
+        ->select('my_carts.*','orders.*','inventories.*','my_carts.quantity as cartQty')
+        ->where('orders.userID','=',Auth::id())
+        ->where( 'orders.paymentStatus', '=', 'successful')
+        ->orderBy( 'orders.created_at', 'DESC')
+        ->get();
+        //->paginate(3);       
+        $categories=Category::orderBy('name')->get();
+        return view('customerView.orderHistory')->with('myorders',$myorders)
+                                                        ->with('categories',$categories);
+    }
+
     public function viewReceivedOrder($id){
 
         $orders=Order::all()->where('id',$id);

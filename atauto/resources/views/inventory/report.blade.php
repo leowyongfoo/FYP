@@ -35,7 +35,7 @@
                     <th>ID</th>
                     <th>Product</th>
                     <th>Description</th>
-                    <th>Quantity</th>
+                    <th>in stock</th>
                     <th>Category</th>
                     <th>Price/Unit</th>
                     <th>Status</th>

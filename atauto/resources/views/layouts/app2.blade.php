@@ -43,14 +43,12 @@
                         <span>Shopping Cart</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/customer.myorder"><span>To Pay</span></a>
+                </li>
 
                 <li>
-                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                        <span>Product Category</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        
-                    </div>
+                    <a href="/order.history"><span>Order History</span></a>
                 </li>
                 <li>
                     <a href="aboutus"><span>About us</span></a>

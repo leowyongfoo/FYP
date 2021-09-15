@@ -23,7 +23,7 @@ class PDFController extends Controller
         $inventories = Inventory::paginate(5);
         $pdf = PDF::loadView('inventory.report', compact('inventories'));
     
-        return $pdf->download('report.pdf');
+        return $pdf->download('inventory_report.pdf');
     }
 
     public function printDO($id)
@@ -36,7 +36,7 @@ class PDFController extends Controller
         $itemDetails =Itemlist::all()->where('deliveryOrderID',$id);
         $pdf = PDF::loadView('deliveryOrder.report', compact('DODetails','itemDetails'));
     
-        return $pdf->download('DOreport.pdf');
+        return $pdf->download('DO_report.pdf');
     }
 
     public function printQo($id)
@@ -49,7 +49,7 @@ class PDFController extends Controller
         $itemDetails =QuotationList::all()->where('quotationID',$id);
         $pdf = PDF::loadView('quotation.report', compact('QODetails','itemDetails'));
     
-        return $pdf->download('QOreport.pdf');
+        return $pdf->download('QO_report.pdf');
     }
 
     public function printCO($id)
@@ -62,7 +62,7 @@ class PDFController extends Controller
         $itemDetails =customer_itemlist::all()->where('customerOrderID',$id);
         $pdf = PDF::loadView('customerOrder.report', compact('CODetails','itemDetails'));
     
-        return $pdf->download('COreport.pdf');
+        return $pdf->download('CO_report.pdf');
     }
 
 }

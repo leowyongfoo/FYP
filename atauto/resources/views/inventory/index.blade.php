@@ -4,14 +4,15 @@
         <div class="alert alert-success" role="alert">
             {{ Session::get('addSuccess')}}
         </div>       
-@endif 
+@endif
+ 
 <div>
             <div class="dataTables">
                 <br>
                 <h2>Inventory</h2>
                 <br>
                 <div class="hoverColor d-flex">
-                    <a href="/inventory.create" class="btn btnStyleLighter mr-4">Add New Inventory</a>
+                    <a href="/inventory.create" class="btn btnStyleLighter mr-4">Add New Product</a>
                     <a href="/inventory.report" class="btn btnStyleLighter">Print report</a>
                 </div>
                 <table class="table table-borderless" style="margin-top: 2vh;">

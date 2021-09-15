@@ -41,7 +41,14 @@
 		                </td>
 		            </tr> 
                 @endforeach
-				 
+				<tr>
+		            <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+		            <td>&nbsp;</td>                   
+		            <td><h3>Total:</h3></td>
+		            <td><input type="text" name="amount" id="amount" value="RM {{ $total }}" class="form-control" placeholder="0.00"></td>
+                    
+		        </tr>
 				<input type="hidden" name="amount" value="{{ $total }}">
 		        </tbody>			
 		    </table>	

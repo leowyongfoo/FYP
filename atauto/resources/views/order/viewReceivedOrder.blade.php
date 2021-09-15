@@ -6,7 +6,7 @@
 		<form>
 			@csrf
 			<br>
-			<h2>View Order detail</h2>
+			<h2>Order detail</h2>
 			<br>
             @foreach($orders as $order)
             <p>
@@ -17,6 +17,10 @@
 			<p>
                 <label for="address" class="label">Address:</label>
                 <input class="inputField form-control" type="text" name="userID" id="userID" value="{{$order->user->address}}" readonly>
+            </p>
+			<p>
+                <label for="date" class="label">Order date/time</label>
+                <input class="inputField form-control" type="text" name="date" id="date" value="{{$order->created_at}}" readonly>
             </p>
             @endforeach
 		    <table class="table table-borderless" style="margin-top: 2vh;">
@@ -50,10 +54,15 @@
 		                <td>
 		                    {{ $receivedOrder->paymentStatus }}
 		                </td>
+						
 		            </tr> 
+					
                 @endforeach
-				 
-				<input type="hidden" name="amount" value="{{ $total }}">
+				 <p>
+				 <label for="total" class="label">Total amount:</label>
+			     <input  class="inputField form-control" type="text" id="total" name="amount" value="RM {{ $total }}" readOnly>
+			    </p> 
+				
 		        </tbody>			
 		    </table>	
 			
