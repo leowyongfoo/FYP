@@ -10,7 +10,7 @@
             <label for="category">Sort by Category:</label>
             <select name="category" id="category" class="form-control" style="width: 20%;" onchange="location = this.value;">
                 <option disabled selected value>Select a category</option>
-                <option value="customer.clientView">All</option>
+                <option value="customer.clientViewAll">All</option>
                 @foreach($categories as $category)
                     <option value="customer.clientView.{{ $category->name }}">{{ $category->name }}</option>
                 @endforeach
