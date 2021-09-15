@@ -43,6 +43,16 @@
                         <span>Shopping Cart</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/customer.myorder"><span>To Pay</span></a>
+                </li>
+
+                <li>
+                    <a href="/order.history"><span>Order History</span></a>
+                </li>
+                <li>
+                    <a href="aboutus"><span>About us</span></a>
+                </li>
             </ul>
         </div>
     </nav>

@@ -40,6 +40,8 @@ Route::get('/deleteCategory/{id}', [App\Http\Controllers\CategoryController::cla
 Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'changeStatus'])->name('category.changeStatus');
 
 //inventory route
+Route::post('/searchProduct',[App\Http\Controllers\InventoryController::class, 'adminSearch'])->name('admin.search.product');
+Route::post('/customer.searchProduct',[App\Http\Controllers\InventoryController::class, 'search'])->name('customer.search.product');
 Route::get('/inventory', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory.index');
 Route::get('/clientView', [App\Http\Controllers\InventoryController::class, 'clientViewAll'])->name('inventory.clientViewAll');
 Route::get('/clientView.{category}', [App\Http\Controllers\InventoryController::class, 'clientView'])->name('inventory.clientView');
@@ -74,6 +76,7 @@ Route::patch('/deliveryOrder/{id}', [App\Http\Controllers\DeliveryOrderControlle
 Route::get('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'index'])->name('customerOrder.index');
 Route::get('/customerOrder.create', [App\Http\Controllers\CustomerOrderController::class, 'create'])->name('customerOrder.create');
 Route::post('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'store'])->name('customerOrder.store');
+Route::get('/customerOrder/{id}/confirmOrder', [App\Http\Controllers\CustomerOrderController::class, 'confirmOrder'])->name('confirmOrder');
 Route::get('/customerOrder/{id}/deleteOrder', [App\Http\Controllers\CustomerOrderController::class, 'deleteOrder'])->name('deleteOrder');
 Route::get('/customerOrder/{id}/deleteItem', [App\Http\Controllers\CustomerOrderController::class, 'deleteItem'])->name('deleteItem');
 Route::get('/customerOrder.{id}.edit', [App\Http\Controllers\CustomerOrderController::class, 'edit'])->name('customerOrder.edit');
@@ -108,7 +111,8 @@ Route::patch('/user/{id}', [App\Http\Controllers\AccountController::class, 'upda
 Route::get('/deleteUser/{id}', [App\Http\Controllers\AccountController::class, 'delete'])->name('deleteUser');
 
 //customer
-Route::get('/customer.clientView', [App\Http\Controllers\InventoryController::class, 'customerClientViewAll'])->name('customer.clientViewAll');
+Route::get('/customer.clientViewAll', [App\Http\Controllers\InventoryController::class, 'customerClientViewAll'])->name('customer.clientViewAll');
+Route::get('/customer.clientView', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.client.View');
 Route::get('/customer.clientView.{category}', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.clientView');
 Route::get('/customer.productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'customerViewDetail'])->name('customer.productDetail');
 
@@ -128,11 +132,12 @@ Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'viewMyOrde
 Route::get('/receivedOrder', [App\Http\Controllers\OrderController::class, 'index'])->name('order.receivedOrder');
 Route::get('/receivedOrder.{id}', [App\Http\Controllers\OrderController::class, 'viewReceivedOrder'])->name('viewReceivedOrder');
 
-
 //customer
 Route::post('/customer.createorder', [App\Http\Controllers\OrderController::class, 'customerAdd'])->name('customer.create.order');
 Route::get('/customer.myorder', [App\Http\Controllers\OrderController::class, 'customerViewMyOrder'])->name('customer.order.viewOrder');
+Route::get('/order.history', [App\Http\Controllers\OrderController::class, 'orderHistory'])->name('orderHistory');
 
+//paypal
 Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
 Route::get('/status', [App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('status');
 
@@ -141,4 +146,9 @@ Route::get('/inventory.report', [App\Http\Controllers\PDFController::class, 'pri
 Route::get('/deliveryOrder.report/{id}', [App\Http\Controllers\PDFController::class, 'printDO'])->name('printReport.DO');
 Route::get('/customerOrder.report/{id}', [App\Http\Controllers\PDFController::class, 'printCO'])->name('printReport.CO');
 Route::get('/quotation.report/{id}', [App\Http\Controllers\PDFController::class, 'printQO'])->name('printReport.QO');
+
+Route::get('/aboutus', [App\Http\Controllers\MainPageController::class, 'aboutus'])->name('aboutus');
+
+
+
 

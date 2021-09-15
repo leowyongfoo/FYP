@@ -49,7 +49,7 @@ class orderPaid extends Notification
         
         return (new MailMessage)
                     ->line('ATAuto Sdn.Bhd.')
-                    ->action('click to return', url('/'))
+                    ->action('click to return', url('/customer.clientView'))
                     ->line('Thank You for purchasing');
                     
     }

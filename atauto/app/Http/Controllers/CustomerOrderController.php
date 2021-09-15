@@ -102,4 +102,16 @@ class CustomerOrderController extends Controller
 
         return redirect("/customerOrder");
     }
+
+    public function confirmOrder($id)
+    {
+        $customerOrders=customer_itemlist::find($id);
+        $items = Inventory::where('id', $customerOrders->inventoryID)->get();
+        foreach($items as $item){
+          if($item){
+            Inventory::where('id', $customerOrders->inventoryID)->decrement('quantity',$customerOrders->quantity);
+            return redirect()->route('customerOrder.index');
+          }
+        }
+    }
 }

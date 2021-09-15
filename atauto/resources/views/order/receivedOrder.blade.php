@@ -24,8 +24,11 @@
                         <td>{{$order->userID}}</td>
                         <td>{{$order->paymentStatus}}</td>
                         <td>{{$order->amount}}</td>
-                        <td class="hoverColor"><a href="{{ route('viewReceivedOrder', ['id' => $order->id]) }}" class="btn btnStyle"
-                            onclick="return confirm('you will be redirect')">View</a></td>
+                        <td class="hoverColor">
+                            <a href="{{ route('viewReceivedOrder', ['id' => $order->id]) }}" class="btn btnStyle">
+                                View
+                            </a>
+                        </td>
                         </tr>
                         @endforeach 
                     </tbody>

@@ -20,15 +20,42 @@ class InventoryController extends Controller
             $item->save();
         }
 
-        return view('inventory.index')->with('inventories', $inventories);
-        
-        
+        return view('inventory.index')->with('inventories', $inventories);  
+    }
+
+    public function search(){
+        $r=request();//retrive submited form data
+        $keyword=$r->searchProduct;
+        $inventories =DB::table('inventories')
+        ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
+        ->select('categories.name as catname','categories.id as catid','inventories.*')
+        ->where('inventories.productName', 'like', '%' . $keyword . '%')
+        ->orWhere('categories.name', 'like', '%' . $keyword . '%')
+        ->orderBy('productName')
+        //->get();
+        ->paginate(4);
+        return view('customerView.customerClientView')->with('inventories',$inventories);
+
+    }
+
+    public function adminSearch(){
+        $r=request();//retrive submited form data
+        $keyword=$r->searchProduct;
+        $inventories =DB::table('inventories')
+        ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
+        ->select('categories.name as catname','categories.id as catid','inventories.*')
+        ->where('inventories.productName', 'like', '%' . $keyword . '%')
+        ->orWhere('inventories.description', 'like', '%' . $keyword . '%')
+        ->orderBy('productName')
+        //->get();
+        ->paginate(4);
+        return view('inventory.clientView')->with('inventories',$inventories);
+
     }
 
     public function create()
     {
-        return view('inventory.create')->with('categories', Category::all());
-                                      
+        return view('inventory.create')->with('categories', Category::all());                              
     }
 
     public function store()
@@ -53,8 +80,8 @@ class InventoryController extends Controller
         return redirect()->route('inventory.index');
     }
 
-    public function edit($id){
-       
+    public function edit($id)
+    {
         $inventories =Inventory::all()->where('id',$id);
         return view('inventory.edit')->with('inventories',$inventories)
                                      ->with('categories', Category::all());
@@ -69,7 +96,7 @@ class InventoryController extends Controller
             $image->move('images',$image->getClientOriginalName());                   
             $imageName=$image->getClientOriginalName(); 
             $inventories->image=$imageName;
-            }       
+        }      
         $inventories->productName=$r->name; 
         $inventories->description=$r->description; 
         $inventories->quantity=$r->quantity;

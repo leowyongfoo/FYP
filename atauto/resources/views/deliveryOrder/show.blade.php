@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Session::has('fail'))           
+        <div class="alert alert-danger" role="alert">
+            {{ Session::get('fail')}}
+        </div>       
+@endif 
 
 <div>
     <div class="dataTables">
@@ -47,8 +52,10 @@
                         <a href="/deliveryOrder/{{ $itemlist->id }}/deleteItem" class="btn btnStyle" onclick="return confirm('Sure Want delete?')">
                         Delete
                         </a>
-                        <a href="/deliveryOrder/{{ $itemlist->id }}/restock" class="btn btnStyle" onclick="return confirm('Sure Want restock?')">
-                        Restock
+                        <a href="/deliveryOrder/{{ $itemlist->id }}/restock" 
+                        class="btn btnStyle" 
+                        onclick="return confirm('Sure Want restock? (you only can restock once!)')">
+                        {{$itemlist->statusID}}
                         </a>
                     </td>
                 </tr>      

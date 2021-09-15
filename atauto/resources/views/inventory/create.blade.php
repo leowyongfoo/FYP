@@ -6,7 +6,7 @@
         <form class="subform" method="post" action="/inventory" enctype="multipart/form-data">
             @csrf
             <p>
-                <h3>Create Inventory</h3>
+                <h3>Add New Product</h3>
             </p>
 
             <p>

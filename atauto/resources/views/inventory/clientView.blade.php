@@ -17,6 +17,11 @@
                 @endforeach
             </select><br>
         </p>
+        <form action="{{ route('admin.search.product') }}" method="post">
+            @csrf
+            <input type="text" name="searchProduct" id="searchProduct">
+            <button class="btn btn-info" type="submit">Search</button>
+        </form> 
         <div class="row">
             @if(count($data)=="0")
                 <h2 style="margin-left: auto; margin-right: auto;">No products available under this category.</h2>

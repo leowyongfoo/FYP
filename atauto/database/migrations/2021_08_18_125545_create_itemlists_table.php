@@ -18,6 +18,7 @@ class CreateItemlistsTable extends Migration
             $table->string('deliveryOrderID');
             $table->string('inventoryID');
             $table->string('orderQuantity');
+            $table->string('statusID');
             $table->timestamps();
 
             $table->index('deliveryOrderID');
