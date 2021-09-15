@@ -47,6 +47,9 @@
                             <a href="/customerOrder/{{ $customer_itemlist->id }}/deleteItem" class="btn btnStyle" onclick="return confirm('Sure Want delete?')">
                             Delete
                             </a>
+                            <a href="/customerOrder/{{ $customer_itemlist->id }}/confirmOrder" class="btn btnStyle" onclick="return confirm('Sure Want Confirm Order?')">
+                            Confirm Order
+                            </a>
                         </td>
                     </tr>      
                     @endforeach    

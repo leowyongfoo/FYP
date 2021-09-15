@@ -73,6 +73,7 @@ Route::patch('/deliveryOrder/{id}', [App\Http\Controllers\DeliveryOrderControlle
 Route::get('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'index'])->name('customerOrder.index');
 Route::get('/customerOrder.create', [App\Http\Controllers\CustomerOrderController::class, 'create'])->name('customerOrder.create');
 Route::post('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'store'])->name('customerOrder.store');
+Route::get('/customerOrder/{id}/confirmOrder', [App\Http\Controllers\CustomerOrderController::class, 'confirmOrder'])->name('confirmOrder');
 Route::get('/customerOrder/{id}/deleteOrder', [App\Http\Controllers\CustomerOrderController::class, 'deleteOrder'])->name('deleteOrder');
 Route::get('/customerOrder/{id}/deleteItem', [App\Http\Controllers\CustomerOrderController::class, 'deleteItem'])->name('deleteItem');
 Route::get('/customerOrder.{id}.edit', [App\Http\Controllers\CustomerOrderController::class, 'edit'])->name('customerOrder.edit');
