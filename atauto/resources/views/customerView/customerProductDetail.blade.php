@@ -7,6 +7,7 @@
                     <h2>Product Detail</h2>
                     <table class="table table-borderless" style="width: 50vh; margin-top: 2vh;">
                     @foreach($inventories as $inventory) 
+                    <img src="{{ asset('images/') }}/{{$inventory->image}}" alt="" class="img-fluid" >
                         <thead>
                             <tr>
                                 <th>Product Name:</th>

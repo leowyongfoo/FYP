@@ -41,7 +41,7 @@ class CartController extends Controller
                         
         ]);     
         
-        return redirect()->route('customerClientView');
+        return redirect()->route('customer.client.View');
     }
 
     public function viewMyCart(){

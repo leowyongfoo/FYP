@@ -22,7 +22,6 @@
                 </a>
               
                 <div class="dropdown-menu ddmenu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Profile</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button class="dropdown-item" type="submit">{{ __('Logout') }}</a>
