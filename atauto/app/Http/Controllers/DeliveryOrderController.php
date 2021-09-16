@@ -8,8 +8,7 @@ use App\Models\DeliveryOrder;
 use App\Models\Itemlist;
 use App\Models\Supplier;
 use App\Models\Inventory;
-use App\Models\Status;
-Use Session;
+use Session;
 
 class DeliveryOrderController extends Controller
 {
@@ -31,7 +30,6 @@ class DeliveryOrderController extends Controller
     public function create()
     {
         return view('deliveryOrder.create')->with('suppliers', Supplier::all())
-                                            ->with('statuses', Status::all())
                                             ->with('inventories', Inventory::all());                          
     }
 

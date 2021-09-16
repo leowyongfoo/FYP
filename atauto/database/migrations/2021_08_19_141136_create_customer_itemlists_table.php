@@ -18,6 +18,7 @@ class CreateCustomerItemlistsTable extends Migration
             $table->string('customerOrderID');
             $table->string('inventoryID');
             $table->string('quantity');
+            $table->string('statusID');
             $table->timestamps();
 
             $table->index('customerOrderID');
