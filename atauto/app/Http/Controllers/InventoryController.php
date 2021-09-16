@@ -26,7 +26,9 @@ class InventoryController extends Controller
     public function search(){
         $r=request();//retrive submited form data
         $keyword=$r->searchProduct;
-        $inventories =DB::table('inventories')
+        $category=$r->category;
+        $categories=Category::orderBy('name')->get();
+        $data =DB::table('inventories')
         ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
         ->select('categories.name as catname','categories.id as catid','inventories.*')
         ->where('inventories.productName', 'like', '%' . $keyword . '%')
@@ -34,22 +36,28 @@ class InventoryController extends Controller
         ->orderBy('productName')
         //->get();
         ->paginate(4);
-        return view('customerView.customerClientView')->with('inventories',$inventories);
+        return view('customerView.customerClientView')->with('data',$data)
+                                                        ->with('categoryName',$category)
+                                                        ->with('categories',$categories);
 
     }
 
     public function adminSearch(){
         $r=request();//retrive submited form data
         $keyword=$r->searchProduct;
-        $inventories =DB::table('inventories')
+        $category=$r->category;
+        $categories=Category::orderBy('name')->get();
+        $data =DB::table('inventories')
         ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
         ->select('categories.name as catname','categories.id as catid','inventories.*')
         ->where('inventories.productName', 'like', '%' . $keyword . '%')
-        ->orWhere('inventories.description', 'like', '%' . $keyword . '%')
+        ->orWhere('categories.name', 'like', '%' . $keyword . '%')
         ->orderBy('productName')
         //->get();
         ->paginate(4);
-        return view('inventory.clientView')->with('inventories',$inventories);
+        return view('inventory.clientView')->with('data',$data)
+                                            ->with('categoryName',$category)
+                                            ->with('categories',$categories);
 
     }
 
@@ -124,6 +132,7 @@ class InventoryController extends Controller
         $data=DB::table('inventories')
         ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
         ->where('categories.name', $category)
+        ->orderBy('productName')
         ->get();
 
         return view('inventory.clientView')->with('data', $data)
@@ -171,6 +180,7 @@ class InventoryController extends Controller
         $data=DB::table('inventories')
         ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
         ->where('categories.name', $category)
+        ->orderBy('productName')
         ->get();
 
         return view('customerView.customerClientView')->with('data', $data)

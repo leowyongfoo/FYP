@@ -82,7 +82,7 @@
                 </li>
 
                 <li>
-                    <a href="aboutus"><span>About us</span></a>
+                    <a href="aboutus"><span>About Us</span></a>
                 </li>
             </ul>
         </div>

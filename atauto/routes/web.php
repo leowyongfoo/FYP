@@ -111,8 +111,7 @@ Route::patch('/user/{id}', [App\Http\Controllers\AccountController::class, 'upda
 Route::get('/deleteUser/{id}', [App\Http\Controllers\AccountController::class, 'delete'])->name('deleteUser');
 
 //customer
-Route::get('/customer.clientViewAll', [App\Http\Controllers\InventoryController::class, 'customerClientViewAll'])->name('customer.clientViewAll');
-Route::get('/customer.clientView', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.client.View');
+Route::get('/customer.clientView', [App\Http\Controllers\InventoryController::class, 'customerClientViewAll'])->name('customer.clientView');
 Route::get('/customer.clientView.{category}', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.clientView');
 Route::get('/customer.productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'customerViewDetail'])->name('customer.productDetail');
 
@@ -148,6 +147,7 @@ Route::get('/customerOrder.report/{id}', [App\Http\Controllers\PDFController::cl
 Route::get('/quotation.report/{id}', [App\Http\Controllers\PDFController::class, 'printQO'])->name('printReport.QO');
 
 Route::get('/aboutus', [App\Http\Controllers\MainPageController::class, 'aboutus'])->name('aboutus');
+Route::get('/customer.aboutus', [App\Http\Controllers\MainPageController::class, 'customerAboutus'])->name('customer.aboutus');
 
 
 

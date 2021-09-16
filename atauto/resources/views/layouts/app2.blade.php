@@ -51,7 +51,7 @@
                     <a href="/order.history"><span>Order History</span></a>
                 </li>
                 <li>
-                    <a href="aboutus"><span>About us</span></a>
+                    <a href="customer.aboutus"><span>About Us</span></a>
                 </li>
             </ul>
         </div>

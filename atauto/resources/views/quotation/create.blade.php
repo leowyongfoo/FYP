@@ -35,7 +35,7 @@
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="number" name="quantity[]" class="form-control quantity">
+                                    <input type="number" name="quantity[]" class="form-control quantity" min="1">
                                 </td>
                                 <td>
                                     <input class="form-control inputField" type="text" name="agreedPriceperunit[]">

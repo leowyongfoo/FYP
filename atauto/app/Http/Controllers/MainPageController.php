@@ -24,5 +24,11 @@ class MainPageController extends Controller
        
         return view('aboutUs');                  
     }
+
+    public function customerAboutus()
+    {
+       
+        return view('aboutUsCust');                  
+    }
    
 }

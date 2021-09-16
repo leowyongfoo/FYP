@@ -97,7 +97,7 @@ a:hover {
 
 <div class="about-section">
   <div style="text-align: left; margin-top: -2vh;">
-    <a href="/index">Back to Home</a>
+    <a href="/customer.clientView">Back to Home</a>
   </div>
   <h2><u>About Us</u></h2>
   <br>
