@@ -35,7 +35,7 @@
         <div class="sidebar shadow p-3">
             <ul>
                 <li>
-                    <a href="/customer.clientView"><span>Client View</span></a>
+                    <a href="/customer.clientView"><span>Products</span></a>
                 </li>
 
                 <li>

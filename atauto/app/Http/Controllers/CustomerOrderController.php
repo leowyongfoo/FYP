@@ -8,20 +8,28 @@ use App\Models\CustomerOrder;
 use App\Models\customer_itemlist;
 use App\Models\Customer;
 use App\Models\Inventory;
-use App\Models\Status;
+Use Session;
 
 class CustomerOrderController extends Controller
 {
     public function index()
     {
-        $customerOrders = CustomerOrder::orderBy('created_at', 'DESC')->paginate(5);
-        return view('customerOrder.index')->with('customerOrders', $customerOrders);                                          
+        $customerOrders = CustomerOrder::orderBy('created_at', 'DESC')->paginate(5); 
+        $items = customer_itemlist::leftjoin('customer_orders','customer_orders.id', '=','customer_itemlists.customerOrderID')
+                           ->select('customer_orders.*','customer_itemlists.*')
+                           ->where('customer_itemlists.statusID','Confirmed')
+                           ->get();
+        foreach($items as $item){
+            $confirmOrders=CustomerOrder::where('id', $item->customerOrderID)->first();
+            $confirmOrders->statusID ='Closed';
+            $confirmOrders->save();
+        }              
+        return view('customerOrder.index')->with('customerOrders', $customerOrders);                           
     }
 
     public function create()
     {
         return view('customerOrder.create')->with('customers', Customer::all())
-                                            ->with('statuses', Status::all())
                                             ->with('inventories', Inventory::all());                                 
     }
 
@@ -38,7 +46,8 @@ class CustomerOrderController extends Controller
             $data2=array(
                 'customerOrderid'=>$customerOrderID->id,
                 'inventoryID'=>$r->inventory[$item],
-                'quantity'=>$r->quantity[$item]
+                'quantity'=>$r->quantity[$item],
+                'statusID'=>'Confirm',
             );
         customer_itemlist::insert($data2);
       }
@@ -101,5 +110,24 @@ class CustomerOrderController extends Controller
         $customerOrders->save();
 
         return redirect("/customerOrder");
+    }
+
+    public function confirmOrder($id)
+    {
+        $customerOrders=customer_itemlist::find($id);
+        if($customerOrders->statusID =='Confirm'){
+        $items = Inventory::where('id', $customerOrders->inventoryID)->get();
+        foreach($items as $item){
+          if($item){
+            Inventory::where('id', $customerOrders->inventoryID)->decrement('quantity',$customerOrders->quantity);
+            $customerOrders->statusID='Confirmed';
+            $customerOrders->save(); 
+            return redirect()->route('customerOrder.index');
+          }
+        }
+        }else{
+            Session::flash('fail',"Product already Confirmed!");
+            return redirect("/customerOrder.{$customerOrders->customerOrderID}");
+        }   
     }
 }

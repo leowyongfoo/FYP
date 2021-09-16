@@ -43,7 +43,8 @@ Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'c
 Route::post('/searchProduct',[App\Http\Controllers\InventoryController::class, 'adminSearch'])->name('admin.search.product');
 Route::post('/customer.searchProduct',[App\Http\Controllers\InventoryController::class, 'search'])->name('customer.search.product');
 Route::get('/inventory', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory.index');
-Route::get('/clientView', [App\Http\Controllers\InventoryController::class, 'clientView'])->name('inventory.clientView');
+Route::get('/clientView', [App\Http\Controllers\InventoryController::class, 'clientViewAll'])->name('inventory.clientViewAll');
+Route::get('/clientView.{category}', [App\Http\Controllers\InventoryController::class, 'clientView'])->name('inventory.clientView');
 Route::get('/productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'viewDetail'])->name('inventory.productDetail');
 Route::get('/inventory.create', [App\Http\Controllers\InventoryController::class, 'create'])->name('inventory.create');
 Route::post('/inventory', [App\Http\Controllers\InventoryController::class, 'store'])->name('inventory.store');
@@ -75,6 +76,7 @@ Route::patch('/deliveryOrder/{id}', [App\Http\Controllers\DeliveryOrderControlle
 Route::get('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'index'])->name('customerOrder.index');
 Route::get('/customerOrder.create', [App\Http\Controllers\CustomerOrderController::class, 'create'])->name('customerOrder.create');
 Route::post('/customerOrder', [App\Http\Controllers\CustomerOrderController::class, 'store'])->name('customerOrder.store');
+Route::get('/customerOrder/{id}/confirmOrder', [App\Http\Controllers\CustomerOrderController::class, 'confirmOrder'])->name('confirmOrder');
 Route::get('/customerOrder/{id}/deleteOrder', [App\Http\Controllers\CustomerOrderController::class, 'deleteOrder'])->name('deleteOrder');
 Route::get('/customerOrder/{id}/deleteItem', [App\Http\Controllers\CustomerOrderController::class, 'deleteItem'])->name('deleteItem');
 Route::get('/customerOrder.{id}.edit', [App\Http\Controllers\CustomerOrderController::class, 'edit'])->name('customerOrder.edit');
@@ -109,6 +111,7 @@ Route::patch('/user/{id}', [App\Http\Controllers\AccountController::class, 'upda
 Route::get('/deleteUser/{id}', [App\Http\Controllers\AccountController::class, 'delete'])->name('deleteUser');
 
 //customer
+Route::get('/customer.clientViewAll', [App\Http\Controllers\InventoryController::class, 'customerClientViewAll'])->name('customer.clientViewAll');
 Route::get('/customer.clientView', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.client.View');
 Route::get('/customer.clientView.{category}', [App\Http\Controllers\InventoryController::class, 'customerClientView'])->name('customer.clientView');
 Route::get('/customer.productDetail.{id}', [App\Http\Controllers\InventoryController::class, 'customerViewDetail'])->name('customer.productDetail');

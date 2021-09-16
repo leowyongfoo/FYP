@@ -116,11 +116,29 @@ class InventoryController extends Controller
         return redirect()->route('inventory.index');
     }
 
-    public function clientView()
+    public function clientView(Request $request)
     {
+        $category=$request->category;
+        $categories=Category::orderBy('name')->get();
+
+        $data=DB::table('inventories')
+        ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
+        ->where('categories.name', $category)
+        ->get();
+
+        return view('inventory.clientView')->with('data', $data)
+                                            ->with('categories',$categories)
+                                            ->with('categoryName',$category);
+    }
+
+    public function clientViewAll(Request $request)
+    {      
         $inventories = Inventory::orderBy('productName')->get()->where('statusID','active');
-        
-        return view('inventory.clientView')->with('inventories',$inventories);
+        $category=$request->category;
+        $categories=Category::orderBy('name')->get();
+        return view('inventory.clientViewAll')->with('inventories',$inventories)
+                                                ->with('categories',$categories)
+                                                ->with('categoryName',$category);
     }
 
     public function viewDetail($id)
@@ -145,42 +163,34 @@ class InventoryController extends Controller
         return redirect()->route('inventory.index');
     }
 
-    public function navbar()
-    {
+    public function customerClientView(Request $request)
+    {      
+        $category=$request->category;
         $categories=Category::orderBy('name')->get();
 
-        return view('layouts.app2')->with('categories',$categories);
+        $data=DB::table('inventories')
+        ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
+        ->where('categories.name', $category)
+        ->get();
+
+        return view('customerView.customerClientView')->with('data', $data)
+                                                        ->with('categories',$categories)
+                                                        ->with('categoryName',$category);
     }
 
     public function customerViewDetail($id)
     {
-        $inventories =Inventory::all()->where('id',$id);
-        $categories=Category::orderBy('name')->get();
-        return view('customerView.customerProductDetail')->with('inventories',$inventories)
-                                                            ->with('categories',$categories);
+        $inventories=Inventory::all()->where('id',$id);
+        return view('customerView.customerProductDetail')->with('inventories',$inventories);
     }
 
-    public function customerClientView()
+    public function customerClientViewAll(Request $request)
     {      
-        $inventories=Inventory::orderBy('productName')->get()->where('statusID','active');
-
-        return view('customerView.customerClientView')->with('inventories',$inventories);
-    }
-
-    /*public function customerClientView()
-    {
-        $r=request();
-        $inventories=Inventory::orderBy('productName')->get()->where('statusID','active');
+        $inventories = Inventory::orderBy('productName')->get()->where('statusID','active');
+        $category=$request->category;
         $categories=Category::orderBy('name')->get();
-        $category=Inventory::find($r->categoryID);
-
-        $sort = DB::table('inventories')
-        ->leftjoin('categories', 'categories.id', '=', 'inventories.categoryID')
-        ->where('categories.id', $category)
-        ->get();
-
-        return view('customerView.customerClientView')->with('inventories',$inventories)
-                                                        ->with('categories',$categories)
-                                                        ->with('sort',$sort);
-    }*/
+        return view('customerView.customerClientViewAll')->with('inventories',$inventories)
+                                                ->with('categories',$categories)
+                                                ->with('categoryName',$category);
+    }
 }
