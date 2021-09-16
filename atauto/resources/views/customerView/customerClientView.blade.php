@@ -39,7 +39,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 card bg-dark text-white" Style="border: 5px groove black; border-radius: 10px;">
                         <div class="card-body">
-                            <div style="height: 55%; width: 80%; margin-left: auto; margin-right: auto;">
+                            <div style="height: 40vh; width: 80%; margin-left: auto; margin-right: auto;">
                                 <a href="/customer.productDetail.{{ $inventory->id }}">
                                     <img src="{{ asset('images/') }}/{{$inventory->image}}" alt="" class="img-fluid" >
                                 </a>
