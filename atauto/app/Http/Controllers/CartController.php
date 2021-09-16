@@ -25,7 +25,7 @@ class CartController extends Controller
             'userID'=>Auth::id(),             
         ]);
         
-        return redirect()->route('inventory.clientView');
+        return redirect()->route('inventory.clientViewAll');
     }
 
     public function customerAdd(){ 
@@ -41,7 +41,7 @@ class CartController extends Controller
                         
         ]);     
         
-        return redirect()->route('customerClientView');
+        return redirect()->route('customer.client.View');
     }
 
     public function viewMyCart(){

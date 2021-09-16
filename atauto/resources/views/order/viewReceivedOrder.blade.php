@@ -16,7 +16,7 @@
 
 			<p>
                 <label for="address" class="label">Address:</label>
-                <input class="inputField form-control" type="text" name="userID" id="userID" value="{{$order->user->address}}" readonly>
+                <textarea class="inputField form-control" type="text" name="address" id="address" cols="30" rows="5" readonly>{{$order->user->address}}</textarea>
             </p>
 			<p>
                 <label for="date" class="label">Order date/time</label>
