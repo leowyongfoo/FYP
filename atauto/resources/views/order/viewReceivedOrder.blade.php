@@ -16,7 +16,8 @@
 
 			<p>
                 <label for="address" class="label">Address:</label>
-                <textarea class="inputField form-control" type="text" name="address" id="address" cols="30" rows="5" readonly>{{$order->user->address}}</textarea>
+				<textarea name="address" id="address" class="inputField form-control" cols="30" rows="5" readonly>{{$order->user->address}}</textarea>
+               
             </p>
 			<p>
                 <label for="date" class="label">Order date/time</label>
