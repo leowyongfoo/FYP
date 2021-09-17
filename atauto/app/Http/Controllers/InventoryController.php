@@ -34,8 +34,7 @@ class InventoryController extends Controller
         ->where('inventories.productName', 'like', '%' . $keyword . '%')
         ->orWhere('categories.name', 'like', '%' . $keyword . '%')
         ->orderBy('productName')
-        //->get();
-        ->paginate(4);
+        ->get();
         return view('customerView.customerClientView')->with('data',$data)
                                                         ->with('categoryName',$category)
                                                         ->with('categories',$categories);

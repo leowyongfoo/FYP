@@ -33,7 +33,7 @@
         </div>
         <div class="row">
             @if(count($data)=="0")
-                <h2 style="margin-left: auto; margin-right: auto;">No products available under this category.</h2>
+                <h2 style="margin-left: auto; margin-right: auto;">No products available under this category or product does not exist.</h2>
             @else
             @foreach($data as $inventory)
                 <div class="col-md-4 mb-4">
@@ -62,7 +62,7 @@
             @endif
         </div> 
         <div class="d-flex justify-content-center pt-4 pl-5">
-            
+        
         </div>
     </div>        
 @endsection

@@ -14,7 +14,7 @@ class DeliveryOrderController extends Controller
 {
     public function index()
     {
-        $deliveryOrders = DeliveryOrder::orderBy('created_at', 'DESC')->paginate(5);
+        $deliveryOrders = DeliveryOrder::orderBy('statusID','desc')->paginate(5);
         $items = Itemlist::leftjoin('delivery_orders','delivery_orders.id', '=','itemlists.deliveryOrderID')
                            ->select('delivery_orders.*','itemlists.*')
                            ->where('itemlists.statusID','Restocked')
